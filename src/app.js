@@ -1,9 +1,13 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const body_parser = require('body-parser');
 
 // Gen and set app instance
 const app = express();
 const PORT = process.env.PORT || 5000;  //Get open port (default to 5000)
+
+// Global Middlewares
+app.use(body_parser.json());    // body-parser runs whenever a request is made
 
 // Import Routes
 const userRoute = require('./Routes/Api/UserRoutes');   // Define targer route
