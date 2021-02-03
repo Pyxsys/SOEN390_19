@@ -19,14 +19,40 @@ router.get('/', async (req, res) => {
 });
 
 /** GET - by ID
- *  Returns a specific user
+ *  Returns a specific email
  */
-router.get('/:userId', async (req, res) => {
+/** GET - by email w/ password
+ *  Returns a specific user by email w/ password
+ */
+/** GET - by email w/ password
+ *  Returns a specific user by email w/ password
+ */
+router.get('/login/:email/:pass', async (req, res) => {
     try{
-        const users = await User.findById(req.params.userId);
-        res.json(users);
+        var success = 0;
+        const users = await User.findOne({email: req.params.email});
+        
+        if(users != null){  //check if email is found in DB
+            //confirm matching passwords
+            if(req.params.pass === users.password){ 
+                console.log(`User '${users.username.toString()}' authenticated.`);
+                success++;  
+        }}
+        
+        //response based on success of authentication
+        if(success > 0) { 
+            res.status(202).json({
+                message: 'authenitcated valid credentials'
+            }); 
+        } else {
+            res.status(400).json({
+                message: 'invalid credentials - bad request'
+            }); 
+        }
+
     } catch(err){
-        res.json({message: err});
+        console.log(err);
+        res.status(500).json('error occured');
     }
 });
 
@@ -50,6 +76,7 @@ router.post('/', async (req, res) => {
         res.json(saved_user);
         console.log('> user added successfully.');
     } catch(err) {
+        console.log(err)
         res.json({message: err}); // return error
         console.log('> user not added.');
     }
