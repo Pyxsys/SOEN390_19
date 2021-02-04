@@ -18,12 +18,7 @@ router.get('/', async (req, res) => {
     }
 });
 
-/** GET - by ID
- *  Returns a specific email
- */
-/** GET - by email w/ password
- *  Returns a specific user by email w/ password
- */
+
 /** GET - by email w/ password
  *  Returns a specific user by email w/ password
  */
