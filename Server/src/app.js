@@ -10,6 +10,7 @@ const PORT = process.env.PORT || 5000;  //Get open port (default to 5000)
 // Global Middlewares
 app.use(body_parser.json());    // body-parser runs whenever a request is made
 app.use(cors())
+
 // Import Routes
 const userRoute = require('./Routes/Api/UserRoutes');   // Define targer route
 app.use('/users', userRoute);                           // Enforce use of route on specified route
@@ -25,7 +26,7 @@ var db_link = 'mongodb://mongo:27017/kapp-docker-express';    //docker mongo con
 mongoose.connect(
     db_link,                                    // Target DB
     { useNewUrlParser: true },                  // Removes deprecation warning
-     () => console.log('... Connected to DB.')  // Log message
+     () => console.log(`... Connected to DB on ${db_link}`)  // Log message
 );
 
 // Begin listening / Start server
