@@ -7,4 +7,4 @@ const business_schema = mongoose.Schema({
     suppliers:          {type: String, required: true}
 });
 
-module.exports = mongoose.model('Business', Business);
+module.exports = mongoose.model('Business', business_schema);
