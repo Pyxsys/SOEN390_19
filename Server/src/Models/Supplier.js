@@ -6,7 +6,7 @@ const business_schema = require('./Business.js');
 const supplier_schema = mongoose.Schema({
     name:       {type: String, required: true},
     phone:       {type: String, required: true},
-    address:          {type: String, required: true},
+    location:          {type: String, required: true},
     businessArr: [business_schema]
 });
     
