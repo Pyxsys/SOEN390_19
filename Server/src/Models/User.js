@@ -13,7 +13,7 @@ const user_schema = mongoose.Schema({
 //Generate a random salt and hashes the password and the salt to encypt them
 function hashPassword(password) {
     var salt = crypto.randomBytes(128).toString('base64');
-    var iterations = 10000;
+    var iterations = 10000; //TODO: could randomize
     var hash = crypto.pbkdf2Sync(password, salt, iterations, 64, 'sha512').toString('hex');
 
     return {
