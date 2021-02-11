@@ -2,7 +2,7 @@
 const mongoose = require('mongoose');
 const business_schema = require('./Business.js');
 
-  
+  // Schema
   const client_schema = mongoose.Schema({
     _id: { type: Number},
     name:       {type: String, required: true},
