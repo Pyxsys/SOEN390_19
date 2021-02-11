@@ -31,6 +31,3 @@ mongoose.connect(
 
 // Begin listening / Start server
 app.listen(PORT, () => console.log(`... Server started on port ${PORT}.`));
-
-// Begin listening / Start server
-app.listen(PORT, () => console.log(`... Server started on port ${PORT}.`));
