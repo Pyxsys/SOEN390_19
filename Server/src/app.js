@@ -9,19 +9,20 @@ const PORT = process.env.PORT || 5000;  //Get open port (default to 5000)
 
 // Global Middlewares
 app.use(body_parser.json());    // body-parser runs whenever a request is made
-app.use(cors())
+app.use(cors());
+
 // Import Routes
 const userRoute = require('./Routes/Api/UserRoutes');   // Define targer route
 app.use('/users', userRoute);                           // Enforce use of route on specified route
 
-
-
+const saleRoute = require('./Routes/Api/SaleRoutes');
+app.use('/sales', saleRoute);
 
 // Connect to mongoose mongoDB
-/* Uncomment for local host mongodb connection
+// Uncomment for local host mongodb connection
 var db_link = 'mongodb://localhost:27017/?readPreference=primary&appname=MongoDB%20Compass&ssl=false';
 //*/
-var db_link = 'mongodb://mongo:27017/kapp-docker-express';    //docker mongo container link
+//var db_link = 'mongodb://mongo:27017/kapp-docker-express';    //docker mongo container link
 mongoose.connect(
     db_link,                                    // Target DB
     { useNewUrlParser: true },                  // Removes deprecation warning
