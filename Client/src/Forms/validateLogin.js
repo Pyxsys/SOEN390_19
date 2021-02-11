@@ -13,7 +13,7 @@ export default function validateLogin(values){
         errors.password = "Password required"
     }
     else{
-        console.log("No Err ors")
+        console.log("No Errors")
     }
 
     return errors;
