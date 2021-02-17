@@ -3,12 +3,12 @@ const mongoose = require('mongoose');
 // Schema
 const bike_schema = mongoose.Schema({
     internalId:       {type: String, required: true},
-    bikeID:           {type: String, required: true},//potential parts include: handlebars, front fork, frame, pedal, seat, tires
+    type:             {type: String, required: true},   //general descriptor eg. mountain bike
     price:            {type: Number, required: true},
     number_Of_Units:  {type: Number, required: true},
-    provider:         {type: String, required: true},
-    type:             {type: String, required: true}
-    //TODO add attributes
+    provider:         {type: String, required: false},
+
+    BikeDocPath:      {type: String, required: true} //Path to .pdf file
 });
 
 module.exports.Bikes = mongoose.model('Bikes', bike_schema);
