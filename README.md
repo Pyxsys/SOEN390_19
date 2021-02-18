@@ -28,7 +28,7 @@ Concordia University.
   5.5. Move process to the background by hitting *Ctrl+Z*.
   5.6. Return active directory to project root: `cd ..`
 6. Both Client and Server are setup and running
-7. Connect to Client in a browser using the link: `localhost:3000`
+7. Connect to Client (if not already) in a browser using the link: [localhost:3000](http://localhost:3000)
 
 ## Via Docker
 ### Requirements
@@ -44,7 +44,7 @@ Concordia University.
     - *kapp-docker-express* on port 5000  
     - *mongo* on port 27017  
 7.  Client, Server, and DB are running  
-8. Connect to Client in a browser using the link: `localhost`  
+8. Connect to Client in a browser using the link: [localhost](http://localhost) 
 
 ## Admin Login  
 You can login into the application by using the following credentials:  
