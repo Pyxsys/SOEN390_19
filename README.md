@@ -28,3 +28,25 @@ Concordia University.
   5.5. Move process to the background by hitting *Ctrl+Z*.
   5.6. Return active directory to project root: `cd ..`
 6. Both Client and Server are setup and running
+7. Connect to Client in a browser using the link: `localhost:3000`
+
+## Via Docker
+### Requirements
+- Docker is running
+### Steps
+1. Download/Clone the project locally  
+2. Open a terminal (*eg. Cmd on windows*)  
+3. Navigate to the project root (*C:/.../SOEN390_19/*).  
+4. Input the following command: `docker-compose up`  
+5. Wait for the containers & images to to generate.  
+6. Assure that there are three containers running in *SOEN390_19*:  
+    - *kapp-docker-react* on port 80  
+    - *kapp-docker-express* on port 5000  
+    - *mongo* on port 27017  
+7.  Client, Server, and DB are running  
+8. Connect to Client in a browser using the link: `localhost`  
+
+## Admin Login  
+You can login into the application by using the following credentials:  
+- *Username:* \<TBD\>
+- *Password:* \<TBD\>
