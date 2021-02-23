@@ -36,15 +36,16 @@ Concordia University.
 ### Steps
 1. Download/Clone the project locally  
 2. Open a terminal (*eg. Cmd on windows*)  
-3. Navigate to the project root (*C:/.../SOEN390_19/*).  
-4. Input the following command: `docker-compose up`  
-5. Wait for the containers & images to to generate.  
-6. Assure that there are three containers running in *SOEN390_19*:  
+3. Navigate to the project root (*C:/.../SOEN390_19/*).
+4. Build a fresh container docker using: `docker-compose build --no-cache`
+5. Input the following command: `docker-compose up`  
+6. Wait for the containers & images to to generate.  
+7. Assure that there are three containers running in *SOEN390_19*:  
     - *kapp-docker-react* on port 80  
     - *kapp-docker-express* on port 5000  
     - *mongo* on port 27017  
-7.  Client, Server, and DB are running  
-8. Connect to Client in a browser using the link: [localhost](http://localhost) 
+8.  Client, Server, and DB are running  
+9. Connect to Client in a browser using the link: [localhost](http://localhost) 
 
 ## Admin Login  
 You can login into the application by using the following credentials:  
