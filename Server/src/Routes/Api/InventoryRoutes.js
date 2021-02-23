@@ -6,12 +6,13 @@ const Bike = require('../../Models/Bike.js');
 /*
 LINKED ROOT: /inventory
  */
-var part_route = '/partinventory';
+const part_route = '/partinventory';
+const bike_route = '/bikeinventory';
 
 // Functions
-function genFilePathFromRequest(request){
-    var doc_path = `${process.cwd()}\\..\\Data\\BikeParts\\${request.body.internalId}-info.pdf`;
-    var step_path = `${process.cwd()}\\..\\Data\\BikeParts\\${request.body.internalId}-step.step`;
+function genFilePathFromRequest(request,data_path){
+    var doc_path = `${process.cwd()}\\..\\Data\\${data_path}\\${request.body.internalId}-info.pdf`;
+    var step_path = `${process.cwd()}\\..\\Data\\${data_path}\\${request.body.internalId}-step.step`;
 
     //Move external files to location
     //TODO
@@ -23,13 +24,14 @@ function genFilePathFromRequest(request){
 }
 
 // Routes-------------------------
+// ------BikeParts----------------
 
-/** GET
+/** PART - GET
  *  Returns and displays all bike parts.
  */
 router.get(part_route, async (req, res) => {
     try{
-        const parts = await Part.BikeParts.find({},'internalId partDocPath partStepPath');   //returns only usernames + emails of users form db
+        const parts = await Part.BikeParts.find({},'internalId partDocPath partStepPath');
         res.json(parts);    //returns all found parts
     } catch(err){
         console.log(`> failed: ${err}`);
@@ -37,7 +39,7 @@ router.get(part_route, async (req, res) => {
     }
 });
 
-/** POST
+/** PART - POST
  *  Adds BikePart to DB
  * */
 router.post(part_route, async (req, res) => {
@@ -45,10 +47,10 @@ router.post(part_route, async (req, res) => {
     //DEBUG  console.log(req.body);  
 
     //Create paths for external files
-    var document_paths = genFilePathFromRequest(req);
+    var document_paths = genFilePathFromRequest(req,"BikeParts");
 
     // Create new part instance with posted json
-    const newpart = new Part.BikeParts({
+    const new_part = new Part.BikeParts({
         internalId:       req.body.internalId, //Destinct from mongoDB ID, given by industry standard
         partType:         req.body.partType,   //General description eg. handlebars, front fork, frame, pedal, seat, tires
         price:            req.body.price,
@@ -60,11 +62,11 @@ router.post(part_route, async (req, res) => {
         partStepPath:    document_paths.stepPath    //Path to .step file
     });
     
-    console.log(newpart);
+    console.log(new_part);
     
     // Save new part instance to db
     try{
-        const saved_part = await newpart.save();
+        const saved_part = await new_part.save();
         res.json(`{message: added part '${saved_part.internalId}' to DB}`);
         console.log('> added part successfully.');
     } catch(err) {
@@ -74,7 +76,7 @@ router.post(part_route, async (req, res) => {
     }
 });
 
-/** PATCH
+/** PART - PATCH
  *  update a part
  */
 router.patch(`${part_route}/:part_id`, async (req,res) =>{
@@ -100,7 +102,7 @@ router.patch(`${part_route}/:part_id`, async (req,res) =>{
         //Update old files if applicable
         if(req.body.files != null){
             console.log('> Updating related auxilliary files ...');
-            const document_paths = genFilePathFromRequest(req); //Create paths for external files
+            const document_paths = genFilePathFromRequest(req,"BikeParts"); //Create paths for external files
             
             //update auxiliarry documetn path fields in collection
             updated_part = await Part.BikeParts.findOneAndUpdate(
@@ -129,10 +131,121 @@ router.patch(`${part_route}/:part_id`, async (req,res) =>{
 
 });
 
-/** DELETE
+/** PART - DELETE
  *  deletes a specific part 
  */
 //TODO
+
+// ------Bikes----------------
+
+/** BIKE - GET
+ *  Returns and displays all bikes.
+ */
+router.get(bike_route, async (req, res) => {
+    try{
+        const bikes = await Bike.Bikes.find({},'internalId bikeDocPath');
+        res.json(bikes);    //returns all found bikes
+    } catch(err){
+        console.log(`> failed: ${err}`);
+        res.status(500).json(`{message: failed at retrieval}`);
+    }
+});
+
+/** BIKE - POST
+ *  Adds Bike to DB
+ * */
+router.post(bike_route, async (req, res) => {
+
+    //Create paths for external files
+    var document_paths = genFilePathFromRequest(req,"Bikes");
+
+    // Create new part instance with posted json
+    const new_bike = new Bike.Bikes({
+        internalId:       req.body.internalId,
+        type:             req.body.type,   
+        price:            req.body.price,
+        numberOfUnits:    req.body.numberOfUnits,
+        provider:         req.body.provider,
+
+        //generated the local paths for uploaded files
+        bikeDocPath:      document_paths.docPath,    //Path to .pdf file
+        partsList:        req.body.partsList
+    });
+    
+    console.log(new_bike);
+    
+    // Save new bike instance to db
+    try{
+        const saved_bike = await new_bike.save();
+        res.json(`{message: added part '${saved_bike.internalId}' to DB}`);
+        console.log('> added part successfully.');
+    } catch(err) {
+        console.log(`> failed: ${err}`);
+        res.status(400).json({message: err});           // return error
+        console.log('> part not added.');
+    }
+});
+
+/** BIKE - PATCH
+ *  update a bike
+ */
+router.patch(`${bike_route}/:bike_id`, async (req,res) =>{
+    try {
+        
+        const entries = Object.keys(req.body);
+        const updates = {};
+
+        // constructs dynamic query with the given request body elements
+        for (let i = 0; i < entries.length; i++) {
+            updates[entries[i]] = Object.values(req.body)[i];
+        }
+        
+        var updated_bike = await Bike.Bikes.findOneAndUpdate(
+            { "internalId": req.params.bike_id }, 
+            { $set: updates },
+            { 
+                new: true,                  //returns updated entry
+                useFindAndModify: false     //appease mongoose dep-warnings
+            } 
+        );
+
+        //Update old files if applicable
+        if(req.body.files != null){
+            console.log('> Updating related auxilliary files ...');
+            const document_paths = genFilePathFromRequest(req,"Bikes"); //Create paths for external files
+            
+            //update auxiliarry documetn path fields in collection
+            updated_bike = await Bike.Bikes.findOneAndUpdate(
+                { "_id": updated_bike._id}, 
+                { $set: {
+                    bikeDocPath: document_paths.docPath,  
+                }},
+                { 
+                    new: true,                  //returns updated entry
+                    useFindAndModify: false     //appease mongoose dep-warnings
+                } 
+            );
+        }
+        
+        // Reaching here -> success
+        console.log(`> part: ${JSON.stringify(updated_bike.internalId)} was updated.`);
+        res.json(`{message: updated bike in DB}`); // returns message about updated part
+        
+
+    } catch(err){
+        res.status(400).json(`{message: part could not be found or bad request}`); // return error
+        console.log(`> failed: ${err}`);
+        console.log(`> bike: '${req.params.bike_id}' could not be updated.`);
+    }
+
+});
+
+/** BIKE - DELETE
+ *  deletes a specific bike 
+ */
+//TODO
+
+
 
 // -------------------------------
 module.exports = router;

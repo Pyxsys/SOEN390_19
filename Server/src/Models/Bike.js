@@ -8,8 +8,8 @@ const bike_schema = mongoose.Schema({
     numberOfUnits:    {type: Number, required: true},
     provider:         {type: String, required: false},  //refer to supplier
 
-    BikeDocPath:      {type: String, required: true},   //Path to .pdf file
-    PartsList: {
+    bikeDocPath:      {type: String, required: true},   //Path to .pdf file
+    partsList: {
         type: [String],     //array of bikeParts, refers to internal IDs
         default: undefined  //default to undefined instead of empty array
     }
