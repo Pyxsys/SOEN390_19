@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 // Schema
 const bike_schema = mongoose.Schema({
-    internalId:       {type: String, required: true},
+    internalId:       {type: String, required: true},   //Destinct from mongoDB ID, given by industry standard
     type:             {type: String, required: true},   //general descriptor eg. mountain bike
     price:            {type: Number, required: true},
     numberOfUnits:    {type: Number, required: true},
