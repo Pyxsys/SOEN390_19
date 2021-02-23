@@ -3,12 +3,23 @@ const router = express.Router();
 const Part = require('../../Models/BikePart.js');
 const Bike = require('../../Models/Bike.js');
 
+/*
+LINKED ROOT: /inventory
+ */
 // Routes-------------------------
 
 /** GET
  *  Returns and displays all bike parts.
  */
-//TODO
+router.get('/partinventory', async (req, res) => {
+    try{
+        const parts = await Part.BikeParts.find({},'internalId partDocPath partStepPath');   //returns only usernames + emails of users form db
+        res.json(parts);    //returns all found parts
+    } catch(err){
+        console.log(`> failed: ${err}`);
+        res.status(500).json(`{message: failed at retrieval}`);
+    }
+});
 
 /** POST
  *  Adds BikePart to DB
