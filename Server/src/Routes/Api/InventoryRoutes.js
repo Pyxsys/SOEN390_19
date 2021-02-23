@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const Part = require('../../Models/BikePart.js');
 const Bike = require('../../Models/Bike.js');
+const Supplier = require('../../Models/Supplier.js');
 
 /*
 LINKED ROOT: /inventory
@@ -271,6 +272,58 @@ router.get(`/display:type-:business`, async (req, res) => {
         res.status(500).json(`{message: failed at retrieval}`);
     }
 });
+
+/**UNFINISHED
+ * Supplier - GET
+ * Returns the given supplier and their catalogue.
+ * Returns all suppliers + catalogues if none is specified.
+ */
+router.get(`/catalogue(-:supplier)?`, async (req, res) => {
+    try{
+        var result;
+        console.log(`> retrieving catalogues for ${(req.params.supplier != null) ? req.params.supplier : 'all suppliers'}.`);
+        
+        if(req.params.supplier != null){
+            //TODO Temporary reference to description as key
+            await Supplier.Supplier.find({"description": req.params.supplier});
+        }
+        else{ await Supplier.Supplier.find(); }
+        res.json(result);    //returns all found parts
+
+    } catch(err){
+        console.log(`> failed: ${err}`);
+        res.status(500).json(`{message: failed at retrieval. Supplier may not exist.}`);
+    }
+});
+
+//helper method adds supplier
+router.post(`/addboi`, async (req, res) => {
+    const new_supp = new Supplier.Supplier({
+        description: "mockSupplier",
+        catalogue: [
+            {
+                internalId: "part1",
+                availableUnits: 5
+            },
+            {
+                internalId: "part2",
+                availableUnits: 56
+            }
+        ]
+    });
+
+    console.log(new_supp);
+    try{
+        const saved_supp = await new_supp.save();
+        res.json(`{message: added mock supplier to DB}`);
+        console.log('> added part successfully.');
+    } catch(err) {
+        console.log(`> failed: ${err}`);
+        res.status(400).json({message: err});           // return error
+        console.log('> supp not added.');
+    }
+});
+
 
 // -------------------------------
 module.exports = router;
