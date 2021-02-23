@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-const bikePart = require('BikePart.js');
 
 // Schema
 const bike_schema = mongoose.Schema({
@@ -11,7 +10,7 @@ const bike_schema = mongoose.Schema({
 
     BikeDocPath:      {type: String, required: true},   //Path to .pdf file
     PartsList: {
-        type: [BikeParts],  //array of bikeParts
+         type: [String],     //array of bikeParts internal IDs, refers to internal IDs
         default: undefined  //default to undefined instead of empty array
     }
 });
