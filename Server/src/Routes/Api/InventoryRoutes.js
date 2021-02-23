@@ -245,7 +245,32 @@ router.patch(`${bike_route}/:bike_id`, async (req,res) =>{
  */
 //TODO
 
+// ------By Business--------------
 
+/** USER - GET
+ *  Returns and displays all parts/bikes of a given provider.
+ *  defaults to bikes.
+ */
+router.get(`/display:type-:business`, async (req, res) => {
+    try{
+        var result;
+        switch (req.params.type.toUpperCase()) {
+            case "PARTS":
+            case "PART":    
+                result = await Part.BikeParts.find({provider: req.params.business});
+                break;
+            case "BIKES":
+            case "BIKE":
+            default:        
+                result = await Bike.Bikes.find({provider: req.params.business});
+        }
+        res.json(result);    //returns all found parts
+
+    } catch(err){
+        console.log(`> failed: ${err}`);
+        res.status(500).json(`{message: failed at retrieval}`);
+    }
+});
 
 // -------------------------------
 module.exports = router;
