@@ -1,10 +1,7 @@
 const mongoose = require('mongoose');
-const business_schema = require('./Business.js');
-//Below causes issues, commented out to allow work on adjacent issue. Related Bug #47
-/*
-var Business = mongoose.model('Business', business_schema);
-var Supplier = Business.discriminator('Supplier', supplier_schema);
-//*/
+const Business = require('./Business.js');
+
+
 
 // Catalogue Schema
 const catalogue_schema = mongoose.Schema({
@@ -17,6 +14,8 @@ const supplier_schema = mongoose.Schema({
     description: {type: String, required: true},
     catalogue: [catalogue_schema]
 });
+
+var Supplier = Business.discriminator('Supplier', supplier_schema);
     
 
 module.exports.Supplier             = mongoose.model('Supplier', supplier_schema);
