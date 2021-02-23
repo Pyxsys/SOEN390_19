@@ -296,7 +296,7 @@ router.get(`/catalogue(-:supplier)?`, async (req, res) => {
     }
 });
 
-//helper method adds supplier
+//helper method adds supplier TO BE REMOVED
 router.post(`/addboi`, async (req, res) => {
     const new_supp = new Supplier.Supplier({
         description: "mockSupplier",

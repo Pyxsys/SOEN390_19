@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const business_schema = require('./Business.js');
-//Below causes issues, commented out to allow work on adjacent issue. Related Bug
+//Below causes issues, commented out to allow work on adjacent issue. Related Bug #47
 /*
 var Business = mongoose.model('Business', business_schema);
 var Supplier = Business.discriminator('Supplier', supplier_schema);
