@@ -3,7 +3,7 @@ import {MenuItems} from './MenuItems'
 import {NavBarButton} from './NavBarButton'
 import '../../CSSFiles/Navbar.css'
 import {AuthContext} from '../../Contexts/AuthorizationContext'
-
+import {Link} from "react-router-dom" 
 
 class Navbar extends Component{
         state = {clicked: false}
@@ -14,12 +14,7 @@ class Navbar extends Component{
         })
 
     }
-
-
-
     
-
-
     render(){
         return(
             <nav className = "NavbarItems">
@@ -32,11 +27,10 @@ class Navbar extends Component{
                     {MenuItems.map((item, index) => {
                         return(
                             <li key = {index}>
-                                <a 
-                                className={item.cName} 
-                                href = {item.url}>
-                                {item.title}
-                                </a>
+                                <Link to = {item.path}
+                                className={item.cName} >
+                                <span>{item.title}</span>
+                                </Link>
                             </li>
                         )
                     })}                    
