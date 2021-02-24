@@ -2,6 +2,8 @@ const express = require('express');
 const mongoose = require('mongoose');
 const body_parser = require('body-parser');
 const cors = require('cors');
+//import seed function.
+const seed = require('./seed');
 
 // Gen and set app instance
 const app = express();
@@ -32,3 +34,4 @@ mongoose.connect(
 
 // Begin listening / Start server
 app.listen(PORT, () => console.log(`... Server started on port ${PORT}.`));
+seed.seedDB();  //Seed DB with contents
