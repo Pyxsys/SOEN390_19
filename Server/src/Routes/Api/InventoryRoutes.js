@@ -265,7 +265,7 @@ router.get(`/display:type-:business`, async (req, res) => {
             default:        
                 result = await Bike.Bikes.find({provider: req.params.business});
         }
-        res.json(result);    //returns all found parts
+        res.status(200).json(result);    //returns all found parts
 
     } catch(err){
         console.log(`> failed: ${err}`);
@@ -273,22 +273,20 @@ router.get(`/display:type-:business`, async (req, res) => {
     }
 });
 
-/**UNFINISHED
- * Supplier - GET
+/**
+ * SUPPLIER - GET
  * Returns the given supplier and their catalogue.
  * Returns all suppliers + catalogues if none is specified.
  */
 router.get(`/catalogue(-:supplier)?`, async (req, res) => {
     try{
         var result;
+        console.log(`> param: ${req.params.supplier}`);
         console.log(`> retrieving catalogues for ${(req.params.supplier != null) ? req.params.supplier : 'all suppliers'}.`);
         
-        if(req.params.supplier != null){
-            //TODO Temporary reference to description as key
-            await Supplier.Supplier.find({"description": req.params.supplier});
-        }
-        else{ await Supplier.Supplier.find(); }
-        res.json(result);    //returns all found parts
+        if(req.params.supplier != null){ result = await Supplier.Suppliers.find( {name: req.params.supplier} ); }
+        else{ result = await Supplier.Suppliers.find(); }
+        res.status(200).json(result);    //returns all found suppliers
 
     } catch(err){
         console.log(`> failed: ${err}`);
@@ -298,7 +296,12 @@ router.get(`/catalogue(-:supplier)?`, async (req, res) => {
 
 //helper method adds supplier TO BE REMOVED
 router.post(`/addboi`, async (req, res) => {
-    const new_supp = new Supplier.Supplier({
+    const new_supp = new Supplier.Suppliers({
+        //business attributes
+        name: "mock",
+        phone: "1-800-999-9999",
+        location: "canada probably",
+        //supplier attributes
         description: "mockSupplier",
         catalogue: [
             {

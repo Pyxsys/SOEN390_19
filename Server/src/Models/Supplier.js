@@ -18,5 +18,5 @@ const supplier_schema = mongoose.Schema({
 var Supplier = Business.discriminator('Supplier', supplier_schema);
     
 
-module.exports.Supplier             = mongoose.model('Supplier', supplier_schema);
-module.exports.SupplierCatalogue    = mongoose.model('SupplierCatalogue', catalogue_schema);
+module.exports.Suppliers             = mongoose.model('Suppliers', supplier_schema);
+module.exports.SupplierCatalogues    = mongoose.model('SupplierCatalogues', catalogue_schema);
