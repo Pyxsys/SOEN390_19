@@ -19,10 +19,10 @@ app.use('/users', userRoute);                           // Enforce use of route 
 
 
 // Connect to mongoose mongoDB
-/* Uncomment for local host mongodb connection
+// Uncomment for local host mongodb connection
 var db_link = 'mongodb://localhost:27017/?readPreference=primary&appname=MongoDB%20Compass&ssl=false';
-//*/
-var db_link = 'mongodb://mongo:27017/kapp-docker-express';    //docker mongo container link
+
+/*var db_link = 'mongodb://mongo:27017/kapp-docker-express';*/    //docker mongo container link
 mongoose.connect(
     db_link,                                    // Target DB
     { useNewUrlParser: true },                  // Removes deprecation warning
