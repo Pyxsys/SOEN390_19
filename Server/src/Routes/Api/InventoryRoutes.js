@@ -251,6 +251,10 @@ router.patch(`${bike_route}/:bike_id`, async (req,res) =>{
 /** USER - GET
  *  Returns and displays all parts/bikes of a given provider.
  *  defaults to bikes.
+ * 
+ * route examples: 
+ *      root/inventory/displaybikes-MrProviderman
+ *      root/inventory/displaypart-parts manufacturing ltd.
  */
 router.get(`/display:type-:business`, async (req, res) => {
     try{
@@ -275,8 +279,12 @@ router.get(`/display:type-:business`, async (req, res) => {
 
 /**
  * SUPPLIER - GET
- * Returns the given supplier and their catalogue.
+ * Returns the given supplier and their catalogue (case sensitive).
  * Returns all suppliers + catalogues if none is specified.
+ * 
+ * route examples: 
+ *      root/inventory/catalogue
+ *      root/inventory/catalogue-MySupplier
  */
 router.get(`/catalogue(-:supplier)?`, async (req, res) => {
     try{
