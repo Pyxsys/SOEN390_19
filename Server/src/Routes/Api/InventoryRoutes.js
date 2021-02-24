@@ -289,7 +289,6 @@ router.get(`/display:type-:business`, async (req, res) => {
 router.get(`/catalogue(-:supplier)?`, async (req, res) => {
     try{
         var result;
-        console.log(`> param: ${req.params.supplier}`);
         console.log(`> retrieving catalogues for ${(req.params.supplier != null) ? req.params.supplier : 'all suppliers'}.`);
         
         if(req.params.supplier != null){ result = await Supplier.Suppliers.find( {name: req.params.supplier} ); }
@@ -301,40 +300,6 @@ router.get(`/catalogue(-:supplier)?`, async (req, res) => {
         res.status(500).json(`{message: failed at retrieval. Supplier may not exist.}`);
     }
 });
-
-//helper method adds supplier TO BE REMOVED
-router.post(`/addboi`, async (req, res) => {
-    const new_supp = new Supplier.Suppliers({
-        //business attributes
-        name: "mock",
-        phone: "1-800-999-9999",
-        location: "canada probably",
-        //supplier attributes
-        description: "mockSupplier",
-        catalogue: [
-            {
-                internalId: "part1",
-                availableUnits: 5
-            },
-            {
-                internalId: "part2",
-                availableUnits: 56
-            }
-        ]
-    });
-
-    console.log(new_supp);
-    try{
-        const saved_supp = await new_supp.save();
-        res.json(`{message: added mock supplier to DB}`);
-        console.log('> added part successfully.');
-    } catch(err) {
-        console.log(`> failed: ${err}`);
-        res.status(400).json({message: err});           // return error
-        console.log('> supp not added.');
-    }
-});
-
 
 // -------------------------------
 module.exports = router;
