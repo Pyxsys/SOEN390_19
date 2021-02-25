@@ -1,9 +1,8 @@
+
+/*
+These are the navbar menu items.
+*/
 export const MenuItems = [
-    {
-        title: "Home",
-        path: "/Home",
-        cName: "nav-links"
-    },
     {
         title: "Sales",
         path: "/Sale",

@@ -1,16 +1,17 @@
+import axios from "axios"
 import { useState } from "react"
-
-
+import fetchRows from "./InventoryHome"
+/*
+this function is for when the user clicks on the add inventory button. This will post the information to the back-end.
+*/
 const useAddInventory = () => {
 
     const [values, setValues] = useState({
-        part: '',
-        supplier: '',
-        pricePerUnit: '',
-        quantity: '',
-        shipmentDate: '',
-        arrivalDate: '',
-        forModel: ''
+        internalId: '',
+        type: '',
+        price: '',
+        numberOfUnits: '',
+        provider: '',
     })
 
     const handleChange = e => {
@@ -21,9 +22,23 @@ const useAddInventory = () => {
         })
     }
 
-    const handleSubmit = e => {
-        e.preventDefault();
-        console.log("ADD INFO")
+    const handleSubmit = async () => {
+        console.log("Attempting to add info")
+        try{
+            const response = await axios.post(`http://localhost:5000/inventory/bikeinventory`,{
+                internalId: values.internalId,
+                price: values.price,
+                type: values.type,
+                provider: values.provider,
+                numberOfUnits: 1
+            })
+            console.log("info added to database")
+            console.log(response)
+            
+        }catch(error){
+            console.debug("Encountered an error tryin to add bike info")
+            console.debug(error)
+        }
     }
 
     return {handleChange, values, handleSubmit}

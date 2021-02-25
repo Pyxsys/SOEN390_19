@@ -7,6 +7,11 @@ import "../../../CSSFiles/SideBars.css"
 import {IconContext} from 'react-icons'
 
 
+
+/*
+InventorySideBar is the specific side bar that is shown when inventory is selected after logging.
+React Router Link is used to pass the path.
+*/
 function InventorySideBar() {
 
     const [sideBarButton,setSideBarButton] = useState(false)

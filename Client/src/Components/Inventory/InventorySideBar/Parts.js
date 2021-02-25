@@ -10,59 +10,64 @@ import Paper from '@material-ui/core/Paper';
 import "../../../CSSFiles/InventoryHome.css"
 import InventorySideBar from './InventorySideBar';
 import AddInventoryForm from './AddInventoryForm'
-import {fetchRows} from '../../../APIService'
+import axios from 'axios';
 
-//Styling for table
+
 const useStyles = makeStyles({
     table: {
       minWidth: 650,
     },
   });
 
-
-
 /*
-  InventoryHome displays the Bike Inventory
-  Using material UI tables to create the display we want
+Parts inventory that is within the sidebar, using material UI tables.
 */
-function InventoryHome() {
-
+function Parts() {
     const [rows, setRows] = useState([]);
+
+    const fetchRows = () => {
+        try{
+            console.log("Fetching Rows from Database")
+            axios.get(`http://localhost:5000/inventory/partinventory`,{
+
+            }).then((response) => {
+                console.log("Got bike inventory")
+                console.log(response.data)
+                setRows(response.data)
+            })
+        }catch(error){
+            console.debug("Error when Fetching Bike Inventory Data")
+            console.debug(error)
+        }   
+        
+    }
 
     const classes = useStyles();
 
     console.log("fetching rows")
-    useEffect(async () => {
-        await getData()
+    useEffect(()=>{
+        fetchRows()
     },[])
-
-    const getData = async () => {
-        console.log("Entered getData")
-        var temp = await fetchRows()
-        setRows(temp)
-    }
-
     return (
-        <div className= "Inventory Home">
+        <div className="Parts Needed">
             <InventorySideBar/>
-            <AddInventoryForm updateRows = {getData}/>
-           <TableContainer component={Paper}>
+            <TableContainer component={Paper}>
                 <Table className={classes.table} size="small" aria-label="a dense table">
                     <TableHead>
                         <TableRow>
-                            <TableCell>Bike ID</TableCell>
-                            <TableCell align="right">Bike Price</TableCell>
-                            <TableCell align="right">Provider</TableCell>
-                            <TableCell align="right">Type</TableCell>
+                            <TableCell>Part ID</TableCell>
+                            <TableCell align="right">Part Type</TableCell>
+                            <TableCell align="right">Price</TableCell>
+                            <TableCell align="right">Provideer</TableCell>
                         </TableRow>
                     </TableHead>
                     <TableBody>
                         {rows.map((row) => (
                             <TableRow key={row.name}>
                                 <TableCell align="right">{row.internalId}</TableCell>
+                                <TableCell align="right">{row.partType}</TableCell>
                                 <TableCell align="right">{row.price}</TableCell>
                                 <TableCell align="right">{row.provider}</TableCell>
-                                <TableCell align="right">{row.type}</TableCell>
                             </TableRow>
                         ))}
                     </TableBody>
@@ -72,4 +77,4 @@ function InventoryHome() {
     )
 }
 
-export default InventoryHome
+export default Parts

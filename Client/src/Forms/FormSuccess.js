@@ -1,5 +1,7 @@
 import React from 'react'
 
+
+//When the sign up wowrks, this is displayed
 const FormSuccess = () => {
     return (
         <div className = "form-content-right">

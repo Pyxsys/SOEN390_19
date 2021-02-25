@@ -5,9 +5,12 @@ import '../../CSSFiles/Navbar.css'
 import {AuthContext} from '../../Contexts/AuthorizationContext'
 import {Link} from "react-router-dom" 
 
+
+//Navbar is React Component
 class Navbar extends Component{
         state = {clicked: false}
 
+    //This state is when one of the items is clicked    
     handleClick = () => {
         this.setState({
             clicked: !this.state.clicked
@@ -15,7 +18,9 @@ class Navbar extends Component{
 
     }
     
+    //Navbar renders the menu items
     render(){
+
         return(
             <nav className = "NavbarItems">
                 <h1 className = "navbar-logo">React <i className="fab fa-react"></i></h1>

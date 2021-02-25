@@ -1,96 +1,71 @@
 import React from 'react'
 import useAddInventory from './useAddInventory'
 
-
+/*
+The followwing Form adds an inventory item to the database
+*/
 const AddInventoryForm = (props) => {
     
     const {handleChange, values, handleSubmit} = useAddInventory(
         props.submitForm
     );
 
+
+    const submitForm = async (e) => {
+        e.preventDefault()
+        await handleSubmit()
+        await props.updateRows()
+    }
+
     return (
         <div className = "">
-            <form className = "" onSubmit = {handleSubmit}>
+            <form className = "" onSubmit = {submitForm}>
                 <h1>Add Inventory Information</h1>
 
                 <div className = "">
                     <input
-                    id = "part"
+                    id = "internalId"
                     type = "text"
-                    name = "part"
+                    name = "internalId"
                     className = "form-input"
-                    placeholder = "Add Part Info"
-                    value = {values.part}
+                    placeholder = "Add Bike ID"
+                    value = {values.internalId}
                     onChange = {handleChange}
                     />
                 </div>
                 <div className = "">
                     <input
-                    id = "supplier"
+                    id = "price"
                     type = "text"
-                    name = "supplier"
+                    name = "price"
                     className = "form-input"
-                    placeholder = "Add Supplier Info"
-                    value = {values.supplier}
+                    placeholder = "Add Price"
+                    value = {values.price}
                     onChange = {handleChange}
                     />
                 </div>
                 <div className = "">
                     <input
-                    id = "pricePerUnit"
+                    id = "provider"
                     type = "text"
-                    name = "pricePerUnit"
+                    name = "provider"
                     className = "form-input"
-                    placeholder = "Add Price per Unit"
-                    value = {values.pricePerUnit}
+                    placeholder = "Add Provider"
+                    value = {values.provider}
                     onChange = {handleChange}
                     />
                 </div>
                 <div className = "">
                     <input
-                    id = "quantity"
+                    id = "type"
                     type = "text"
-                    name = "quantity"
+                    name = "type"
                     className = "form-input"
-                    placeholder = "Add Quantity"
-                    value = {values.quantity}
+                    placeholder = "Add Type"
+                    value = {values.type}
                     onChange = {handleChange}
                     />
                 </div>
-                <div className = "">
-                    <input
-                    id = "shipmentDate"
-                    type = "text"
-                    name = "shipmentDate"
-                    className = "form-input"
-                    placeholder = "Add Shipment Date"
-                    value = {values.shipmentDate}
-                    onChange = {handleChange}
-                    />
-                </div>
-                <div className = "">
-                    <input
-                    id = "arrivalDate"
-                    type = "text"
-                    name = "arrivalDate"
-                    className = "form-input"
-                    placeholder = "Add Arrival Date"
-                    value = {values.arrivalDate}
-                    onChange = {handleChange}
-                    />
-                </div>
-                <div className = "">
-                    <input
-                    id = "forModel"
-                    type = "text"
-                    name = "forModel"
-                    className = "form-input"
-                    placeholder = "Add for which Model"
-                    value = {values.forModel}
-                    onChange = {handleChange}
-                    />
-                </div>
-
                 <div>
                     <button className = ""
                     type = "submit">Add Info</button>

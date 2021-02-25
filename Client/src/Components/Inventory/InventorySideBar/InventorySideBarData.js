@@ -3,6 +3,9 @@ import * as AiIcons from "react-icons/ai"
 import * as VscIcons from "react-icons/vsc"
 import * as BsIcons from "react-icons/bs"
 
+/*
+The data that is passed to the sidebar, including the path and each one having a specfici icon, stored in an array.
+*/
 export const InventorySideBarData = [
     {
         title: "Inventory Home",
@@ -11,7 +14,7 @@ export const InventorySideBarData = [
         className: "side-text"
     },
     {
-        title: "Parts Needed",
+        title: "Parts",
         path: '/Inventory/PartsNeeded',
         icon: <AiIcons.AiOutlineFileExclamation/>,
         className: "side-text"

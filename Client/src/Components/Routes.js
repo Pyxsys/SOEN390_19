@@ -7,6 +7,10 @@ import OnceLoggedIn from './OnceLoggedIn'
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom"
 
 
+/**
+ * This Routes function is to show the sign up pae if the user is not logged in.
+ * Or the OnceLogggedIn page when the user has been authorized.
+ */
 function Routes() {
 
   const {loggedIn, setLoggedIn} = React.useContext(AuthContext)
