@@ -1,27 +1,26 @@
+
+/*
+These are the navbar menu items.
+*/
 export const MenuItems = [
     {
-        title: "Home",
-        url: "#",
-        cName: "nav-links"
-    },
-    {
         title: "Sales",
-        url: "#",
+        path: "/Sale",
         cName: "nav-links"
     },
     {
         title: "Customers",
-        url: "#",
+        path: "/Customers",
         cName: "nav-links"
     },
     {
-        title: "Tracking",
-        url: "#",
+        title: "Inventory",
+        path: "/Inventory",
         cName: "nav-links"
     },
     {
         title: "Logout",
-        url: "#",
+        path: "#",
         cName: "nav-links-mobile"
     },
 

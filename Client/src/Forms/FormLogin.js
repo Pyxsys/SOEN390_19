@@ -4,7 +4,9 @@ import validateLogin from './validateLogin'
 import '../CSSFiles/Form.css'
 
 
-
+/**
+ * Displaying the form for the login
+ */
 const FormLogin = (props) => {
     const {handleChange, values, handleSubmit, errors} =
     useLogin(

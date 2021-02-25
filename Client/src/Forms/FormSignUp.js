@@ -3,6 +3,11 @@ import useForm from './useForm'
 import validate from './validateInfo'
 import '../CSSFiles/Form.css'
 
+
+/**
+ * Displaying the form for the Sign Up
+ */
+
 const FormSignUp = (props) => {
 const {handleChange, values, handleSubmit, errors} 
 = useForm(

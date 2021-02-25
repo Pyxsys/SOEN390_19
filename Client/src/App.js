@@ -3,12 +3,14 @@ import {AuthProvider, AuthContext} from './Contexts/AuthorizationContext'
 import React, { useState } from 'react';
 import Routes from './Components/Routes'
 
-
+/**
+ * AuthProvider wraps the Routes so that we can check when loggedIn is true.
+ */
 function App() {
 
   return (
     <div className="App">
-      <AuthProvider >
+      <AuthProvider>
        <Routes/>
       </AuthProvider>
     </div>

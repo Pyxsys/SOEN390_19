@@ -11,7 +11,7 @@ const SIZES = [
     "btn--medium",
     "btn--large"
 ]
-
+//Used for signing out.
 export const NavBarButton = ({
     children,
     buttonStyle,

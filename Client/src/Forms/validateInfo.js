@@ -1,4 +1,5 @@
 
+//Ensuring no invalid emails, username, or passwords are given through the signup form.
 
 export default function validateInfo(values){
     let errors ={}

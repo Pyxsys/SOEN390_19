@@ -32,7 +32,7 @@ function genFilePathFromRequest(request,data_path){
  */
 router.get(part_route, async (req, res) => {
     try{
-        const parts = await Part.BikeParts.find({},'internalId partDocPath partStepPath');
+        const parts = await Part.BikeParts.find({});
         res.json(parts);    //returns all found parts
     } catch(err){
         console.log(`> failed: ${err}`);
@@ -144,7 +144,7 @@ router.patch(`${part_route}/:part_id`, async (req,res) =>{
  */
 router.get(bike_route, async (req, res) => {
     try{
-        const bikes = await Bike.Bikes.find({},'internalId bikeDocPath');
+        const bikes = await Bike.Bikes.find();
         res.json(bikes);    //returns all found bikes
     } catch(err){
         console.log(`> failed: ${err}`);

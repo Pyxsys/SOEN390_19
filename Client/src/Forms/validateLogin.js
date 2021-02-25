@@ -1,5 +1,6 @@
 import axios from 'axios'
 
+//Validating that the login values are real
 export default function validateLogin(values){
     let errors = {}
     let emailTest = values.email

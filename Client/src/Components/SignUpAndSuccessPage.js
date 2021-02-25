@@ -6,7 +6,9 @@ import '../CSSFiles/Form.css'
 import {AuthContext} from '../Contexts/AuthorizationContext'
 
 
-
+/**
+ * Sign up and log in page for creating an account or logging in
+ */
 const SignUpAndSuccessPage = () => {
 
     const [isSubmitted, setIsSubmitted] = useState(false);
