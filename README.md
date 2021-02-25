@@ -49,5 +49,5 @@ Concordia University.
 
 ## Admin Login  
 You can login into the application by using the following credentials:  
-- *Username:* \<TBD\>
-- *Password:* \<TBD\>
+- *Email:* admin@email.com
+- *Password:* administrator
