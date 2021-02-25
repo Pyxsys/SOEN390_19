@@ -26,6 +26,7 @@ app.use('/inventory', inventoryRoute);
 //var db_link = 'mongodb://localhost:27017/?readPreference=primary&appname=MongoDB%20Compass&ssl=false'; //TODO COMMENT
 //*/
 var db_link = 'mongodb://mongo:27017/kapp-docker-express';    //docker mongo container link
+
 mongoose.connect(
     db_link,                                    // Target DB
     { useNewUrlParser: true },                  // Removes deprecation warning
