@@ -7,7 +7,7 @@ const part_list_schema = mongoose.Schema({
 
 // Schema
 const bike_schema = mongoose.Schema({
-    internalId:       {type: String, required: true},   //Destinct from mongoDB ID, given by industry standard
+    internalId:       {type: String, required: true, unique: true},   //Destinct from mongoDB ID, given by industry standard
     type:             {type: String, required: true},   //general descriptor eg. mountain bike
     price:            {type: Number, required: true},
     numberOfUnits:    {type: Number, required: true},
