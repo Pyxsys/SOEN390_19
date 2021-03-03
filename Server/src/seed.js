@@ -52,8 +52,11 @@ const bike001 =
     price:            450,
     number_Of_Units:  200,
     provider:         "Bixe",
-    BikeDocPath:      "N/A",   
-    PartsList: ["JBH01", "JBH02"]
+    bikeDocPath:      "N/A",   
+    partsList: [
+        {partInternalId: "JBH01"}, 
+        {partInternalId: "JBH02"}
+    ]
     
 };
 
