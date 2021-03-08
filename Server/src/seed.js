@@ -29,7 +29,7 @@ const part001 =
     internalId: "JBH01", 
     partType: "Handle Bars", 
     price: 30, 
-    number_Of_Units: 400, 
+    numberOfUnits: 400, 
     provider: "James Bars", 
     partDocPath: "N/A", 
     partDocStep: "N/A"
@@ -38,7 +38,7 @@ part002 = {
     internalId: "JBH02", 
     partType: "Handle Bars",
     price: 20, 
-    number_Of_Units: 250, 
+    numberOfUnits: 250, 
     provider: "James Bars", 
     partDocPath: "N/A", 
     partDocStep: "N/A"
