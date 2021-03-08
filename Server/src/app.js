@@ -29,7 +29,11 @@ var db_link = 'mongodb://mongo:27017/kapp-docker-express';    //docker mongo con
 
 mongoose.connect(
     db_link,                                    // Target DB
-    { useNewUrlParser: true },                  // Removes deprecation warning
+    {   // Removes deprecation warnings
+        useNewUrlParser: true, 
+        useUnifiedTopology: true, 
+        useCreateIndex: true
+    },     
      () => console.log(`... Connected to DB on ${db_link}`)  // Log message
 );
 
