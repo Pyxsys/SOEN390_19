@@ -57,7 +57,6 @@ function Parts() {
                         <TableRow>
                             <TableCell>Part ID</TableCell>
                             <TableCell align="right">Part Type</TableCell>
-                            <TableCell align="right">Amount Required</TableCell>
                             <TableCell align="right">Price</TableCell>
                             <TableCell align="right">Provideer</TableCell>
                         </TableRow>
@@ -65,9 +64,8 @@ function Parts() {
                     <TableBody>
                         {rows.map((row) => (
                             <TableRow key={row.name}>
-                                <TableCell align="right">{row.internalId}</TableCell>    
+                                <TableCell align="right">{row.internalId}</TableCell>
                                 <TableCell align="right">{row.partType}</TableCell>
-                                <TableCell align="right">{row.numberOfUnits}</TableCell>
                                 <TableCell align="right">{row.price}</TableCell>
                                 <TableCell align="right">{row.provider}</TableCell>
                             </TableRow>

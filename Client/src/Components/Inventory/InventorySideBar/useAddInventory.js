@@ -10,6 +10,8 @@ const useAddInventory = () => {
         internalId: '',
         type: '',
         price: '',
+        partInternalId: '',
+        amountRequired: '',
         numberOfUnits: '',
         provider: '',
     })
@@ -30,6 +32,10 @@ const useAddInventory = () => {
                 price: values.price,
                 type: values.type,
                 provider: values.provider,
+                partsList: [{
+                partInternalId: values.partInternalId,
+                amountRequired: values.amountRequired
+                }],
                 numberOfUnits: 1
             })
             console.log("info added to database")

@@ -46,6 +46,28 @@ const AddInventoryForm = (props) => {
                 </div>
                 <div className = "">
                     <input
+                    id = "partInternalId"
+                    type = "text"
+                    name = "partInternalId"
+                    className = "form-input"
+                    placeholder = "Add Part ID"
+                    value = {values.partInternalId}
+                    onChange = {handleChange}
+                    />
+                </div>
+                <div className = "">
+                    <input
+                    id = "amountRequired"
+                    type = "text"
+                    name = "amountRequired"
+                    className = "form-input"
+                    placeholder = "Add Quantity of Part"
+                    value = {values.amountRequired}
+                    onChange = {handleChange}
+                    />
+                </div>
+                <div className = "">
+                    <input
                     id = "provider"
                     type = "text"
                     name = "provider"
