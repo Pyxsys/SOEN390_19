@@ -50,7 +50,7 @@ const bike001 =
     internalId:       "BXSP01",
     type:             "Speed",   
     price:            450,
-    number_Of_Units:  200,
+    numberOfUnits:    200,
     provider:         "Bixe",
     bikeDocPath:      "N/A",   
     partsList: [
