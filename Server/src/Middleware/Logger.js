@@ -1,3 +1,13 @@
+/**Logger.js
+ * Records the http requests sent to the server.
+ * 
+ * Logger captures requests given to back-end to permit 
+ * consistency checks and recreations of states in the case of 
+ * a server failure/shutdown. Logs are saved to an external file in
+ * the '/Data/' directory from the project root.
+ * 
+ * Author: Pierre-Alexis Barras [Pyxsys]
+ */
 const fs = require('fs');   //import file system
 const log_filepath = '../Data/Logs/'
 
