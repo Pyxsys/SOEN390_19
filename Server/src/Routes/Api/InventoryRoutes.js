@@ -1,3 +1,9 @@
+/** InventoryRoutes.js
+* Route controller for inventory models.
+* 
+* File supports Creating, Reading, and Updating of
+* bike and parts models.
+*/
 const express = require('express');
 const router = express.Router();
 const Part = require('../../Models/BikePart.js');
