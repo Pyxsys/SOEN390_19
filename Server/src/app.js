@@ -1,3 +1,10 @@
+/** app.js
+* Main index file for back-end server.
+* 
+* This file will be what is executed when one runs 'npm start'.
+* Dependnecies, Port specification, Routes and DB connection parameters
+* are all defined in this file.
+*/
 const express = require('express');
 const mongoose = require('mongoose');
 const body_parser = require('body-parser');
@@ -22,10 +29,11 @@ app.use('/inventory', inventoryRoute);
 
 
 // Connect to mongoose mongoDB
-///* Uncomment for local host mongodb connection
-//var db_link = 'mongodb://localhost:27017/?readPreference=primary&appname=MongoDB%20Compass&ssl=false'; //TODO COMMENT
-//*/
 var db_link = 'mongodb://mongo:27017/kapp-docker-express';    //docker mongo container link
+/* Comment for local host mongodb connection
+db_link = 'mongodb://localhost:27017/?readPreference=primary&appname=MongoDB%20Compass&ssl=false';
+//*/
+
 
 mongoose.connect(
     db_link,                                    // Target DB
