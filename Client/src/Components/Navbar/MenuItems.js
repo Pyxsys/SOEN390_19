@@ -23,5 +23,10 @@ export const MenuItems = [
         path: "#",
         cName: "nav-links-mobile"
     },
+    {
+        title:"Manufacturing",
+        path:"/Manufacturing",
+        cName:"nav-links"
+    },
 
 ]
