@@ -10,18 +10,32 @@ const useAddInventory = () => {
         internalId: '',
         type: '',
         price: '',
-        partInternalId: '',
-        amountRequired: '',
+        partsList:[{partInternalId: '' , 
+        amountRequired: ''}],
         numberOfUnits: '',
         provider: '',
     })
-
+    
+     const handleChangeInput = (index,event) => {
+        const results =[...values.partsList];
+        results[index][event.target.name]=event.target.value;
+        setValues(results);
+    }
     const handleChange = e => {
         const {name, value} = e.target
         setValues({
             ...values,
             [name]: value
         })
+    }
+    const handleAddFields = () =>{
+        setValues([values.partsList],{parInternalId:'',amountRequired:''})
+    }
+    
+    const handleRemoveFields = (index) =>{
+        const removed =[...values.partsList];
+        removed.splice(index, 1);
+        setValues(removed);
     }
 
     const handleSubmit = async () => {
@@ -33,8 +47,8 @@ const useAddInventory = () => {
                 type: values.type,
                 provider: values.provider,
                 partsList: [{
-                partInternalId: values.partInternalId,
-                amountRequired: values.amountRequired
+                partInternalId: results.partInternalId,
+                amountRequired: results.amountRequired,
                 }],
                 numberOfUnits: 1
             })
