@@ -3,7 +3,7 @@ import Navbar from "./Navbar/Navbar"
 import {AuthContext}from "../Contexts/AuthorizationContext"
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom"
 import Inventory from "../Components/Inventory/InventorySideBar/Inventory"
-
+import Manufacturing from "../Components/Manufacturing/Manufacturing"
 
 /**
  * When the user is authenticated, we are able to display the logged in page.
@@ -20,6 +20,7 @@ const OnceLoggedIn = () => {
           <Switch>
           <Route path= "/Inventory" component = {Inventory}/>
           <Route path = "/Sales"/>
+          <Route path= "/Manufacturing" component={Manufacturing}/>
           </Switch>
       </div>
     );
