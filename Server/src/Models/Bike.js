@@ -1,3 +1,8 @@
+/**
+ * Bike model includes internalId, type of bike, price, number of bike units,
+ * supplier, pdf file path, and parts list schema 
+ */
+
 const mongoose = require('mongoose');
 
 const part_list_schema = mongoose.Schema({

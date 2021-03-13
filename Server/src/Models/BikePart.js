@@ -1,3 +1,8 @@
+/**
+ * Bike part model includes internal id to identify bike part, a general description of 
+ * the part type, price, number of part units, supplier, pdf file path, and step file path
+ */
+
 const mongoose = require('mongoose');
 
 // Schema
