@@ -181,7 +181,6 @@ async function assembleBike(bike_id, requested_amount){
         let check_result = ensurePartsAvailable(bike_model.partsList, requested_amount)
         .then(res => {
             
-            //console.log(res)
             //display warning if there are insufficient parts to complete inital request but enough to make some
             if(res.insuffient_parts){
                 console.log("\x1b[33m%s\x1b[0m", `   WARNING: Cannot assemble requested amount of bikes due to insufficient parts.`);
@@ -225,12 +224,20 @@ async function assembleBike(bike_id, requested_amount){
                 options
             ).exec();
             console.log("\x1b[32m%s\x1b[0m", `   ... Added ${requested_amount} ${bike_model.internalId} bike(s).`, "");
+            return requested_amount;    //push assembled amount up
         })
-        .catch(err => console.log("\x1b[31m%s\x1b[0m", `> ${err}`,""));
+        .catch(err => {
+            console.log("\x1b[31m%s\x1b[0m", `> ${err}`,"");
+            return 0;   //no bikes assembled
+        });
         
+        return check_result; //return number of assembeld bikes to caller
+
     } catch(err) {
         console.log("\x1b[31m", `> failed: ${err}`);
-        console.log(err);;
+        console.log(err);
+        return 0;   //no bikes assembled
+
     }
 }
 
