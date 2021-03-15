@@ -22,7 +22,7 @@ module.exports = function(){
     return function (req, res, next) {
 
         //Get request metadata
-        let user = "User"; //TODO, obtain user form context
+        let user = ""; //TODO, obtain user form context
 
         let current_datetime = new Date();
         let formatted_date =
