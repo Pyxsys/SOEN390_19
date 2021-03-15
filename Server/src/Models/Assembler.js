@@ -6,8 +6,95 @@ const Bike = require('./Bike.js');
 const schedule_schema = mongoose.Schema({
     start: {type: Date, required: true},
     end:   {type: Date, required: true},
-    task:  {type: String, required: true},
+    task:  {type: String, required: true}   //internalId of item
 });
+
+/**Schecule class
+ * Provides a start and end time and a bike model to assemble.
+ */
+class Schedule {
+    /**
+     * Creates a new instance of a schedule.
+     * @param {Date} start 
+     * @param {Date} end 
+     * @param {String} bike_internal_id 
+     */
+    constructor(start_date, end_date, bike_internal_id){
+        this._start = start_date;
+        this._end = end_date;
+        this._task = bike_internal_id;
+    }
+
+    // Getters
+    get start(){ return this._start; }
+    get end(){ return this._end; }
+    get task(){ return this._task; }
+
+    //Methods
+
+    /**
+     * Computes the length of time for the task in days.
+     * @returns {Number} number of days
+     */
+    calcDuration(){ 
+        const diffTime = Math.abs(this.end - this.start);
+        const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+        return diffDays;
+    }
+
+    print(){
+        console.log(`start: ${this.start}, end: ${this.end}, task: ${this.task}`);
+        console.log(`duration: ${this.calcDuration()} days.`);
+    }
+}
+
+/** Assembler class
+ * Using a schedule, will execute assemblies over a period of time.
+ * 
+*/
+class Assembler {
+    /**
+     * Creates a new instance of an assembler.
+     * @param {String} name - name of assembler
+     * @param {Schedule} schedule - schedule
+     * @param {Number} rate - integer amount of bikes to be produced in a day
+     */
+    constructor(name, schedule, rate){
+        this._name = name;
+        this._schedule = schedule;   //json schedule, see schedule_schema
+        this._rate = rate;           //expected number of bikes produced per day (bot dependent)
+        this._produced = 0;          //amount of bikes produced
+
+        console.log("\x1b[32m%s\x1b[0m", `> [Server] Created new Assembler instance: '${this.name}'`);
+    }
+
+    // Getters
+    get name(){ return this._name; }
+    get start(){ return this._schedule.start; }
+    get end(){ return this._schedule.end; }
+    get rate(){ return this._rate; }
+    get duration() { return this._schedule.calcDuration(); }
+    get bikeModel() { return this._schedule.task; }
+    get expectedProduction() { return this.calcExpectedProduction(); }
+    get state() { return `  (Assembler: ${this.name}) ${this._produced}/${this.expectedProduction} bikes assembled.`; }
+
+    //Methods
+
+    /**
+     * Computes the expected amount of bikes to be produced over the span of the task
+     * @returns 
+     */
+    calcExpectedProduction(){
+        return this.duration * this.rate;
+    }
+
+    /**
+     * assembles bikes over the course of time according to the schedule and rate.
+     */
+    run(){
+        //TODO
+    }
+}
 
 /**Ensures there are enough parts to to assemble 'requested_amount' amount of bikes 
  * defined by the parts list. returns a json describing the state of the parts database
@@ -154,5 +241,7 @@ async function assembleBike(bike_id, requested_amount){
     }
 }
 
+module.exports.Schedule = Schedule;
+module.exports.Assembler = Assembler;
 module.exports.Schedules = mongoose.model('Schedules', schedule_schema);
 module.exports.assembleBike = assembleBike;
