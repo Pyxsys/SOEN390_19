@@ -26,9 +26,9 @@ class Schedule {
     }
 
     // Getters
-    get start(){ return this._start; }
-    get end(){ return this._end; }
-    get task(){ return this._task; }
+    get start()     { return this._start; }
+    get end()       { return this._end; }
+    get task()      { return this._task; }
 
     //Methods
 
@@ -40,11 +40,6 @@ class Schedule {
         const diffTime = Math.abs(this.end - this.start);
         const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
         return diffDays;
-    }
-
-    print(){
-        console.log(`start: ${this.start}, end: ${this.end}, task: ${this.task}`);
-        console.log(`duration: ${this.calcDuration()} days.`);
     }
 }
 
@@ -69,14 +64,14 @@ class Assembler {
     }
 
     // Getters
-    get name(){ return this._name; }
-    get start(){ return this._schedule.start; }
-    get end(){ return this._schedule.end; }
-    get rate(){ return this._rate; }
-    get duration() { return this._schedule.calcDuration(); }
-    get bikeModel() { return this._schedule.task; }
-    get expectedProduction() { return this.calcExpectedProduction(); }
-    get state() { return `  (Assembler: ${this.name}) ${this._produced}/${this.expectedProduction} bikes assembled.`; }
+    get name()                  { return this._name; }
+    get start()                 { return this._schedule.start; }
+    get end()                   { return this._schedule.end; }
+    get rate()                  { return this._rate; }
+    get duration()              { return this._schedule.calcDuration(); }
+    get bikeModel()             { return this._schedule.task; }
+    get expectedProduction()    { return this.calcExpectedProduction(); }
+    get state()                 { return `  (Assembler: ${this.name}) ${this._produced}/${this.expectedProduction} bikes assembled.`; }
 
     //Methods
 
@@ -84,9 +79,7 @@ class Assembler {
      * Computes the expected amount of bikes to be produced over the span of the task
      * @returns 
      */
-    calcExpectedProduction(){
-        return this.duration * this.rate;
-    }
+    calcExpectedProduction() { return this.duration * this.rate; }
 
     /**
      * assembles bikes over the course of time according to the schedule and rate.
