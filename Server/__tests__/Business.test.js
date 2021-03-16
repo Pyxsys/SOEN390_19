@@ -25,7 +25,7 @@ describe('Business Unit Tests', () => {
     });
 
     // Unit Testing #1: Create and Save a new Business into DB
-    it('create and save new Business into DB', async () => {
+    test('create and save new Business into DB', async () => {
         const newTestBusiness = new Business({
             name:     'Test Name',
             phone:    '514-123-456',

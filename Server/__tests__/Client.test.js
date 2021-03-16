@@ -26,7 +26,7 @@ describe('Client Unit Tests', () => {
     });
 
     // Unit Testing #1: Create and save a new client into DB
-    it('create and save new Client into DB', async () => {
+    test('create and save new Client into DB', async () => {
         const newTestBusiness = new Business({
             name:     'Test Name',
             phone:    '514-123-456',
@@ -50,7 +50,7 @@ describe('Client Unit Tests', () => {
     });
 
     // Unit Testing #2: Create a client with a missing inherited field from Business model (missing 'name' field)
-    it('create client with missing inherited field from Business model', async () => {
+    test('create client with missing inherited field from Business model', async () => {
         const newTestBusiness = new Business({ // missing required 'name' field
             phone:    '514-123-456',
             location: 'Moon'

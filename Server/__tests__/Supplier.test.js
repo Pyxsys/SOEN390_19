@@ -26,7 +26,7 @@ describe('Client Unit Tests', () => {
     });
 
     // Unit Testing #1: Create and save a new supplier into DB
-    it('create and save new Supplier into DB', async () => {
+    test('create and save new Supplier into DB', async () => {
         const newTestBusiness = new Business({ // creating parent object Business
             name:     'Test Name',
             phone:    '514-123-456',

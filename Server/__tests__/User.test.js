@@ -27,7 +27,7 @@ describe('User Unit Testing', () => {
     });
 
     // Unit Testing #1: Create and Save a new user into DB
-    it('create and save new user', async () => {
+    test('create and save new user', async () => {
         const newTestUser = new User.Users({
             username:   'dummyNewTest',
             email:      'dummy@test.com',
@@ -44,7 +44,7 @@ describe('User Unit Testing', () => {
     });
 
     // Unit Testing #2: Create a user with a required field missing (email)
-    it('create a user with a missing field should fail', async () => {
+    test('create a user with a missing field should fail', async () => {
         const missingFieldTestUser = new User.Users({ // user with missing email
             username:   'dummyMissingTest',
             password:   'test1234',
@@ -63,7 +63,7 @@ describe('User Unit Testing', () => {
     });
 
     // Unit Testing #3: Create a user with a non defined field
-    it('create a user with a undefined field should fail', async () => {
+    test('create a user with a undefined field should fail', async () => {
         const undefinedFieldTestUser = new User.Users({ // user with undefined field 'age'
         age:        25,
         username:   'dummyMissingTest',
@@ -79,7 +79,7 @@ describe('User Unit Testing', () => {
     });
     
     // Unit Testing #4: Test if password hashes correctly
-    it('tests password hashing', () =>{
+    test('tests password hashing', () =>{
         var results = User.hashPassword("TestPassword");
         // actual testing
         expect(results.hash).not.toBe(results.hashPassword);
@@ -88,7 +88,7 @@ describe('User Unit Testing', () => {
     });
 
     // Unit Testing #5: Test if the password is correct by comparing its hash
-    it('test if password is correct based on its hash', () =>{
+    test('test if password is correct based on its hash', () =>{
         var passwordTest = "TestPassword1234";
         var savedHash = User.hashPassword(passwordTest);
         var isPasswordHashGood = User.isPasswordCorrect(savedHash.hash, savedHash.salt, savedHash.iterations, passwordTest)
