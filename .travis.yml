@@ -10,5 +10,5 @@ before_install:
   - cd ..
 
 script:
-  - cd Server
+  - cd Server/__test__
   - npm test
