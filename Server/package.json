@@ -29,6 +29,7 @@
   },
   "jest": {
     "preset": "@shelf/jest-mongodb",
-    "timeout": 50000
+    "testTimeout": 50000,
+    "verbose": true
   }
 }
