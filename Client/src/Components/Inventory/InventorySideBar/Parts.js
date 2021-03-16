@@ -58,7 +58,7 @@ function Parts() {
                             <TableCell>Part ID</TableCell>
                             <TableCell align="right">Part Type</TableCell>
                             <TableCell align="right">Price</TableCell>
-                            <TableCell align="right">Provideer</TableCell>
+                            <TableCell align="right">Provider</TableCell>
                         </TableRow>
                     </TableHead>
                     <TableBody>
