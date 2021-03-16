@@ -7,9 +7,6 @@ import IconButton from '@material-ui/core/IconButton'
 import RemoveIcon from '@material-ui/icons/Remove'
 import AddIcon from '@material-ui/icons/Add'
 import Icon from '@material-ui/core/Icon'
-import handleAddFields from './useAddInventory'
-import handleChangeInput from './useAddInventory'
-import handleRemoveFields from './useAddInventory'
 import { makeStyles } from '@material-ui/core/styles'
 
 /*
@@ -96,12 +93,14 @@ const AddInventoryForm = (props) => {
             <form className="" onSubmit={handleSubmit}>   
        
             {/* {values.partsList.map((part, index)=>(
+
+                {
+                values.partsList.map((part, index)=>(
+
                 <div key={index}>
                 </div>
             ))} */}
         </form>
-   
-
         </div>
     )
 }
