@@ -4,6 +4,9 @@ language: node_js
 node_js:
   - 14.15.4
 
+services:
+  - mongodb
+
 before_install:
   - cd Server
   - npm install
