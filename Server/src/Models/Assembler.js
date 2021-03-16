@@ -111,6 +111,7 @@ class Assembler {
  *      }
  * 
  * @param {Part Array} partsList 
+ * @param {Number} requested_amount - amount of specified bike to be assembled. 
  */
 async function ensurePartsAvailable(partsList, requested_amount){
 
