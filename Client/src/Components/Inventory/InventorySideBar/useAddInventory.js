@@ -10,17 +10,19 @@ const useAddInventory = () => {
         internalId: '',
         type: '',
         price: '',
-        partsList:[{partInternalId: '' , 
-        amountRequired: ''}],
+        partsList:'',
         numberOfUnits: '',
         provider: '',
     })
     
-     const handleChangeInput = (index,event) => {
+    
+     /**
+      * const handleChangeInput = (index,event) => {
         const results =[...values.partsList];
         results[index][event.target.name]=event.target.value;
         setValues(results);
     }
+    */
     const handleChange = e => {
         const {name, value} = e.target
         setValues({
@@ -28,28 +30,44 @@ const useAddInventory = () => {
             [name]: value
         })
     }
+    /** 
     const handleAddFields = () =>{
         setValues([values.partsList],{parInternalId:'',amountRequired:''})
     }
-    
+    */
+
+    /** 
     const handleRemoveFields = (index) =>{
         const removed =[...values.partsList];
         removed.splice(index, 1);
         setValues(removed);
     }
+    */
+
+    const addPartsInformation = (stringToBeSplit) => {
+        var partsAndQuanities = stringToBeSplit.split(", ")
+        var partsArray = []
+        for(var i=0; i<partsAndQuanities.length; i++){
+            // create object
+            var j = {partInternalId: partsAndQuanities[i], amountRequired: parseInt(partsAndQuanities[++i])}
+            //add object to array
+            partsArray.push(j)
+        }      
+        console.log("From addpartsInformation ", partsArray) 
+        return partsArray
+
+}
 
     const handleSubmit = async () => {
         console.log("Attempting to add info")
+        // addPartsInformation(values.partsList)
         try{
             const response = await axios.post(`http://localhost:5000/inventory/bikeinventory`,{
                 internalId: values.internalId,
                 price: values.price,
                 type: values.type,
                 provider: values.provider,
-                partsList: [{
-                partInternalId: results.partInternalId,
-                amountRequired: results.amountRequired,
-                }],
+                partsList: addPartsInformation(values.partsList),
                 numberOfUnits: 1
             })
             console.log("info added to database")

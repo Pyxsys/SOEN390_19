@@ -13,7 +13,7 @@ import handleRemoveFields from './useAddInventory'
 import { makeStyles } from '@material-ui/core/styles'
 
 /*
-The followwing Form adds an inventory item to the database
+The following Form adds an inventory item to the database
 */
 const AddInventoryForm = (props) => {
    
@@ -76,46 +76,29 @@ const AddInventoryForm = (props) => {
                     onChange = {handleChange}
                     />
                 </div>
+
+                <div className = "">
+                    <input
+                    id = "partsList"
+                    type = "text"
+                    name = "partsList"
+                    className = "form-input"
+                    placeholder = "Add parts list"
+                    value = {values.partsList}
+                    onChange = {handleChange}
+                    />
+                </div>
                 <div>
                     <button className = ""
                     type = "submit">Add Info</button>
                 </div>
             </form>
             <form className="" onSubmit={handleSubmit}>   
-        <h1>Add new Part</h1>
        
-            {values.partsList.map((part, index)=>(
+            {/* {values.partsList.map((part, index)=>(
                 <div key={index}>
-        <TextField
-        name="partInternalId"
-        label="Part Id"
-        variant="filled"
-        value={values.partsList[index].partInternalId}
-        onChange={event => handleChangeInput(index,event)}
-        />
-        <TextField
-        name="amountRequired"
-        label="Amount"
-        variant="filled"
-        value={values.partsList[index].amountRequired}
-        onChange={event => handleChangeInput(index,event)}
-        />
-        <IconButton onClick={()=> handleRemoveFields(index)}>
-             <RemoveIcon/>
-        </IconButton>
-        <IconButton 
-        onClick={()=> handleAddFields()}>
-            <AddIcon/>
-        </IconButton>
                 </div>
-            ))}
-            <Button 
-            className=""
-            variant="contained" 
-            type="submit" 
-            endIcon={<Icon>Add</Icon>}>
-                Add
-            </Button>
+            ))} */}
         </form>
    
 
