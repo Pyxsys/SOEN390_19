@@ -25,7 +25,7 @@ describe('Client Unit Tests', () => {
     });
 
     // Unit Test #1: Creat and save Bike into DB
-    it('create and save a new BikePart into DB', async () => {
+    test('create and save a new BikePart into DB', async () => {
         const newTestBikePart = new BikePart.BikeParts({
             internalId:       'abc123', 
             partType:         'Handlebars',
