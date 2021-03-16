@@ -1,0 +1,11 @@
+
+language: node_js
+
+node_js:
+  - 14.15.4
+
+before_install:
+  - npm install $TRAVIS_BUILD_DIR/Server
+
+script:
+  - npm test $TRAVIS_BUILD_DIR/Server
