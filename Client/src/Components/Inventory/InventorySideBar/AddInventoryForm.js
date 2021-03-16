@@ -7,9 +7,6 @@ import IconButton from '@material-ui/core/IconButton'
 import RemoveIcon from '@material-ui/icons/Remove'
 import AddIcon from '@material-ui/icons/Add'
 import Icon from '@material-ui/core/Icon'
-import handleAddFields from './useAddInventory'
-import handleChangeInput from './useAddInventory'
-import handleRemoveFields from './useAddInventory'
 import { makeStyles } from '@material-ui/core/styles'
 
 /*
@@ -17,7 +14,7 @@ The followwing Form adds an inventory item to the database
 */
 const AddInventoryForm = (props) => {
    
-    const {handleChange, values, handleSubmit} = useAddInventory(
+    const {handleChange, handleChangeInput,handleAddFields,handleRemoveFields, values, handleSubmit} = useAddInventory(
         props.submitForm
     );
     
@@ -80,11 +77,8 @@ const AddInventoryForm = (props) => {
                     <button className = ""
                     type = "submit">Add Info</button>
                 </div>
-            </form>
-            <form className="" onSubmit={handleSubmit}>   
-        <h1>Add new Part</h1>
-       
-            {values.partsList.map((part, index)=>(
+                {
+                values.partsList.map((part, index)=>(
                 <div key={index}>
         <TextField
         name="partInternalId"
@@ -109,15 +103,7 @@ const AddInventoryForm = (props) => {
         </IconButton>
                 </div>
             ))}
-            <Button 
-            className=""
-            variant="contained" 
-            type="submit" 
-            endIcon={<Icon>Add</Icon>}>
-                Add
-            </Button>
-        </form>
-   
+            </form>
 
         </div>
     )

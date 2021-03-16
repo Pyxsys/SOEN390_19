@@ -47,8 +47,8 @@ const useAddInventory = () => {
                 type: values.type,
                 provider: values.provider,
                 partsList: [{
-                partInternalId: results.partInternalId,
-                amountRequired: results.amountRequired,
+                partInternalId: values.partInternalId,
+                amountRequired: values.amountRequired,
                 }],
                 numberOfUnits: 1
             })
@@ -61,7 +61,7 @@ const useAddInventory = () => {
         }
     }
 
-    return {handleChange, values, handleSubmit}
+    return {handleChange,handleChangeInput,handleAddFields,handleRemoveFields, values, handleSubmit}
 }
 
 export default useAddInventory
