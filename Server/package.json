@@ -28,6 +28,7 @@
     "nodemon": "^2.0.7"
   },
   "jest": {
-    "preset": "@shelf/jest-mongodb"
+    "preset": "@shelf/jest-mongodb",
+    "timeout": 50000
   }
 }
