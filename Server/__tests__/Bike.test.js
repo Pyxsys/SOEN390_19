@@ -15,7 +15,7 @@ describe('Client Unit Tests', () => {
         });
     });
     
-    beforeAll(done => { // makes sur that all previous tests instance are closed
+    beforeAll(done => { // makes sure that all previous tests instance are closed
         done();
     });
       
@@ -24,7 +24,7 @@ describe('Client Unit Tests', () => {
         done();
     });
 
-    // Unit Test #1: Creat and save Bike into DB
+    // Unit Test #1: Create and save Bike into DB
     test('create and save a new Bike into DB', async () => {
         const newTestBike = new Bike.Bikes({
             internalId:     'abc123',
