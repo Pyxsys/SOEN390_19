@@ -1,11 +1,17 @@
+/** [useForm.js]
+* Summary. 
+This useForm is for the sign up page, it checks if the values entered in the form are correct, then handles the submit.
+Using axios.post it is able to add the information to the database. Making sure there are no errors with what as added.
+* 
+* Description. 
+We will be checking if the information which provided by the user is correct, and it will be added on database.
+*/
+
 import validate from './validateInfo'
 import {useState, useEffect} from 'react'
 import axios from 'axios'
 
-/**
- * This useForm is for the sign up page, it checks if the values entered in the form are correct, then handles the submit.
- * Using axios.post it is able to add the information to the database. Making sure there are no errors with what as added.
- */
+
 const useForm = callback => {
 
     //Initial state of the form where the values are empty
