@@ -1,6 +1,6 @@
 /** [useForm.js]
 * Summary. 
-We will be checking if the information which provided by the user is correct, and it will be added on database.
+The webpage will be checking if the information which provided by the user is correct, and it will be added on database.
 * 
 * Description. 
 This useForm is for the sign up page, it checks if the values entered in the form are correct, then handles the submit.
