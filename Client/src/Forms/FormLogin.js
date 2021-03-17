@@ -1,9 +1,10 @@
 /** [FormLogin.js]
 * Summary. 
 The purpose of this page is to show user an Interface where they can login into their account.
+Front-end sends a request login form to Back-end. Back-end will approve or reject the login.
 * 
 * Description. 
-By using FrontEnd and BackEnd simultaneously, the user will login his/her account and it will be checked on the data base 
+By using FrontEnd and BackEnd sequentially, the user will login his/her account and it will be checked on the data base 
 to see if it matches with any profile and if successful , the website will allow user the get inside of the page.
 */
 
