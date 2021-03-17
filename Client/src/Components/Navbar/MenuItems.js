@@ -9,8 +9,8 @@ export const MenuItems = [
         cName: "nav-links"
     },
     {
-        title: "Customers",
-        path: "/Customers",
+        title: "Manufacturing",
+        path: "/Manufacturing",
         cName: "nav-links"
     },
     {
