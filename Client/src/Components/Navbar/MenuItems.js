@@ -1,7 +1,9 @@
 /** [MenuItems.js]
-* Summary. (Use periods, 1-2 sentences MAX)
+* Summary. 
+Displaying the elements of the menu items.
 * 
-* Description. (Use periods)
+* Description. 
+This will show the titles and their paths to each items in the menu list.
 */
 
 export const MenuItems = [
