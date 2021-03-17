@@ -3,7 +3,7 @@
 Validating that the login values are real.
 *
 * Description. 
-Showing user that input boxes needs to be filled in orde to make a successful login.
+Showing user that input boxes needs to be filled in order to make a successful login.
 */
 import axios from 'axios'
 
