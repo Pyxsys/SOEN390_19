@@ -1,4 +1,4 @@
-/** [InventorySlideBar.js]
+/** [InventorySideBar.js]
 * Summary.
 InventorySideBar is the specific side bar that is shown when inventory is selected after logging.
 React Router Link is used to pass the path.
