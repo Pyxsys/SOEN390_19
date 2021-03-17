@@ -1,10 +1,10 @@
 /** [NavBarButton.js]
 * Summary.
-The required functions and visual design of the code is implemented.
-Once clicked it will bring the elements for the menu.
+It is to create the navigation bar button to appear the items in the menu.
 * 
 * Description.
-It is to create the navigation bar button to appear the items in the menu.
+The required functions and visual design of the code is implemented.
+Once clicked it will bring the elements for the menu.
 */
 import React from 'react'
 import '../../CSSFiles/NavBarButton.css'
