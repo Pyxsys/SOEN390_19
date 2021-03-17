@@ -1,13 +1,6 @@
 import React from 'react'
 import useAddInventory from './useAddInventory'
 import {useState} from 'react';
-import TextField from '@material-ui/core/TextField'
-import Button from '@material-ui/core/Button'
-import IconButton from '@material-ui/core/IconButton'
-import RemoveIcon from '@material-ui/icons/Remove'
-import AddIcon from '@material-ui/icons/Add'
-import Icon from '@material-ui/core/Icon'
-import { makeStyles } from '@material-ui/core/styles'
 
 /*
 The following Form adds an inventory item to the database
@@ -25,13 +18,13 @@ const AddInventoryForm = (props) => {
     }
 
     return (
-        <div className = "">
-            <form className = "" onSubmit = {submitForm}>
-                <h1>Add Inventory Information</h1>
+        <div className = "Inventory-Home">
+            <form className = "" id="" onSubmit = {submitForm}>
+                <h1>Add Inventory</h1>
 
-                <div className = "">
+                <div className = "form-data-edit">
                     <input
-                    id = "internalId"
+                    id = "Input-ID"
                     type = "text"
                     name = "internalId"
                     className = "form-input"
@@ -40,9 +33,9 @@ const AddInventoryForm = (props) => {
                     onChange = {handleChange}
                     />
                 </div>
-                <div className = "">
+                <div className = "form-data-edit">
                     <input
-                    id = "price"
+                    id = "Input-ID"
                     type = "text"
                     name = "price"
                     className = "form-input"
@@ -51,9 +44,9 @@ const AddInventoryForm = (props) => {
                     onChange = {handleChange}
                     />
                 </div>
-                <div className = "">
+                <div className = "form-data-edit">
                     <input
-                    id = "provider"
+                    id = "Input-ID"
                     type = "text"
                     name = "provider"
                     className = "form-input"
@@ -62,9 +55,9 @@ const AddInventoryForm = (props) => {
                     onChange = {handleChange}
                     />
                 </div>
-                <div className = "">
+                <div className = "form-data-edit">
                     <input
-                    id = "type"
+                    id = "Input-ID"
                     type = "text"
                     name = "type"
                     className = "form-input"
@@ -74,9 +67,9 @@ const AddInventoryForm = (props) => {
                     />
                 </div>
 
-                <div className = "">
+                <div className = "form-data-edit">
                     <input
-                    id = "partsList"
+                    id = "Input-ID"
                     type = "text"
                     name = "partsList"
                     className = "form-input"
