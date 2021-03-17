@@ -1,3 +1,12 @@
+/** [FormSignUp.js]
+* Summary. 
+Asking user required information in order to create his/her profile.By simply typing inside input boxes ,then we will
+sent this data to BackEnd in order to create profile.
+* 
+* Description. 
+The user will simplly create his/her profile after filling their personal information and once It is done, the website
+will show confirmation message to the user.
+*/
 import React from 'react'
 import useForm from './useForm'
 import validate from './validateInfo'

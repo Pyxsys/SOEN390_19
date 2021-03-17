@@ -1,3 +1,10 @@
+/** [Navbar.js]
+* Summary.
+The key components of making a NavigationBar.This bar will render the menu items.
+* 
+* Description.
+This code is to build Navigation Bar on the left side of the screen once logged in.
+*/
 import React, { Component } from 'react'
 import {MenuItems} from './MenuItems'
 import {NavBarButton} from './NavBarButton'
