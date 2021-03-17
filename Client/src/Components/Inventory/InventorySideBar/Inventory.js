@@ -1,3 +1,12 @@
+/** [Inventory.js]
+* Summary.
+The inventory function is using the sidebar and its routes
+* 
+* Description. 
+Thanks to sidebar and its routes,so developers can receive the information for Inventory and parts needed for the inventory.
+
+*/
+
 import React from 'react'
 import InventorySideBar from './InventorySideBar';
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom"
@@ -5,9 +14,7 @@ import InventoryHome from "./InventoryHome"
 import Parts from "./Parts"
 import Navbar from "../../Navbar/Navbar"
 
-/*
- Inventory function utilizing the sidebar and its routes
-*/
+
 
 function Inventory() {
     return (

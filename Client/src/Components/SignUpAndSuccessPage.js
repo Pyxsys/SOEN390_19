@@ -1,3 +1,11 @@
+/** [SignUpAndSuccessPage.js]
+* Summary. 
+Sign up and log in page for creating an account or logging in
+* 
+* Description. 
+This will initialize required steps in orde to submit sign up and login
+
+*/
 import React, {useState} from 'react'
 import FormSignUp from '../Forms/FormSignUp'
 import FormSucess from '../Forms/FormSuccess'
@@ -6,9 +14,7 @@ import '../CSSFiles/Form.css'
 import {AuthContext} from '../Contexts/AuthorizationContext'
 
 
-/**
- * Sign up and log in page for creating an account or logging in
- */
+
 const SignUpAndSuccessPage = () => {
 
     const [isSubmitted, setIsSubmitted] = useState(false);

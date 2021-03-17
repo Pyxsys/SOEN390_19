@@ -1,3 +1,12 @@
+/** [FormSuccess.js]
+* Summary.
+After user just finished creating profile, the system will display a success message.
+* 
+* Description. 
+The success message will be shown the user after profile completion.
+*/
+
+
 import React from 'react'
 
 

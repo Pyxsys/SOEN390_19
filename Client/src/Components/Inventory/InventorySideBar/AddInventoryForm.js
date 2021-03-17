@@ -1,3 +1,10 @@
+/** [AddInventory.js]
+* Summary.
+* The following Form adds an inventory item to the database
+* 
+* Description. 
+* The form sends Bike info that will be added into the database with user-specified attributes.
+*/
 import React from 'react'
 import useAddInventory from './useAddInventory'
 

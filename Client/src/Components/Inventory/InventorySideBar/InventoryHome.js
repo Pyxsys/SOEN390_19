@@ -1,3 +1,15 @@
+/** [InventoryHome.js]
+* Summary. 
+InventoryHome displays the Bike Inventory
+Using material UI tables to create the display we want.
+* 
+* Description.
+We will be using the UI table in order to make the display we need.
+This inventory will also show what is inside the Bike Inventory.Additonaly we can manipulate the data and send it 
+to the backEnd to store the data.
+
+*/
+
 import React, {useState, useEffect} from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
@@ -21,10 +33,7 @@ const useStyles = makeStyles({
 
 
 
-/*
-  InventoryHome displays the Bike Inventory
-  Using material UI tables to create the display we want
-*/
+
 function InventoryHome() {
 
     const [rows, setRows] = useState([]);
