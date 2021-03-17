@@ -20,7 +20,7 @@ const AddInventoryForm = (props) => {
     return (
         <div className = "">
             <form className = "" onSubmit = {submitForm}>
-                <h1>Add Inventory Information</h1>
+                <h1>Add Inventory Information TEST4</h1>
 
                 <div className = "">
                     <input

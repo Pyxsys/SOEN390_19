@@ -1,9 +1,15 @@
+/** [useAddInventory.js]
+* Summary. 
+This is for when the user clicks on the add inventory button. This will post the information to the back-end.
+*
+* Description. (Use periods)
+After we choose what to be added onto the list,then we can click on the add and it will add information to backEnd.
+Additionally, I will show us the status of the upload
+*/
 import axios from "axios"
 import { useState } from "react"
 import fetchRows from "./InventoryHome"
-/*
-this function is for when the user clicks on the add inventory button. This will post the information to the back-end.
-*/
+
 const useAddInventory = () => {
 
     const [values, setValues] = useState({

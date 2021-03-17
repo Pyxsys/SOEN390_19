@@ -1,7 +1,9 @@
-
-/*
-These are the navbar menu items.
+/** [MenuItems.js]
+* Summary. (Use periods, 1-2 sentences MAX)
+* 
+* Description. (Use periods)
 */
+
 export const MenuItems = [
     {
         title: "Sales",
