@@ -1,3 +1,14 @@
+/** [InventorySideBar.js]
+* Summary.
+InventorySideBar is the specific side bar that is shown when inventory is selected after logging.
+React Router Link is used to pass the path.
+* 
+* Description.
+This side bar is unique for this page. When we are on the inventory page different version
+of the sidebar will be shown.
+*/
+
+
 import React, {useState} from 'react'
 import * as FaIcons from "react-icons/fa"
 import * as AiIcons from "react-icons/ai"
@@ -8,10 +19,7 @@ import {IconContext} from 'react-icons'
 
 
 
-/*
-InventorySideBar is the specific side bar that is shown when inventory is selected after logging.
-React Router Link is used to pass the path.
-*/
+
 function InventorySideBar() {
 
     const [sideBarButton,setSideBarButton] = useState(false)

@@ -1,6 +1,13 @@
+/** [validateLogin.js]
+* Summary. 
+Validating that the login values are real.
+*
+* Description. 
+Showing user that input boxes needs to be filled in order to make a successful login.
+*/
 import axios from 'axios'
 
-//Validating that the login values are real
+
 export default function validateLogin(values){
     let errors = {}
     let emailTest = values.email

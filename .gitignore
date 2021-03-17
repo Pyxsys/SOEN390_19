@@ -30,3 +30,6 @@ node_modules
 
 # IDE settings
 .vscode
+
+# test instance files
+globalConfig.json
