@@ -4,7 +4,7 @@ Ensuring no invalid emails, username, or passwords are given through the signup 
 * 
 * Description.
 Cheking user's input to make sure that they fill user register details as the website requires.
-Each input box has its own rules and we are checking that we get correct/accurate input from user.
+Each input box has its own rules and we are checking that we get valid input from the user.
 */
 
 export default function validateInfo(values){
