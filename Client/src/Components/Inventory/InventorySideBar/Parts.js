@@ -1,3 +1,12 @@
+/** [Parts.js]
+* Summary.
+* Parts inventory that is within the sidebar, using material UI tables.
+*
+* Description.
+This Parts for inventory is inside the sidebar and it is utilizing the UI table.
+It will also fetch info from database and show user the status.
+*/
+
 import React, {useState, useEffect} from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
@@ -19,9 +28,7 @@ const useStyles = makeStyles({
     },
   });
 
-/*
-Parts inventory that is within the sidebar, using material UI tables.
-*/
+
 function Parts() {
     const [rows, setRows] = useState([]);
 
