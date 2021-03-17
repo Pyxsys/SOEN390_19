@@ -1,8 +1,11 @@
+//Declare imports and requirements
 const express = require('express');
 const mongoose = require('mongoose');
+
 const body_parser = require('body-parser');
 const cors = require('cors');
-//import seed function.
+
+const logger = require('./Middleware/Logger')
 const seed = require('./seed');
 
 // Gen and set app instance
@@ -12,6 +15,8 @@ const PORT = process.env.PORT || 5000;  //Get open port (default to 5000)
 // Global Middlewares
 app.use(body_parser.json());    // body-parser runs whenever a request is made
 app.use(cors());
+app.use(logger());              // logger will record the requests made to back-end
+
 
 // Import Routes
 const userRoute = require('./Routes/Api/UserRoutes.js');    // Define target user route
