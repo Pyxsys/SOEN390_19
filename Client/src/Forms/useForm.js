@@ -1,10 +1,10 @@
 /** [useForm.js]
 * Summary. 
-This useForm is for the sign up page, it checks if the values entered in the form are correct, then handles the submit.
-Using axios.post it is able to add the information to the database. Making sure there are no errors with what as added.
+We will be checking if the information which provided by the user is correct, and it will be added on database.
 * 
 * Description. 
-We will be checking if the information which provided by the user is correct, and it will be added on database.
+This useForm is for the sign up page, it checks if the values entered in the form are correct, then handles the submit.
+Using axios.post it is able to add the information to the database. Making sure there are no errors with what as added.
 */
 
 import validate from './validateInfo'
