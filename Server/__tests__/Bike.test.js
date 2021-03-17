@@ -33,7 +33,11 @@ describe('Client Unit Tests', () => {
             numberOfUnits:  6,
             provider:       'Test Provider',
             bikeDocPath:    './',
-            partsList:      ['frame', 'pedal', 'seat']
+            partsList:      [
+                {partInternalId: 'frame', amountRequired: 1},
+                {partInternalId: 'pedal', amountRequired: 1},
+                {partInternalId: 'seat', amountRequired: 1}
+            ]
         });
         const savedTestBike = await newTestBike.save(); // save into test DB
         // actual testing
