@@ -1,9 +1,9 @@
 /** [Inventory.js]
 * Summary.
-The inventory function is using the slidebar and its routes
+The inventory function is using the sidebar and its routes
 * 
 * Description. 
-Thanks to slidebar and its routes we can receive the information for Inventory and parts needed for the inventory.
+Thanks to slidebar and its routes,so developers can receive the information for Inventory and parts needed for the inventory.
 
 */
 
