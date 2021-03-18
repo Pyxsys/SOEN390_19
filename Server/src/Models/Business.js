@@ -1,3 +1,8 @@
+/**
+ * Business model is a parent to client and supplier models and includes business name,
+ * phone number, and location
+ */
+
 const mongoose = require('mongoose');
 
 // Schema

@@ -1,3 +1,8 @@
+/**
+ * User model includes username, email address, password, salt, and iterations.
+ * Contains a function to hash the password and to check if the entered password is correct
+ */
+
 const mongoose = require('mongoose');
 const crypto = require('crypto');
 

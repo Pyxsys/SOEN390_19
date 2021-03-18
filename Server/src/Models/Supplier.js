@@ -1,3 +1,9 @@
+/**
+ * Supplier model inherits Business model and includes business name, phone number,
+ * location, supplier description, and catalogue information (unique id, number of units
+ * available)
+ */
+
 const mongoose = require('mongoose');
 const Business = require('./Business.js');
 

@@ -1,3 +1,9 @@
+/**
+ * Assembler model includes a start time and end time of the scheduled assembling task.
+ * Contains a function to check if parts are still available and a function to assemble
+ * the bike using bike id and requested amount.
+ */
+
 const mongoose = require('mongoose');
 const Part = require('./BikePart.js');
 const Bike = require('./Bike.js');
