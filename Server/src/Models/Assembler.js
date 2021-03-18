@@ -125,11 +125,11 @@ async function ensurePartsAvailable(partsList, requested_amount){
     let min_possible_assemblies = requested_amount;
     let insufficient_parts = false;
 
-    for( const Element of partsList){
+    for( const Element of Object.keys(partsList)){
         // find needed parts in db
         let part = await Part.BikeParts.findOne({ internalId: Element.partInternalId });
         // throw error if part not found
-        if(part.internalId === "undefined"){throw new Error(`Could not find part: ${Element.partInternalId}`);}
+        if(part === null){throw new Error(`Could not find part: ${Element.partInternalId}`);}
         else {
             let parts_available = part.numberOfUnits;
             let parts_needed_per_bike = Element.amountRequired;
@@ -252,3 +252,4 @@ module.exports.Schedule = Schedule;
 module.exports.Assembler = Assembler;
 module.exports.Schedules = mongoose.model('Schedules', schedule_schema);
 module.exports.assembleBike = assembleBike;
+module.exports.ensurePartsAvailable = ensurePartsAvailable;
