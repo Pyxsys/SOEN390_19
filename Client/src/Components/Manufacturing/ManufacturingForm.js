@@ -3,7 +3,9 @@ import useManufacturingForm from './useManufacturingForm'
 import {fetchRows} from '../../APIService'
 
 const ManufacturingForm = (props) => {
+  var status
   const [rows, setRows] = useState([])
+  const [response, setResponse] = useState("No request made")
   
   useEffect(async () => {
     await fetchDropDown()
@@ -24,13 +26,15 @@ const {handleChange, handleSubmit, values} = useManufacturingForm(
 
 const submitForm = async (e) => {
   e.preventDefault()
-  await handleSubmit()
+  status = await handleSubmit()
+  setResponse(status.data.message)
+  console.log(status)
 }
 
-    return (
-        <div>
+  return (
+    <div>
             <h1>  Manufacture a bike </h1>
-            <form className="" id= "" onSubmit={submitForm}>
+      <form className="" id= "" onSubmit={submitForm}>
             <label>
           Which Bike Model:
           <select 
@@ -54,14 +58,16 @@ const submitForm = async (e) => {
             onChange = {handleChange}
             />
         <div>
-        <button className = ""  t
-        type = "submit">REQUEST</button>
-                </div>
-            </form>
+        <button className = ""  
+        type = "submit">REQUEST
+        </button>
+        </div>
+      </form>
+          <h1>{response}</h1>
         </div>
 
 
-    )
+   )
 
 
 

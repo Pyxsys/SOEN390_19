@@ -27,6 +27,7 @@ const useManufacturingForm = () => {
             })
             console.log("Info sent for manufacturing request")
             console.log(response.data.message)
+            return response;
         }catch (error){
             console.error(error)
         }
