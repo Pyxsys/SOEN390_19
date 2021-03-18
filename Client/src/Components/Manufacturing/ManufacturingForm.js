@@ -1,11 +1,23 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import useManufacturingForm from './useManufacturingForm'
-
-
+import {fetchRows} from '../../APIService'
 
 const ManufacturingForm = () => {
-
+  const [rows, setRows] = useState([])
   
+  useEffect(async () => {
+    await fetchDropDown()
+  }, [])
+
+  const fetchDropDown = async () => {
+   var temp = await fetchRows();
+   console.log("TEMP ", temp)
+    setRows(temp)
+  }
+
+  var optionItems = rows.map((item) =>
+  <option key = {item.internalId} >{item.internalId}</option>
+)
 
     return (
         <div>
@@ -14,11 +26,7 @@ const ManufacturingForm = () => {
             <label>
           Which Bike Model:
           <select >
-            <option value="BXSP01">BXSP01</option>
-            <option value="BXSP01">BXSP01</option>
-            <option value="BXSP01">BXSP01</option>
-            <option value="BXSP01">BXSP01</option>
-            
+            {optionItems}
           </select>
           <br/>
         </label>
