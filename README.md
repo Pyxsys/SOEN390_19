@@ -29,6 +29,12 @@ Concordia University.
   5.6. Return active directory to project root: `cd ..`
 6. Both Client and Server are setup and running
 7. Connect to Client (if not already) in a browser using the link: [localhost:3000](http://localhost:3000)
+#### Running tests with jest
+1. Open a terminal (*eg. Cmd on windows*)
+2. Navigate to the project root (*C:/.../SOEN390_19/*).
+3. Navigate to the test directory: `cd Server/__tests__/`
+4. Run jest with: `npm test`
+5. Tests suites are run with the output displayed to the terminal.
 
 ## Via Docker
 ### Requirements
