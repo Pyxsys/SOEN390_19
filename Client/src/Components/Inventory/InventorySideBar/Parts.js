@@ -56,13 +56,14 @@ function Parts() {
             <PartsForm updateRows={fetchRows}/>
             <TableContainer component={Paper}>
                 <Table className={classes.table} size="small" id="Edit-the-table" aria-label="a dense table">
-                    <TableHead><TableRow><TableCell colspan="4" id="The-Table-Title">Parts</TableCell></TableRow></TableHead>
+                    <TableHead><TableRow><TableCell colspan="5" id="The-Table-Title">Parts</TableCell></TableRow></TableHead>
                     <TableHead>
                         <TableRow>
                             <TableCell align="right">Part ID</TableCell>
                             <TableCell align="right">Part Type</TableCell>
                             <TableCell align="right">Price</TableCell>
                             <TableCell align="right">Provider</TableCell>
+                            <TableCell align="right">Quantity</TableCell>
                         </TableRow>
                     </TableHead>
                     <TableBody>
@@ -72,6 +73,7 @@ function Parts() {
                                 <TableCell align="right">{row.partType}</TableCell>
                                 <TableCell align="right">{row.price}</TableCell>
                                 <TableCell align="right">{row.provider}</TableCell>
+                                <TableCell align="right">{row.numberOfUnits}</TableCell>
                             </TableRow>
                         ))}
                     </TableBody>

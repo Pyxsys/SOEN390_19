@@ -26,7 +26,7 @@ const useManufacturingForm = () => {
                 quantity: parseInt(values.quantity)
             })
             console.log("Info sent for manufacturing request")
-            console.log(response)
+            console.log(response.data.message)
         }catch (error){
             console.error(error)
         }

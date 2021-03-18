@@ -73,6 +73,17 @@ const AddInventoryForm = (props) => {
                     onChange = {handleChange}
                     />
                 </div>
+                <div className = "form-data-edit">
+                    <input
+                    id = "Input-ID"
+                    type = "text"
+                    name = "numberOfUnits"
+                    className = "form-input"
+                    placeholder = "Add quantity"
+                    value = {values.numberOfUnits}
+                    onChange = {handleChange}
+                    />
+                </div>
 
                 <div className = "form-data-edit">
                     <input

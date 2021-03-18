@@ -52,7 +52,7 @@ const useAddInventory = () => {
                 type: values.type,
                 provider: values.provider,
                 partsList: addPartsInformation(values.partsList),
-                numberOfUnits: 1
+                numberOfUnits: parseInt(values.numberOfUnits)
             })
             console.log("info added to database")
             console.log(response)
