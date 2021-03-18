@@ -1,3 +1,11 @@
+/** [PartsForm.js]
+* Summary.
+* The following Form adds an parts inventory.
+* 
+* Description. 
+* The form adds parts by ID to th table and automatically updates the page.
+*/
+
 import React from 'react'
 import usePartsForm from './usePartsForm'
 const PartsForm = (props) => {

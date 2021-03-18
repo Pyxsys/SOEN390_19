@@ -1,4 +1,4 @@
-/** [AddInventory.js]
+/** [AddInventoryForm.js]
 * Summary.
 * The following Form adds an inventory item to the database
 * 

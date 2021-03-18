@@ -1,6 +1,15 @@
 import axios from "axios"
 import { useState } from "react"
 
+
+/** [useManufacturingFrom.js.js]
+* Summary.
+* Functionality behind how the form works. 
+* 
+* Description. 
+* Handlechange is used when a field changes, the states are used to store the values if there are no changes, set state is called
+* when we want to change the state.
+*/
 const useManufacturingForm = () => {
     const [values, setValues] = useState(
         {

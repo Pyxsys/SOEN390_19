@@ -2,6 +2,14 @@ import React, { useState, useEffect } from 'react'
 import useManufacturingForm from './useManufacturingForm'
 import {fetchRows} from '../../APIService'
 
+
+/** [ManufacturingForm.js]
+* Summary.
+* The following Form requests to make a bike based off of information in the back end
+* 
+* Description. 
+* The form takes the ID of a bike and the quantity for each one then submits a request
+*/
 const ManufacturingForm = (props) => {
   var status
   const [rows, setRows] = useState([])

@@ -1,3 +1,11 @@
+
+/** [usePartsForm.js]
+* Summary.
+* This page is how thee usePartsForm works. 
+* 
+* Description. 
+* Handle submit, handle change are how the values are kept track of and then passed to the backend.
+*/
 import axios from "axios"
 import { useState } from "react"
 
