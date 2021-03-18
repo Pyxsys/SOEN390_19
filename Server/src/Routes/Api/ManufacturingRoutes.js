@@ -13,7 +13,7 @@ const Assemblers = require('../../Models/Assembler');
  * */
  router.post('/assemble', async (req, res) => {
     try{
-        let result = Assemblers.assembleBike(req.body.internalId, req.body.quantity);   //call assemble function
+        let result = await Assemblers.assembleBike(req.body.internalId, req.body.quantity);   //call assemble function
         res.status(200).json({
                 message: `Created ${result} ${req.body.internalId} bike(s).`,
                 amount: result
