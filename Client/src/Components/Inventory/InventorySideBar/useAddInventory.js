@@ -20,15 +20,6 @@ const useAddInventory = () => {
         numberOfUnits: '',
         provider: '',
     })
-    
-    
-     /**
-      * const handleChangeInput = (index,event) => {
-        const results =[...values.partsList];
-        results[index][event.target.name]=event.target.value;
-        setValues(results);
-    }
-    */
     const handleChange = e => {
         const {name, value} = e.target
         setValues({
@@ -36,19 +27,6 @@ const useAddInventory = () => {
             [name]: value
         })
     }
-    /** 
-    const handleAddFields = () =>{
-        setValues([values.partsList],{parInternalId:'',amountRequired:''})
-    }
-    */
-
-    /** 
-    const handleRemoveFields = (index) =>{
-        const removed =[...values.partsList];
-        removed.splice(index, 1);
-        setValues(removed);
-    }
-    */
 
     const addPartsInformation = (stringToBeSplit) => {
         var partsAndQuanities = stringToBeSplit.split(", ")

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import useManufacturingForm from './useManufacturingForm'
 import {fetchRows} from '../../APIService'
 
-const ManufacturingForm = () => {
+const ManufacturingForm = (props) => {
   const [rows, setRows] = useState([])
   
   useEffect(async () => {
@@ -14,35 +14,49 @@ const ManufacturingForm = () => {
    console.log("TEMP ", temp)
     setRows(temp)
   }
-
   var optionItems = rows.map((item) =>
-  <option key = {item.internalId} >{item.internalId}</option>
+  <option value = {item.internalId}> {item.internalId} </option>
 )
+
+const {handleChange, handleSubmit, values} = useManufacturingForm(
+  props.submitForm
+)
+
+const submitForm = async (e) => {
+  e.preventDefault()
+  await handleSubmit()
+}
 
     return (
         <div>
             <h1>  Manufacture a bike </h1>
-            <form>
+            <form className="" id= "" onSubmit={submitForm}>
             <label>
           Which Bike Model:
-          <select >
+          <select 
+          id = "Input-ID"
+          type="text"
+          name = "internalId"
+          value= {values.internalId}
+          onChange = {handleChange}>
+            <option value = "select"> Select </option>
             {optionItems}
           </select>
           <br/>
         </label>
-            <label>
-          Amount Requested:
           <input
-            name="Amount Requested"
-            type="number"
+            id = "Input-ID"
+            type="text"
+            name="quantity"
+            className = "form-input"
+            placeholder= "Quantity"
+            value = {values.quantity}
+            onChange = {handleChange}
             />
-        </label>
         <div>
         <button className = ""  t
         type = "submit">REQUEST</button>
                 </div>
-
-
             </form>
         </div>
 
