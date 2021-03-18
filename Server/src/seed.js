@@ -1,6 +1,10 @@
-/** File exists to seed database with values to allow
- *  the use of certain features from the get-go.
- */
+/** seed.js
+* Seed file for populating DB on startup.
+* 
+* File exists to seed database with values to allow
+* the use of certain features from the get-go. Also instantiates 
+* the admin login credentials.
+*/
 const express = require('express');
 const router = express.Router();
 
