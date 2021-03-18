@@ -1,40 +1,62 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import useManufacturingForm from './useManufacturingForm'
+import {fetchRows} from '../../APIService'
 
-
-
-const ManufacturingForm = () => {
-
+const ManufacturingForm = (props) => {
+  const [rows, setRows] = useState([])
   
+  useEffect(async () => {
+    await fetchDropDown()
+  }, [])
+
+  const fetchDropDown = async () => {
+   var temp = await fetchRows();
+   console.log("TEMP ", temp)
+    setRows(temp)
+  }
+  var optionItems = rows.map((item) =>
+  <option value = {item.internalId}> {item.internalId} </option>
+)
+
+const {handleChange, handleSubmit, values} = useManufacturingForm(
+  props.submitForm
+)
+
+const submitForm = async (e) => {
+  e.preventDefault()
+  await handleSubmit()
+}
 
     return (
         <div>
             <h1>  Manufacture a bike </h1>
-            <form>
+            <form className="" id= "" onSubmit={submitForm}>
             <label>
           Which Bike Model:
-          <select >
-            <option value="BXSP01">BXSP01</option>
-            <option value="BXSP01">BXSP01</option>
-            <option value="BXSP01">BXSP01</option>
-            <option value="BXSP01">BXSP01</option>
-            
+          <select 
+          id = "Input-ID"
+          type="text"
+          name = "internalId"
+          value= {values.internalId}
+          onChange = {handleChange}>
+            <option value = "select"> Select </option>
+            {optionItems}
           </select>
           <br/>
         </label>
-            <label>
-          Amount Requested:
           <input
-            name="Amount Requested"
-            type="number"
+            id = "Input-ID"
+            type="text"
+            name="quantity"
+            className = "form-input"
+            placeholder= "Quantity"
+            value = {values.quantity}
+            onChange = {handleChange}
             />
-        </label>
         <div>
         <button className = ""  t
         type = "submit">REQUEST</button>
                 </div>
-
-
             </form>
         </div>
 
