@@ -1,3 +1,9 @@
+/** UserRoutes.js
+* Route controller for user models.
+* 
+* File supports Creating, Reading, and Updating of
+* user models.
+*/
 const express = require('express');
 const router = express.Router();
 const User = require('../../Models/User');

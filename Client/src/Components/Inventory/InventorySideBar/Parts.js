@@ -1,12 +1,3 @@
-/** [Parts.js]
-* Summary.
-* Parts inventory that is within the sidebar, using material UI tables.
-*
-* Description.
-This Parts for inventory is inside the sidebar and it is utilizing the UI table.
-It will also fetch info from database and show user the status.
-*/
-
 import React, {useState, useEffect} from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
@@ -18,17 +9,18 @@ import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import "../../../CSSFiles/InventoryHome.css"
 import InventorySideBar from './InventorySideBar';
-import AddInventoryForm from './AddInventoryForm'
+import PartsForm from './PartsForm'
 import axios from 'axios';
-
-
 const useStyles = makeStyles({
     table: {
-      minWidth: 650,
+        minWidth: 50,
+        maxWidth: 1610,
     },
   });
 
-
+/*
+Parts inventory that is within the sidebar, using material UI tables.
+*/
 function Parts() {
     const [rows, setRows] = useState([]);
 
@@ -55,17 +47,23 @@ function Parts() {
     useEffect(()=>{
         fetchRows()
     },[])
+
+
+
     return (
         <div className="Parts Needed">
             <InventorySideBar/>
+            <PartsForm updateRows={fetchRows}/>
             <TableContainer component={Paper}>
-                <Table className={classes.table} size="small" aria-label="a dense table">
+                <Table className={classes.table} size="small" id="Edit-the-table" aria-label="a dense table">
+                    <TableHead><TableRow><TableCell colspan="5" id="The-Table-Title">Parts</TableCell></TableRow></TableHead>
                     <TableHead>
                         <TableRow>
-                            <TableCell>Part ID</TableCell>
+                            <TableCell align="right">Part ID</TableCell>
                             <TableCell align="right">Part Type</TableCell>
                             <TableCell align="right">Price</TableCell>
                             <TableCell align="right">Provider</TableCell>
+                            <TableCell align="right">Quantity</TableCell>
                         </TableRow>
                     </TableHead>
                     <TableBody>
@@ -75,6 +73,7 @@ function Parts() {
                                 <TableCell align="right">{row.partType}</TableCell>
                                 <TableCell align="right">{row.price}</TableCell>
                                 <TableCell align="right">{row.provider}</TableCell>
+                                <TableCell align="right">{row.numberOfUnits}</TableCell>
                             </TableRow>
                         ))}
                     </TableBody>

@@ -190,3 +190,19 @@
     color: #22e010;
     font-weight: 600;
   }
+  
+#Edit-the-table{
+  margin-left:300px
+  
+}
+#Input-ID{
+  margin: 8px 0;
+  width: 110px
+}
+input:focus{
+  border: 2px solid black;
+}
+.Inventory-Home{
+  width:260px;
+  background-color: #D3D3D3
+}

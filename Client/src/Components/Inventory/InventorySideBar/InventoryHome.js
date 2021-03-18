@@ -1,15 +1,3 @@
-/** [InventoryHome.js]
-* Summary. 
-InventoryHome displays the Bike Inventory
-Using material UI tables to create the display we want.
-* 
-* Description.
-We will be using the UI table in order to make the display we need.
-This inventory will also show what is inside the Bike Inventory.Additonaly we can manipulate the data and send it 
-to the backEnd to store the data.
-
-*/
-
 import React, {useState, useEffect} from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
@@ -33,7 +21,10 @@ const useStyles = makeStyles({
 
 
 
-
+/*
+  InventoryHome displays the Bike Inventory
+  Using material UI tables to create the display we want
+*/
 function InventoryHome() {
 
     const [rows, setRows] = useState([]);
@@ -52,26 +43,30 @@ function InventoryHome() {
     }
 
     return (
-        <div className= "Inventory Home">
+        <div className= "">
             <InventorySideBar/>
             <AddInventoryForm updateRows = {getData}/>
            <TableContainer component={Paper}>
-                <Table className={classes.table} size="small" aria-label="a dense table">
+                <Table className={classes.table} id="Edit-the-table"  size="small" aria-label="a dense table">
+                    <TableHead><TableRow><TableCell colspan="5" id="The-Table-Title">Inventory</TableCell></TableRow></TableHead>
                     <TableHead>
                         <TableRow>
-                            <TableCell>Bike ID</TableCell>
-                            <TableCell align="right">Bike Price</TableCell>
-                            <TableCell align="right">Provider</TableCell>
-                            <TableCell align="right">Type</TableCell>
+                            <TableCell align="center">Bike ID</TableCell>
+                            <TableCell align="center">Bike Price</TableCell>
+                            <TableCell align="center">Provider</TableCell>
+                            <TableCell align="center">Type</TableCell>
+                            <TableCell align="center">Quantity</TableCell>
                         </TableRow>
                     </TableHead>
                     <TableBody>
                         {rows.map((row) => (
                             <TableRow key={row.name}>
-                                <TableCell align="right">{row.internalId}</TableCell>
-                                <TableCell align="right">{row.price}</TableCell>
-                                <TableCell align="right">{row.provider}</TableCell>
-                                <TableCell align="right">{row.type}</TableCell>
+                                <TableCell align="center">{row.internalId}</TableCell>
+                                <TableCell align="center">{row.price}</TableCell>
+                                <TableCell align="center">{row.provider}</TableCell>
+                                <TableCell align="center">{row.type}</TableCell>
+                                <TableCell align="center">{row.numberOfUnits}</TableCell>
+
                             </TableRow>
                         ))}
                     </TableBody>

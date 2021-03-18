@@ -1,4 +1,10 @@
-//Declare imports and requirements
+/** app.js
+* Main index file for back-end server.
+* 
+* This file will be what is executed when one runs 'npm start'.
+* Dependnecies, Port specification, Routes and DB connection parameters
+* are all defined in this file.
+*/
 const express = require('express');
 const mongoose = require('mongoose');
 
@@ -25,16 +31,24 @@ app.use('/users', userRoute);                               // Enforce use of ro
 const inventoryRoute = require ('./Routes/Api/InventoryRoutes.js'); // Define inventory route
 app.use('/inventory', inventoryRoute);
 
+const ManufacturingRoute = require('./Routes/Api/ManufacturingRoutes.js'); // Define manufacturing route
+app.use('/manufacturing', ManufacturingRoute);
+
 
 // Connect to mongoose mongoDB
-///* Uncomment for local host mongodb connection
-//var db_link = 'mongodb://localhost:27017/?readPreference=primary&appname=MongoDB%20Compass&ssl=false'; //TODO COMMENT
-//*/
 var db_link = 'mongodb://mongo:27017/kapp-docker-express';    //docker mongo container link
+/* Comment for local host mongodb connection
+db_link = 'mongodb://localhost:27017/?readPreference=primary&appname=MongoDB%20Compass&ssl=false';
+//*/
+
 
 mongoose.connect(
     db_link,                                    // Target DB
-    { useNewUrlParser: true },                  // Removes deprecation warning
+    {   // Removes deprecation warnings
+        useNewUrlParser: true, 
+        useUnifiedTopology: true, 
+        useCreateIndex: true
+    },     
      () => console.log(`... Connected to DB on ${db_link}`)  // Log message
 );
 

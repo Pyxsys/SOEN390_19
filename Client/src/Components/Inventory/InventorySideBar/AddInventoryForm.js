@@ -1,4 +1,4 @@
-/** [AddInventory.js]
+/** [AddInventoryForm.js]
 * Summary.
 * The following Form adds an inventory item to the database
 * 
@@ -7,17 +7,17 @@
 */
 import React from 'react'
 import useAddInventory from './useAddInventory'
+import {useState} from 'react';
 
 /*
-The followwing Form adds an inventory item to the database
+The following Form adds an inventory item to the database
 */
 const AddInventoryForm = (props) => {
-    
+   
     const {handleChange, values, handleSubmit} = useAddInventory(
         props.submitForm
     );
-
-
+    
     const submitForm = async (e) => {
         e.preventDefault()
         await handleSubmit()
@@ -25,13 +25,13 @@ const AddInventoryForm = (props) => {
     }
 
     return (
-        <div className = "">
-            <form className = "" onSubmit = {submitForm}>
-                <h1>Add Inventory Information</h1>
+        <div className = "Inventory-Home">
+            <form className = "" id="" onSubmit = {submitForm}>
+                <h1>Add Inventory</h1>
 
-                <div className = "">
+                <div className = "form-data-edit">
                     <input
-                    id = "internalId"
+                    id = "Input-ID"
                     type = "text"
                     name = "internalId"
                     className = "form-input"
@@ -40,9 +40,9 @@ const AddInventoryForm = (props) => {
                     onChange = {handleChange}
                     />
                 </div>
-                <div className = "">
+                <div className = "form-data-edit">
                     <input
-                    id = "price"
+                    id = "Input-ID"
                     type = "text"
                     name = "price"
                     className = "form-input"
@@ -51,9 +51,9 @@ const AddInventoryForm = (props) => {
                     onChange = {handleChange}
                     />
                 </div>
-                <div className = "">
+                <div className = "form-data-edit">
                     <input
-                    id = "provider"
+                    id = "Input-ID"
                     type = "text"
                     name = "provider"
                     className = "form-input"
@@ -62,9 +62,9 @@ const AddInventoryForm = (props) => {
                     onChange = {handleChange}
                     />
                 </div>
-                <div className = "">
+                <div className = "form-data-edit">
                     <input
-                    id = "type"
+                    id = "Input-ID"
                     type = "text"
                     name = "type"
                     className = "form-input"
@@ -73,12 +73,45 @@ const AddInventoryForm = (props) => {
                     onChange = {handleChange}
                     />
                 </div>
+                <div className = "form-data-edit">
+                    <input
+                    id = "Input-ID"
+                    type = "text"
+                    name = "numberOfUnits"
+                    className = "form-input"
+                    placeholder = "Add quantity"
+                    value = {values.numberOfUnits}
+                    onChange = {handleChange}
+                    />
+                </div>
+
+                <div className = "form-data-edit">
+                    <input
+                    id = "Input-ID"
+                    type = "text"
+                    name = "partsList"
+                    className = "form-input"
+                    placeholder = "Add parts list"
+                    value = {values.partsList}
+                    onChange = {handleChange}
+                    />
+                </div>
                 <div>
                     <button className = ""
                     type = "submit">Add Info</button>
                 </div>
             </form>
+            <form className="" onSubmit={handleSubmit}>   
+       
+            {/* {values.partsList.map((part, index)=>(
 
+                {
+                values.partsList.map((part, index)=>(
+
+                <div key={index}>
+                </div>
+            ))} */}
+        </form>
         </div>
     )
 }

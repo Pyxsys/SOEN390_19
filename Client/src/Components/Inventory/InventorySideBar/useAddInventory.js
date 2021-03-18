@@ -16,10 +16,10 @@ const useAddInventory = () => {
         internalId: '',
         type: '',
         price: '',
+        partsList:'',
         numberOfUnits: '',
         provider: '',
     })
-
     const handleChange = e => {
         const {name, value} = e.target
         setValues({
@@ -28,15 +28,31 @@ const useAddInventory = () => {
         })
     }
 
+    const addPartsInformation = (stringToBeSplit) => {
+        var partsAndQuanities = stringToBeSplit.split(", ")
+        var partsArray = []
+        for(var i=0; i<partsAndQuanities.length; i++){
+            // create object
+            var j = {partInternalId: partsAndQuanities[i], amountRequired: parseInt(partsAndQuanities[++i])}
+            //add object to array
+            partsArray.push(j)
+        }      
+        console.log("From addpartsInformation ", partsArray) 
+        return partsArray
+
+}
+
     const handleSubmit = async () => {
         console.log("Attempting to add info")
+        // addPartsInformation(values.partsList)
         try{
             const response = await axios.post(`http://localhost:5000/inventory/bikeinventory`,{
                 internalId: values.internalId,
                 price: values.price,
                 type: values.type,
                 provider: values.provider,
-                numberOfUnits: 1
+                partsList: addPartsInformation(values.partsList),
+                numberOfUnits: parseInt(values.numberOfUnits)
             })
             console.log("info added to database")
             console.log(response)

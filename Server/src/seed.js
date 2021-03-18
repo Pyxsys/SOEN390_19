@@ -1,6 +1,10 @@
-/** File exists to seed database with values to allow
- *  the use of certain features from the get-go.
- */
+/** seed.js
+* Seed file for populating DB on startup.
+* 
+* File exists to seed database with values to allow
+* the use of certain features from the get-go. Also instantiates 
+* the admin login credentials.
+*/
 const express = require('express');
 const router = express.Router();
 
@@ -29,7 +33,7 @@ const part001 =
     internalId: "JBH01", 
     partType: "Handle Bars", 
     price: 30, 
-    number_Of_Units: 400, 
+    numberOfUnits: 400, 
     provider: "James Bars", 
     partDocPath: "N/A", 
     partDocStep: "N/A"
@@ -38,7 +42,7 @@ part002 = {
     internalId: "JBH02", 
     partType: "Handle Bars",
     price: 20, 
-    number_Of_Units: 250, 
+    numberOfUnits: 250, 
     provider: "James Bars", 
     partDocPath: "N/A", 
     partDocStep: "N/A"
@@ -50,10 +54,13 @@ const bike001 =
     internalId:       "BXSP01",
     type:             "Speed",   
     price:            450,
-    number_Of_Units:  200,
+    numberOfUnits:    200,
     provider:         "Bixe",
-    BikeDocPath:      "N/A",   
-    PartsList: ["JBH01", "JBH02"]
+    bikeDocPath:      "N/A",   
+    partsList: [
+        {partInternalId: "JBH01"}, 
+        {partInternalId: "JBH02"}
+    ]
     
 };
 

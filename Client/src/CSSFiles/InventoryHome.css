@@ -1,15 +1,19 @@
 table {
     font-family: arial, sans-serif;
-    border-collapse: collapse;
+    border-collapse: initial;
     width: 100%;
   }
   
   td, th {
     border: 1px solid #dddddd;
-    text-align: left;
+    text-align: center;
     padding: 15px;
   }
   
   tr:nth-child(even) {
     background-color: #dddddd;
+  }
+  #The-Table-Title{
+    font-size:25px;
+    font-weight:bold;
   }
