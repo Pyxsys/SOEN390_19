@@ -1,6 +1,5 @@
 .NavbarItems{
-    background: linear-gradient(90deg, chocolate 0%, 
-    rgba(73,63,252) 100%);
+    background-color: black;
     height: 80px;
     display: flex;
     align-items: center;
@@ -27,16 +26,17 @@
     text-align: center;
     width: 70vw;
     justify-content: end;
-    margin-right: 2rem;
+    margin-right: 20rem;
 }
 
 .nav-links{
     color: white;
     text-decoration:none;
     padding: 0.5rem 1rem;
+    margin-right: 17rem
 }
 
-.nav-links :hover{
+.nav-links a:hover{
     background-color: chocolate;
     border-radius: 4px;
     transition: all 0.2s ease-out
@@ -137,6 +137,9 @@
 
     Button{
         display: none;
+    }
+    #edit-the-elements{
+        text-align: right;
     }
 
 }

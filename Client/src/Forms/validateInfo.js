@@ -1,4 +1,11 @@
-
+/** [validateInfo.js]
+* Summary. 
+Ensuring no invalid emails, username, or passwords are given through the signup form.
+* 
+* Description.
+Cheking user's input to make sure that they fill user register details as the website requires.
+Each input box has its own rules and we are checking that a valid input from the user will be received.
+*/
 
 export default function validateInfo(values){
     let errors ={}

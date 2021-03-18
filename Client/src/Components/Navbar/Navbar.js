@@ -1,26 +1,33 @@
+/** [Navbar.js]
+* Summary.
+The key components of making a NavigationBar.This bar will render the menu items.
+* 
+* Description.
+This code is to build Navigation Bar on the left side of the screen once logged in.
+*/
 import React, { Component } from 'react'
 import {MenuItems} from './MenuItems'
 import {NavBarButton} from './NavBarButton'
 import '../../CSSFiles/Navbar.css'
 import {AuthContext} from '../../Contexts/AuthorizationContext'
+import {Link} from "react-router-dom" 
 
 
+//Navbar is React Component
 class Navbar extends Component{
         state = {clicked: false}
 
+    //This state is when one of the items is clicked    
     handleClick = () => {
         this.setState({
             clicked: !this.state.clicked
         })
 
     }
-
-
-
     
-
-
+    //Navbar renders the menu items
     render(){
+
         return(
             <nav className = "NavbarItems">
                 <h1 className = "navbar-logo">React <i className="fab fa-react"></i></h1>
@@ -32,11 +39,10 @@ class Navbar extends Component{
                     {MenuItems.map((item, index) => {
                         return(
                             <li key = {index}>
-                                <a 
-                                className={item.cName} 
-                                href = {item.url}>
-                                {item.title}
-                                </a>
+                                <Link to = {item.path}
+                                className={item.cName} >
+                                <span>{item.title}</span>
+                                </Link>
                             </li>
                         )
                     })}                    
