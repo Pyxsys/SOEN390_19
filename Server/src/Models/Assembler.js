@@ -125,7 +125,7 @@ async function ensurePartsAvailable(partsList, requested_amount){
     let min_possible_assemblies = requested_amount;
     let insufficient_parts = false;
 
-    for( const Element of Object.keys(partsList)){
+    for( const Element of partsList){
         // find needed parts in db
         let part = await Part.BikeParts.findOne({ internalId: Element.partInternalId });
         // throw error if part not found
