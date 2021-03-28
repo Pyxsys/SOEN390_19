@@ -5,6 +5,7 @@
 * Description. 
 * The form sends Bike info that will be added into the database with user-specified attributes.
 */
+
 import React from 'react'
 import useAddInventory from './useAddInventory'
 import {useState} from 'react';
@@ -26,7 +27,7 @@ const AddInventoryForm = (props) => {
 
     return (
         <div className = "Inventory-Home">
-            <form className = "" id="" onSubmit = {submitForm}>
+            <form className = "inv-form" id="" onSubmit = {submitForm}>
                 <h1>Add Inventory</h1>
 
                 <div className = "form-data-edit">
@@ -40,6 +41,7 @@ const AddInventoryForm = (props) => {
                     onChange = {handleChange}
                     />
                 </div>
+                &nbsp; &nbsp;&nbsp; &nbsp;
                 <div className = "form-data-edit">
                     <input
                     id = "Input-ID"
@@ -51,6 +53,7 @@ const AddInventoryForm = (props) => {
                     onChange = {handleChange}
                     />
                 </div>
+                &nbsp; &nbsp;&nbsp; &nbsp;
                 <div className = "form-data-edit">
                     <input
                     id = "Input-ID"
@@ -62,6 +65,7 @@ const AddInventoryForm = (props) => {
                     onChange = {handleChange}
                     />
                 </div>
+                &nbsp; &nbsp;&nbsp; &nbsp;
                 <div className = "form-data-edit">
                     <input
                     id = "Input-ID"
@@ -73,6 +77,7 @@ const AddInventoryForm = (props) => {
                     onChange = {handleChange}
                     />
                 </div>
+                &nbsp; &nbsp;&nbsp; &nbsp;
                 <div className = "form-data-edit">
                     <input
                     id = "Input-ID"
@@ -84,7 +89,7 @@ const AddInventoryForm = (props) => {
                     onChange = {handleChange}
                     />
                 </div>
-
+                &nbsp; &nbsp;&nbsp; &nbsp;
                 <div className = "form-data-edit">
                     <input
                     id = "Input-ID"
@@ -96,6 +101,7 @@ const AddInventoryForm = (props) => {
                     onChange = {handleChange}
                     />
                 </div>
+                &nbsp; &nbsp;&nbsp; &nbsp;
                 <div>
                     <button className = ""
                     type = "submit">Add Info</button>
