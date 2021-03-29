@@ -103,7 +103,7 @@ const AddInventoryForm = (props) => {
                 </div>
                 &nbsp; &nbsp;&nbsp; &nbsp;
                 <div>
-                    <button className = ""
+                    <button className = "inv-input-btn"
                     type = "submit">Add Info</button>
                 </div>
             </form>

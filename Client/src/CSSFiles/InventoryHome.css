@@ -18,3 +18,8 @@ table {
     font-weight:bold;
     background-color:#a9a9a9d2;
   }
+
+  .Inventory-Container{
+    margin-left: 175px;
+    max-width: 1600px;
+  }

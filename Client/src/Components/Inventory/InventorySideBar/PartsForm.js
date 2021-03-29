@@ -35,6 +35,7 @@ const PartsForm = (props) => {
                     onChange = {handleChange}
                     />
                 </div>
+                &nbsp; &nbsp; &nbsp; &nbsp;
                 <div className = "form-data-edit">
                     <input
                     id = "Input-ID"
@@ -46,6 +47,7 @@ const PartsForm = (props) => {
                     onChange = {handleChange}
                     />
                 </div>
+                &nbsp; &nbsp; &nbsp; &nbsp;
                 <div className = "form-data-edit">
                     <input
                     id = "Input-ID"
@@ -57,6 +59,7 @@ const PartsForm = (props) => {
                     onChange = {handleChange}
                     />
                 </div>
+                &nbsp; &nbsp; &nbsp; &nbsp;
                 <div className = "form-data-edit">
                     <input
                     id = "Input-ID"
@@ -68,6 +71,7 @@ const PartsForm = (props) => {
                     onChange = {handleChange}
                     />
                 </div>
+                &nbsp; &nbsp; &nbsp; &nbsp;
                 <div className = "form-data-edit">
                     <input
                     id = "Input-ID"
@@ -80,11 +84,12 @@ const PartsForm = (props) => {
                     />
                 </div>
               <div>
-                <button className="" type="submit">Add Part</button>
+                <button className="inv-input-btn" type="submit">Add Part</button>
               </div>
                 
             </form>
         </div>
+        
     )
 }
 
