@@ -35,6 +35,7 @@ class Schedule {
     get start()     { return this._start; }
     get end()       { return this._end; }
     get task()      { return this._task; }
+    get bikeID()    { return this._task; }
 
     //Methods
 
@@ -77,7 +78,9 @@ class Assembler {
     get duration()              { return this._schedule.calcDuration(); }
     get bikeModel()             { return this._schedule.task; }
     get expectedProduction()    { return this.calcExpectedProduction(); }
-    get state()                 { return `  (Assembler: ${this.name}) ${this._produced}/${this.expectedProduction} bikes assembled.`; }
+    get produced()              { return this._produced; }
+    get state()                 { return `(Assembler: ${this.name}) ${this.produced}/${this.expectedProduction} bikes assembled.`; }
+    get stateAsJson()           { return `{assembler: ${this.name}, produced: ${this.produced}, expected: ${this.expectedProduction}}`; }
 
     //Methods
 
@@ -87,11 +90,61 @@ class Assembler {
      */
     calcExpectedProduction() { return this.duration * this.rate; }
 
-    /**
-     * assembles bikes over the course of time according to the schedule and rate.
+    /**TODO
+     * Simulates Assembling bikes over the course of time according to the schedule and rate.
+     * [Use of observers strongly considered]
      */
     run(){
-        //TODO
+        //declare/define variables
+        let job_finished = false;       //lets the assembler know if all bikes have been assembled
+        let job_halted = false;         //lets assembler know if there are delays
+        const target_model = await Bike.Bikes.findOne({ internalId: this._schedule.bikeID });
+        if(target_model === null) {     //ensures model is valid
+            console.log("\x1b[31m", `> failed: Bike model not found.`);
+            break; 
+            }    
+
+        //produce unique order number?
+
+        //create assembly job and submit to db?
+
+        //start assemblies
+        console.log(`(${this.name}) Machine has started new manufacturing order:`);
+        
+        while(!job_finished){
+        
+            //Determine if at rate tick-over (would a bike be done at this time?/has a day passed)
+            if((!job_halted) && true){
+                try{
+                    //determine number of bikes to be assembled
+                    let batch_amount = (this.rate < this.expectedProduction - this.produced) ? this.rate : this.expectedProduction - this.produced ;
+
+                    //ensure parts available
+                    parts_check = await ensurePartsAvailable(target_model.partsList, batch_amount);
+
+                    //assemble bike.
+                    this.produced += assembleBike(this._schedule.bikeID);
+
+                } catch(err) { 
+                    //on errors, halt job
+                    job_halted = true; 
+                } 
+
+                //is job done?
+                if(this.produced === this.expectedProduction){
+                    job_finished = true;
+                }
+
+            }
+            
+            //if job is halted
+            if(job_halted) {
+                //check if parts are now available
+            }
+        }
+
+        console.log(`(${this.name}) Machine has finished manufacturing order:`);
+        
     }
 }
 
