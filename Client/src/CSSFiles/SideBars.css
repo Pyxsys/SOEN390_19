@@ -7,9 +7,11 @@
 }
 
 .menu-bars{
-    margin-left: 2rem;
+    margin-left: 7rem;
     font-size: 2rem;
     background: none;
+    position: absolute;
+    top: 25px; 
 }
 
 .side-menu{
