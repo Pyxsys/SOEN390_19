@@ -94,14 +94,14 @@ class Assembler {
      * Simulates Assembling bikes over the course of time according to the schedule and rate.
      * [Use of observers strongly considered]
      */
-    run(){
+    async run(){
         //declare/define variables
         let job_finished = false;       //lets the assembler know if all bikes have been assembled
         let job_halted = false;         //lets assembler know if there are delays
         const target_model = await Bike.Bikes.findOne({ internalId: this._schedule.bikeID });
         if(target_model === null) {     //ensures model is valid
             console.log("\x1b[31m", `> failed: Bike model not found.`);
-            break; 
+            return null;
             }    
 
         //produce unique order number?
