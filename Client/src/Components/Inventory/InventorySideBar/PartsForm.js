@@ -30,7 +30,7 @@ const PartsForm = (props) => {
                     type = "text"
                     name = "internalId"
                     className = "form-input"
-                    placeholder = "Add Part ID"
+                    placeholder = "Part ID"
                     value = {partValues.internalId}
                     onChange = {handleChange}
                     />
@@ -42,7 +42,7 @@ const PartsForm = (props) => {
                     type = "text"
                     name = "partType"
                     className = "form-input"
-                    placeholder = "Add Type"
+                    placeholder = "Type"
                     value = {partValues.type}
                     onChange = {handleChange}
                     />
@@ -54,7 +54,7 @@ const PartsForm = (props) => {
                     type = "text"
                     name = "price"
                     className = "form-input"
-                    placeholder = "Add Price"
+                    placeholder = "Price"
                     value = {partValues.price}
                     onChange = {handleChange}
                     />
@@ -66,7 +66,7 @@ const PartsForm = (props) => {
                     type = "text"
                     name = "provider"
                     className = "form-input"
-                    placeholder = "Add Provider"
+                    placeholder = "Provider"
                     value = {partValues.provider}
                     onChange = {handleChange}
                     />
@@ -78,15 +78,13 @@ const PartsForm = (props) => {
                     type = "text"
                     name = "numberOfUnits"
                     className = "form-input"
-                    placeholder = "Add Number Of Units"
+                    placeholder = "Number Of Units"
                     value = {partValues.numberOfUnits}
                     onChange = {handleChange}
                     />
                 </div>
-              <div>
-                <button className="inv-input-btn" type="submit">Add Part</button>
-              </div>
-                
+                &nbsp; &nbsp; &nbsp; &nbsp;            
+                <button className="inv-input-btn" type="submit">Add Part</button>                
             </form>
         </div>
         
