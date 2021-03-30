@@ -186,6 +186,10 @@
   margin: 8px 0;
   width: 110px
 }
+#Input-ID-Big{
+  margin: 8px 0;
+  width: 330px
+}
 input:focus{
   border: 2px solid black;
 }
@@ -214,6 +218,7 @@ input:focus{
   color: #000000;
   font-weight: bold;
   font-size: 1rem;
+
 }
 
 .inv-input-btn:hover
@@ -224,3 +229,4 @@ input:focus{
   box-shadow: 0px 0px 8px #47383880;
   transition: all 0.2s linear;
 }
+

@@ -36,7 +36,7 @@ const AddInventoryForm = (props) => {
                     type = "text"
                     name = "internalId"
                     className = "form-input"
-                    placeholder = "Add Bike ID"
+                    placeholder = "Bike ID"
                     value = {values.internalId}
                     onChange = {handleChange}
                     />
@@ -48,7 +48,7 @@ const AddInventoryForm = (props) => {
                     type = "text"
                     name = "price"
                     className = "form-input"
-                    placeholder = "Add Price"
+                    placeholder = "Price"
                     value = {values.price}
                     onChange = {handleChange}
                     />
@@ -60,7 +60,7 @@ const AddInventoryForm = (props) => {
                     type = "text"
                     name = "provider"
                     className = "form-input"
-                    placeholder = "Add Provider"
+                    placeholder = "Provider"
                     value = {values.provider}
                     onChange = {handleChange}
                     />
@@ -72,7 +72,7 @@ const AddInventoryForm = (props) => {
                     type = "text"
                     name = "type"
                     className = "form-input"
-                    placeholder = "Add Type"
+                    placeholder = "Type"
                     value = {values.type}
                     onChange = {handleChange}
                     />
@@ -84,7 +84,7 @@ const AddInventoryForm = (props) => {
                     type = "text"
                     name = "numberOfUnits"
                     className = "form-input"
-                    placeholder = "Add quantity"
+                    placeholder = "Quantity"
                     value = {values.numberOfUnits}
                     onChange = {handleChange}
                     />
@@ -92,20 +92,18 @@ const AddInventoryForm = (props) => {
                 &nbsp; &nbsp;&nbsp; &nbsp;
                 <div className = "form-data-edit">
                     <input
-                    id = "Input-ID"
+                    id = "Input-ID-Big"
                     type = "text"
                     name = "partsList"
                     className = "form-input"
-                    placeholder = "Add parts list"
+                    placeholder = "Parts list"
                     value = {values.partsList}
                     onChange = {handleChange}
                     />
                 </div>
                 &nbsp; &nbsp;&nbsp; &nbsp;
-                <div>
                     <button className = "inv-input-btn"
                     type = "submit">Add Info</button>
-                </div>
             </form>
             <form className="" onSubmit={handleSubmit}>   
        
