@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kapp-client-deployment
+  labels:
+    app: kapp-client
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: kapp-client
+  template:
+    metadata:
+      labels:
+        app: kapp-client
+    spec:
+      containers:
+      - name: kapp-client
+        image: soen390_19_react-app:latest
+        ports:
+        - containerPort: 3000
