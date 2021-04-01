@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: kapp-client-service
+spec:
+  selector:
+    app: kapp-client
+  ports:
+    - protocol:TCP
+      port: 80
+      targetPort: 3000
