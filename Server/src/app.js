@@ -34,6 +34,9 @@ app.use('/inventory', inventoryRoute);
 const ManufacturingRoute = require('./Routes/Api/ManufacturingRoutes.js'); // Define manufacturing route
 app.use('/manufacturing', ManufacturingRoute);
 
+const AccountingRoute = require('./Routes/Api/AccountingRoutes.js'); // define accounting route
+app.use('/accounting', AccountingRoute);
+
 
 // Connect to mongoose mongoDB
 var db_link = 'mongodb://mongo:27017/kapp-docker-express';    //docker mongo container link
