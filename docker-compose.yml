@@ -1,6 +1,6 @@
 version: '3'
 services:
-  react-app:
+  react_client:
     container_name: kapp-docker-react
     restart: always
     build: './Client'
@@ -9,7 +9,7 @@ services:
     networks:
      - kapp-app
   
-  api-server:
+  express_server:
     container_name: kapp-docker-express
     restart: always
     build: './Server'

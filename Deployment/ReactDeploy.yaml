@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: kapp-client
-        image: soen390_19_react-app:latest
+        image: soen390_19_react_client:latest
         ports:
         - containerPort: 3000
