@@ -35,7 +35,7 @@ const ManufacturingRoute = require('./Routes/Api/ManufacturingRoutes.js'); // De
 app.use('/manufacturing', ManufacturingRoute);
 
 const AccountingRoute = require('./Routes/Api/AccountingRoutes.js'); // define accounting route
-//app.use('/accounting', AccountingRoute);
+app.use('/accounting', AccountingRoute);
 
 
 // Connect to mongoose mongoDB

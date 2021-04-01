@@ -6,7 +6,8 @@
 
 const express = require('express');
 const router = express.Router();
-const Sale = require('../../Models/Sales.js');
+//const Sale = require('../../Models/Sales.js');
+const Bike = require('../../Models/Bike.js');
 
 // Routes-------------------------
 // ------Accounting----------------
@@ -17,7 +18,7 @@ const Sale = require('../../Models/Sales.js');
 
  router.get('/' , async (req, res) => {
     try{
-        const sales = await Sale.Sales.find();
+        const sales = await Bike.Bikes.find(); // change to const sales = await Sale.Sales.find() once sales model is complete
         res.json(sales);    //returns all found sales
     } catch(err){
         console.log(`> failed: ${err}`);
@@ -25,3 +26,4 @@ const Sale = require('../../Models/Sales.js');
     }
 });
 
+module.exports = router;
