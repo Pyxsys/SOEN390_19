@@ -6,3 +6,9 @@
   padding: 0;
   font-family: 'PT Sans', sans-serif;
 }
+#myBackGround {
+  background-image: url('https://user-images.githubusercontent.com/58408904/111043140-f9c86300-840e-11eb-9613-a063c1600846.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  background-size: 100% 100%;
+}
