@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import Manufacturing from './Manufacturing'
 import ManufacturingForm from './ManufacturingForm'
 import {fetchRows} from '../../APIService'
+import InventorySideBar from '../Inventory/InventorySideBar/InventorySideBar'
 
 /** [ManufaturingHome.js]
 * Summary.
@@ -14,6 +15,7 @@ function ManufacturingHome() {
 
     return (
         <div>
+            <InventorySideBar/>
             <ManufacturingForm/>
         
         </div>
