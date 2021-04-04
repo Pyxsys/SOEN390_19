@@ -29,6 +29,8 @@
   },
   "jest": {
     "preset": "@shelf/jest-mongodb",
-    "verbose": true
+    "verbose": true,
+    "collectCoverage": true,
+    "coverageReporters": ["json", "html"]
   }
 }
