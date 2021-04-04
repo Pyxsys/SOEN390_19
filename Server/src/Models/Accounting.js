@@ -14,4 +14,4 @@ const accounting_schema = mongoose.Schema({
     client:             {type: String, required: false},  //refer to the person making the order
 });
 
-module.exports.BikeParts = mongoose.model('Accounting', accounting_schema);
+module.exports.Accounting = mongoose.model('Accounting', accounting_schema);
