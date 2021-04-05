@@ -9,7 +9,7 @@ Additionally, I will show us the status of the upload
 import axios from "axios"
 import { useState } from "react"
 import fetchRows from "./InventoryHome"
-import config from '../../../../config.json';
+import config from '../../../config.json';
 
 const useAddInventory = () => {
 

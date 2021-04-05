@@ -8,7 +8,7 @@
 */
 import axios from "axios"
 import { useState } from "react"
-import config from '../../../../config.json'
+import config from '../../../config.json'
 
 
 const usePartsForm = () => {

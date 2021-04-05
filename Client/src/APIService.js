@@ -10,7 +10,7 @@ Thanks to this service the inventory could be edited.
 */
 
 import axios from 'axios';
-import config from '../config.json'
+import config from './config.json'
 
 export const fetchRows = async () => {
     try{

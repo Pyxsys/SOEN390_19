@@ -10,7 +10,7 @@ import React, {useState, useEffect} from 'react'
 import validateLogin from './validateLogin'
 import {AuthContext} from '../Contexts/AuthorizationContext'
 import axios from 'axios'
-import config from '../../config.json'
+import config from '../config.json'
 
 
 //this callback function is used to when the user presses the log in button.  
