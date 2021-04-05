@@ -43,7 +43,7 @@ const useLogin = callback => {
         if(Object.keys(errors).length === 0){
             try{
                 console.log("going to database to verify user")
-                axios.get(`http://localhost:5000/users/login/${values.email}/${values.password}`,{
+                axios.get(config.site_root_from_config+`/users/login/${values.email}/${values.password}`,{
                     email: values.email,
                     pass: values.password
                 })

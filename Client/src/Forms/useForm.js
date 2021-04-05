@@ -48,7 +48,7 @@ const useForm = callback => {
             console.log("Registration information is good")
             console.log(values)
             try{
-                axios.post("http://localhost:5000/users", { 
+                axios.post(config.site_root_from_config+"/users", { 
                     
                     username: values.username,
                     password: values.password,
