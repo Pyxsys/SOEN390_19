@@ -11,7 +11,6 @@ import "../../../CSSFiles/InventoryHome.css"
 import InventorySideBar from './InventorySideBar';
 import PartsForm from './PartsForm'
 import axios from 'axios';
-import config from '../../../../config.json';
 const useStyles = makeStyles({
     table: {
         minWidth: 50,
@@ -28,7 +27,7 @@ function Parts() {
     const fetchRows = () => {
         try{
             console.log("Fetching Rows from Database")
-            axios.get(config.site_root_from_config+`/inventory`+`/partinventory`,{
+            axios.get(`http://localhost:5000/inventory/partinventory`,{
 
             }).then((response) => {
                 console.log("Got bike inventory")

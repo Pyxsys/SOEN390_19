@@ -10,12 +10,11 @@ Thanks to this service the inventory could be edited.
 */
 
 import axios from 'axios';
-import config from '../config.json'
 
 export const fetchRows = async () => {
     try{
         console.log("Fetching Rows from Database")
-        const response = await axios.get(config.site_root_from_config+`/inventory`+`/bikeinventory`)
+        const response = await axios.get(`http://localhost:5000/inventory/bikeinventory`)
         console.log("Got bike inventory")
         console.log(response.data)
         return response.data

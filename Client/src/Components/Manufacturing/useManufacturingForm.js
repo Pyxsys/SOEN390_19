@@ -1,6 +1,5 @@
 import axios from "axios"
 import { useState } from "react"
-import config from '../../../config.json'
 
 
 /** [useManufacturingFrom.js.js]
@@ -31,7 +30,7 @@ const useManufacturingForm = () => {
         console.log("Attempting to manufacture bike")
         try{
             console.log("QUANTITY: ", values.quantity)
-            const response = await axios.post(config.site_root_from_config+"/manufacturing"+"/assemble", {
+            const response = await axios.post("http://localhost:5000/manufacturing/assemble", {
                 internalId: values.internalId,
                 quantity: parseInt(values.quantity)
             })
