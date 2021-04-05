@@ -8,7 +8,6 @@
 */
 import axios from "axios"
 import { useState } from "react"
-import config from '../../../../config.json'
 
 
 const usePartsForm = () => {
@@ -31,7 +30,7 @@ const usePartsForm = () => {
         console.log("Attempting to add info")
         // addPartsInformation(values.partsList)
         try{
-            const response = await axios.post(config.site_root_from_config+`/inventory`+`/partinventory`,{
+            const response = await axios.post(`http://localhost:5000/inventory/partinventory`,{
                 internalId: partValues.internalId,
                 partType: partValues.partType,
                 price: partValues.price,

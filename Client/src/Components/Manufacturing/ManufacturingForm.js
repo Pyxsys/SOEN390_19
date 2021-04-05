@@ -57,7 +57,7 @@ const submitForm = async (e) => {
           <br/>
         </label>
           <input
-             id = "Input-ID-Manufacture"
+            id = "Input-ID-Manufacture"
             type="text"
             name="quantity"
             placeholder= "Quantity"

@@ -18,6 +18,11 @@ export const MenuItems = [
         cName: "nav-links"
     },
     {
+        title: "Accounting",
+        path: "/Accounting",
+        cName: "nav-links"
+    },
+    {
         title: "Logout",
         path: "#",
         cName: "nav-links-mobile"
