@@ -26,7 +26,7 @@ const FormLogin = (props) => {
     return (  
     <div className ="form-content-login" >
        <form className= "form" onSubmit={handleSubmit}>
-          <img src="https://user-images.githubusercontent.com/58408904/110261377-03b91480-7f7e-11eb-894d-87afe991198b.png" alt="logo" width="300" height="300"  />
+          <img src="https://user-images.githubusercontent.com/58408904/112918742-9f4c2980-90d3-11eb-9d2d-a94f0acaf0e5.png" alt="logo" width="300" height="300"  />
               <h1>Please Login using your email and password</h1>
               <div className="form-inputs">
                   <label htmlFor="email"

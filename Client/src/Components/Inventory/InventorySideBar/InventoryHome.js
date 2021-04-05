@@ -46,7 +46,7 @@ function InventoryHome() {
         <div className= "">
             <InventorySideBar/>
             <AddInventoryForm updateRows = {getData}/>
-           <TableContainer component={Paper}>
+           <TableContainer component={Paper} className = "Inventory-Container">
                 <Table className={classes.table} id="Edit-the-table"  size="small" aria-label="a dense table">
                     <TableHead><TableRow><TableCell colspan="5" id="The-Table-Title">Inventory</TableCell></TableRow></TableHead>
                     <TableHead>

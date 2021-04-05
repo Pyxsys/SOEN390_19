@@ -10,6 +10,9 @@ import axios from "axios"
 import { useState } from "react"
 import fetchRows from "./InventoryHome"
 
+import config from '../../../config.json';
+
+
 const useAddInventory = () => {
 
     const [values, setValues] = useState({

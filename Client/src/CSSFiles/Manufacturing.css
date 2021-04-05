@@ -1,0 +1,17 @@
+#manufacture-formed{
+    text-align: center;
+
+}
+#Input-ID-Manufacture{
+    margin: 8px 0;
+    width: 110px
+
+  }
+  input:focus{
+    border: 2px solid black;
+  }
+
+  input:hover {
+    border: 1px solid #999;
+    border-radius: 5px;
+} 
