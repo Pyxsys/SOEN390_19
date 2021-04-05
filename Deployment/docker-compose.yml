@@ -3,7 +3,7 @@ services:
   react_client:
     container_name: kappindu-react
     restart: always
-    image: kappacr.azurecr.io/soen390_19_react_client:s3
+    image: 'soen390_19_react_client'
     ports:
       - '80:3000'
     networks:
@@ -12,7 +12,7 @@ services:
   express_server:
     container_name: kappindu-express
     restart: always
-    image: kappacr.azurecr.io/soen390_19_express_server:s3
+    image: 'soen390_19_express_server'
     ports:
       - '5000:5000'
     networks:
@@ -21,7 +21,7 @@ services:
       - mongo    
   mongo:
     container_name: kappindu-mongo
-    image: kappacr.azurecr.io/mongo:39019
+    image: mongo
     ports:
       - '27017:27017'
     networks:
