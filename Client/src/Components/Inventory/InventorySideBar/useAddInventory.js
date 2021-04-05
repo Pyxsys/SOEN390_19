@@ -9,7 +9,9 @@ Additionally, I will show us the status of the upload
 import axios from "axios"
 import { useState } from "react"
 import fetchRows from "./InventoryHome"
+
 import config from '../../../config.json';
+
 
 const useAddInventory = () => {
 
@@ -47,7 +49,7 @@ const useAddInventory = () => {
         console.log("Attempting to add info")
         // addPartsInformation(values.partsList)
         try{
-            const response = await axios.post(config.site_root_from_config+`/inventory`+`/bikeinventory`,{
+            const response = await axios.post(`http://localhost:5000/inventory/bikeinventory`,{
                 internalId: values.internalId,
                 price: values.price,
                 type: values.type,

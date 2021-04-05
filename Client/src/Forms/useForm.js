@@ -10,7 +10,9 @@ Using axios.post it is able to add the information to the database. Making sure 
 import validate from './validateInfo'
 import {useState, useEffect} from 'react'
 import axios from 'axios'
+
 import config from '../config.json'
+
 
 
 const useForm = callback => {
@@ -46,7 +48,7 @@ const useForm = callback => {
             console.log("Registration information is good")
             console.log(values)
             try{
-                axios.post(config.site_root_from_config+"/users", { 
+                axios.post("http://localhost:5000/users", { 
                     
                     username: values.username,
                     password: values.password,
