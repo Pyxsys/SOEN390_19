@@ -12,3 +12,35 @@
     background-attachment: fixed;
   background-size: 100% 100%;
 }
+
+.footer-basic {
+  position: fixed;
+  left: 0;
+  border-radius: 10px 0 0 10px;
+  bottom: 0;
+  width: 100%;
+  height: 115px;
+  background: linear-gradient(
+90deg
+, rgb(204, 255, 255) 0%, rgb(153, 204, 255) 100%);
+    background-image: linear-gradient(
+90deg
+, rgb(204, 255, 255) 0%, rgb(153, 204, 255) 100%);
+    background-position-x: initial;
+    background-position-y: initial;
+    background-size: initial;
+    background-attachment: initial;
+    background-origin: initial;
+    background-clip: initial;
+    background-color: initial;
+
+  color:#ffffff;
+}
+
+#table1,
+#table1 tr,
+#table1 td { border: 0; 
+  font-weight: bold;
+  font-size: 20px;
+  height: 5px;
+ ;}
