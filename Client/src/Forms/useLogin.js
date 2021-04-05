@@ -11,6 +11,9 @@ import validateLogin from './validateLogin'
 import {AuthContext} from '../Contexts/AuthorizationContext'
 import axios from 'axios'
 
+import config from '../config.json'
+
+
 
 //this callback function is used to when the user presses the log in button.  
 const useLogin = callback => {
@@ -40,7 +43,7 @@ const useLogin = callback => {
         if(Object.keys(errors).length === 0){
             try{
                 console.log("going to database to verify user")
-                axios.get(`http://localhost:5000/users/login/${values.email}/${values.password}`,{
+                axios.get(config.site_root_from_config+`/users/login/${values.email}/${values.password}`,{
                     email: values.email,
                     pass: values.password
                 })

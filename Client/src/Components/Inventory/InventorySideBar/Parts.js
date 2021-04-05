@@ -11,6 +11,9 @@ import "../../../CSSFiles/InventoryHome.css"
 import InventorySideBar from './InventorySideBar';
 import PartsForm from './PartsForm'
 import axios from 'axios';
+
+import config from '../../../config.json';
+
 const useStyles = makeStyles({
     table: {
         minWidth: 50,
