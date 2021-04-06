@@ -3,12 +3,13 @@ Winter 2021 SOEN 390 minicap repository for Kap Industries (Team 19).
 Concordia University.
 
 # Intallation/Setup Guide
-## Dev MongoDB Options
-There are three possible avenues for the mongo connection:  
+### Dev MongoDB Options
+There are three possible avenues for the mongoDB connection:  
 1. Cloud MongoDB Atlas *(Default)*  
 2. Local MongoDB Instance  
 3. Docker MongoDB Instance  
-To determine which connection you wish to use, comment/uncomment the appropriate `db_link` value on lines 41-43 in: `SOEN390_19/Server/src/app.js`
+
+If you wish to change the connection, comment/uncomment the appropriate '*db_link*' variable value on lines 41-43 in '*SOEN390_19/Server/src/app.js*' and save the change prior to starting the application.
 
 ## Via NPM
 ### Requirements
