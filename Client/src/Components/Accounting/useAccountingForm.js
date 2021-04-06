@@ -43,10 +43,11 @@ return temp;
                 console.log("Bike ID does not exit");
             }
             });
+            const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
             console.log("Add sale", addSale);
             if(addSale){
             const response = await axios.post(`http://localhost:5000/accounting/post`,{
-                internalId: values.internalId,
+                internalId: Math.floor(Math.random() * 237)+alphabet[Math.floor(Math.random() * alphabet.length)]+Math.floor(Math.random() * 2375)+alphabet[Math.floor(Math.random() * alphabet.length)]+Math.floor(Math.random()),
                 client: values.client,
                 item: values.item,
                 numberOfUnits: parseInt(values.numberOfUnits),
