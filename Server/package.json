@@ -7,6 +7,10 @@
     "start": "nodemon src/app.js",
     "test": "jest --testEnvironment=node --forceExit"
   },
+  "engines": {
+    "node": "14.x",
+    "npm": "6.x"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",

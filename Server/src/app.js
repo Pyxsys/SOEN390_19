@@ -38,7 +38,7 @@ app.use('/manufacturing', ManufacturingRoute);
 // Connection link to mongoDB for mongoose (Uncomment/Comment for the desired connection)
 var db_link; 
 
-db_link = 'mongodb+srv://KappApp:Kappernicus@kappindu.0adkv.mongodb.net/test'                      // Cloud mongodb link
+db_link = 'mongodb+srv://KappApp:Kappernicus@kappindu.0adkv.mongodb.net/test';                       // Cloud mongodb link
 //db_link = 'mongodb://localhost:27017/?readPreference=primary&appname=MongoDB%20Compass&ssl=false'; // Localhost mongodb connection
 //db_link = 'mongodb://mongo:27017/kapp-docker-express';                                             // Docker mongo container link
 
