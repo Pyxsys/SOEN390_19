@@ -1,1 +1,1 @@
-web: node src/app.js
+web: sh -c 'cd ./Server/ &&  npm start '
