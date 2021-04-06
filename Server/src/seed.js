@@ -30,7 +30,7 @@ const admin_user =
 //Bike Parts
 const part001 = 
 {
-    internalId: "JBH01", 
+    internalId: "seed-JBH01", 
     partType: "Handle Bars", 
     price: 30, 
     numberOfUnits: 400, 
@@ -39,7 +39,7 @@ const part001 =
     partDocStep: "N/A"
 },
 part002 = {
-    internalId: "JBH02", 
+    internalId: "seed-JBH02", 
     partType: "Handle Bars",
     price: 20, 
     numberOfUnits: 250, 
@@ -51,15 +51,15 @@ part002 = {
 //Bikes
 const bike001 =
 {
-    internalId:       "BXSP01",
+    internalId:       "seed-BXSP01",
     type:             "Speed",   
     price:            450,
     numberOfUnits:    200,
     provider:         "Bixe",
     bikeDocPath:      "N/A",   
     partsList: [
-        {partInternalId: "JBH01"}, 
-        {partInternalId: "JBH02"}
+        {partInternalId: "seed-JBH01"}, 
+        {partInternalId: "seed-JBH02"}
     ]
     
 };
@@ -68,18 +68,18 @@ const bike001 =
 const supplier001 = 
 {
     //business attributes
-    name: "James Bar",
+    name: "seed-James Bar",
     phone: "1-800-999-9999",
     location: "Soemhwa, Canada",
     //supplier attributes
     description: "Premium handlebars from guys with handlebars.",
     catalogue: [
         {
-            internalId: "JBH01",
+            internalId: "seed-JBH01",
             availableUnits: 5
         },
         {
-            internalId: "JBH01",
+            internalId: "seed-JBH01",
             availableUnits: 56
         }
     ]
