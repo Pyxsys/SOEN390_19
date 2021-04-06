@@ -34,11 +34,14 @@ app.use('/inventory', inventoryRoute);
 const ManufacturingRoute = require('./Routes/Api/ManufacturingRoutes.js'); // Define manufacturing route
 app.use('/manufacturing', ManufacturingRoute);
 
+const AccountingRoute = require('./Routes/Api/AccountingRoutes.js'); // Define manufacturing route
+app.use('/accounting', AccountingRoute);
+
 
 // Connect to mongoose mongoDB
 var db_link = 'mongodb://mongo:27017/kapp-docker-express';    //docker mongo container link
-/* Comment for local host mongodb connection
-db_link = 'mongodb://localhost:27017/?readPreference=primary&appname=MongoDB%20Compass&ssl=false';
+// Comment for local host mongodb connection
+//db_link = 'mongodb://localhost:27017/?readPreference=primary&appname=MongoDB%20Compass&ssl=false';
 //*/
 
 
