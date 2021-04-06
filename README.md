@@ -3,8 +3,8 @@ Winter 2021 SOEN 390 minicap repository for Kap Industries (Team 19).
 Concordia University.
 
 # Intallation/Setup Guide
-## Dev MongoDB Options
-There are three possible avenues for the mongo connection:  
+### Dev MongoDB Options
+There are three possible avenues for the mongoDB connection:  
 1. Cloud MongoDB Atlas *(Default)*  
 2. Local MongoDB Instance  
 3. Docker MongoDB Instance  
