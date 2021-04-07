@@ -34,7 +34,7 @@ const part001 =
     partType: "Handle Bars", 
     price: 30, 
     numberOfUnits: 400, 
-    provider: "James Bars", 
+    provider: "seed-James Bars", 
     partDocPath: "N/A", 
     partDocStep: "N/A"
 },
@@ -43,7 +43,7 @@ part002 = {
     partType: "Handle Bars",
     price: 20, 
     numberOfUnits: 250, 
-    provider: "James Bars", 
+    provider: "seed-James Bars", 
     partDocPath: "N/A", 
     partDocStep: "N/A"
 };
