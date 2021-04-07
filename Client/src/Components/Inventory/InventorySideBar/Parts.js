@@ -11,6 +11,12 @@ import "../../../CSSFiles/InventoryHome.css"
 import InventorySideBar from './InventorySideBar';
 import PartsForm from './PartsForm'
 import axios from 'axios';
+<<<<<<< HEAD
+=======
+
+import config from '../../../config.json';
+
+>>>>>>> BE_PreProd
 const useStyles = makeStyles({
     table: {
         minWidth: 50,

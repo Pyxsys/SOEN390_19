@@ -33,7 +33,11 @@
     color: white;
     text-decoration:none;
     padding: 0.5rem 1rem;
+<<<<<<< HEAD
     margin-right: 7rem
+=======
+    margin-right: 10rem
+>>>>>>> BE_PreProd
 }
 
 .nav-links a:hover{
