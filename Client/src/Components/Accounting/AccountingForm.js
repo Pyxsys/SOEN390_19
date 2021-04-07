@@ -1,3 +1,10 @@
+/** [AccountingForm.js]
+* Summary.
+* The following Form adds a sale to accounting.
+* 
+* Description. 
+* The form adds orders by ID to the table and automatically updates the page..
+*/
 
 
 import React from 'react'

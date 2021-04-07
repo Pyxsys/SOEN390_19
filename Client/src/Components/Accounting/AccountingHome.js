@@ -10,6 +10,7 @@ import Paper from '@material-ui/core/Paper';
 import InventorySideBar from '../Inventory/InventorySideBar/InventorySideBar'
 import AccountingForm from './AccountingForm'
 import axios from 'axios';
+
 //Styling for table
 const useStyles = makeStyles({
     table: {
@@ -18,6 +19,10 @@ const useStyles = makeStyles({
   });
 
 
+/*
+  AccountingHome displays the Bike Sales
+  Using material UI tables to create the display we want
+*/
 
 
 function AccountingHome() {
