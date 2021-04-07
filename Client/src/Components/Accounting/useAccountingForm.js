@@ -10,7 +10,7 @@ const useAccountingForm = () => {
         internalId:'',
         client: '',
         item: '',
-        numerOfUnits: '',
+        numberOfUnits: '',
         price:'',
     })
     const handleChange = e => {
@@ -33,12 +33,15 @@ return temp;
         try{
             var inventory= await fetchBikeInventory();
             console.log(inventory);
-
             inventory.forEach(e => {
                 if(values.item===e.internalId){
                     addSale=true;
                     console.log(addSale);
                     values.price=e.price*values.numberOfUnits;
+                    if(values.numberOfUnits > e.numberOfUnits){
+                        alert("The number of bikes you want to order is high than the number of bikes we have in stock.");
+                        addSale=false;
+                    }
                 }
                  else{
                 console.log("Bike ID does not exit");
@@ -53,6 +56,7 @@ return temp;
                 price:values.price
             })
             addSale=false;
+            console.log(values.item);
             }            
             }catch(error){
             console.debug("Encountered an error tryin to add sale info")
