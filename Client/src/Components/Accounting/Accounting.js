@@ -9,7 +9,6 @@ function Accounting() {
     return (
         <div>
             <Router>
-                {/* <Navbar/> */}
             <InventorySideBar/>
             <Switch>
                 <Route path= "/Accounting" exact component = {AccountingHome}/>
