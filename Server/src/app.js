@@ -34,7 +34,7 @@ app.use('/inventory', inventoryRoute);
 const ManufacturingRoute = require('./Routes/Api/ManufacturingRoutes.js'); // Define manufacturing route
 app.use('/manufacturing', ManufacturingRoute);
 
-const AccountingRoute = require('./Routes/Api/AccountingRoutes.js'); // Define manufacturing route
+const AccountingRoute = require('./Routes/Api/AccountingRoutes.js'); // Define accounting route
 app.use('/accounting', AccountingRoute);
 
 
