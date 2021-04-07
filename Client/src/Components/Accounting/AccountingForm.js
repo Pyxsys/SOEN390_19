@@ -1,3 +1,10 @@
+/** [AccountingForm.js]
+* Summary.
+* The following Form adds a sale to accounting.
+* 
+* Description. 
+* The form adds orders by ID to the table and automatically updates the page..
+*/
 import React from 'react'
 import useAccountingForm from './useAccountingForm'
 const AccountingForm = (props) => {
@@ -16,18 +23,6 @@ const AccountingForm = (props) => {
         <div className = "Inventory-Home">
             <h1>Add Order</h1>
            <form className = "" onSubmit={submitForm}>
-           <div className = "form-data-edit">
-                    <input
-                    id = "Input-ID"
-                    type = "text"
-                    name = "internalId"
-                    className = "form-input"
-                    placeholder = "Order ID"
-                    value = {values.internalId}
-                    onChange = {handleChange}
-                    />
-                </div>
-                &nbsp; &nbsp; &nbsp; &nbsp;
             <div className = "form-data-edit">
                     <input
                     id = "Input-ID"
