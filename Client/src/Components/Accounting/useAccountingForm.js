@@ -6,6 +6,7 @@ import config from '../../config.json'
 
 const useAccountingForm = () => {
     var addSale=false;
+    var numBikeCheck = true;
     const [values, setValues] = useState({
         internalId:'',
         client: '',
@@ -38,25 +39,29 @@ return temp;
                     addSale=true;
                     console.log(addSale);
                     values.price=e.price*values.numberOfUnits;
-                    if(values.numberOfUnits > e.numberOfUnits){
-                        alert("The number of bikes you want to order is high than the number of bikes we have in stock.");
-                        addSale=false;
-                    }
+                    if (values.numberOfUnits > e.numberOfUnits)
+                        numBikeCheck = false;
                 }
-                 else{
-                console.log("Bike ID does not exit");
-            }
+                
             });
             console.log("Add sale", addSale);
-            if(addSale){
-            const response = await axios.post(`${config.site_root_from_config}/accounting`,{
+            if(!addSale){
+                alert("Could not identify bike " + values.item + ", please enter a valid bike ID.");
+            }
+            else if(!numBikeCheck)
+            {
+                alert("You ordered more bikes than we have in in stock, please andjust your quantity accordingly.")
+            }
+            if(addSale && numBikeCheck){
+            const response = await axios.post(`${config.site_root_from_config}/accounting/post`,{
                 client: values.client,
                 item: values.item,
                 numberOfUnits: parseInt(values.numberOfUnits),
                 price:values.price
             })
             addSale=false;
-            console.log(values.item);
+           
+            
             }            
             }catch(error){
             console.debug("Encountered an error tryin to add sale info")
