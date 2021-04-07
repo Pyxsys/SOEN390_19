@@ -1,3 +1,11 @@
+/** [useAccountingForm.js]
+* Summary. 
+This is for when the user clicks on the submit button. This will post the information to the back-end.
+*
+* Description. (Use periods)
+After we choose what to be added onto the list,then we can click on the add and it will add information to backEnd.
+Additionally, I will show us the status of the upload
+*/
 import axios from "axios"
 import { useState } from "react"
 import Inventory from "../Inventory/InventorySideBar/Inventory"
@@ -43,10 +51,11 @@ return temp;
                 console.log("Bike ID does not exit");
             }
             });
+            const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
             console.log("Add sale", addSale);
             if(addSale){
             const response = await axios.post(`http://localhost:5000/accounting/post`,{
-                internalId: values.internalId,
+                internalId: Math.floor(Math.random() * 237)+alphabet[Math.floor(Math.random() * alphabet.length)]+Math.floor(Math.random() * 2375)+alphabet[Math.floor(Math.random() * alphabet.length)]+Math.floor(Math.random()),
                 client: values.client,
                 item: values.item,
                 numberOfUnits: parseInt(values.numberOfUnits),
