@@ -46,7 +46,7 @@ return temp;
             });
             console.log("Add sale", addSale);
             if(addSale){
-            const response = await axios.post(`${config.site_root_from_config}/accounting/post`,{
+            const response = await axios.post(`${config.site_root_from_config}/accounting`,{
                 internalId: values.internalId,
                 client: values.client,
                 item: values.item,

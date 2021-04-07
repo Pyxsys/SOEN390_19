@@ -31,7 +31,7 @@ const Bike = require('../../Models/Bike.js');
  *  Adds accounting information to DB
  */
 
- router.post('/post', async (req, res) => {
+ router.post('/', async (req, res) => {
  
 
     // Create new accounting instance
