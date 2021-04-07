@@ -30,7 +30,7 @@ function Parts() {
     const fetchRows = () => {
         try{
             console.log("Fetching Rows from Database")
-            axios.get(`http://localhost:5000/inventory/partinventory`,{
+            axios.get(`${config.site_root_from_config}/inventory/partinventory`,{
 
             }).then((response) => {
                 console.log("Got bike inventory")

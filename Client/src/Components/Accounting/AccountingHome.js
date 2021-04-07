@@ -27,7 +27,7 @@ function AccountingHome() {
     const fetchRowse = () => {
         try{
             console.log("Fetching Rows from Database")
-            axios.get(`http://localhost:5000/accounting`,{
+            axios.get(`http://${config.site_root_from_config}:5000/accounting`,{
     
             }).then((response) => {
                 console.log("Got sale transactions")
