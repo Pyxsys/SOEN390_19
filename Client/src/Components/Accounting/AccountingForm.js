@@ -36,7 +36,7 @@ const AccountingForm = (props) => {
                     type = "text"
                     name = "item"
                     className = "form-input"
-                    placeholder = "Bike Id"
+                    placeholder = "Bike ID"
                     value = {values.item}
                     onChange = {handleChange}
                     />
