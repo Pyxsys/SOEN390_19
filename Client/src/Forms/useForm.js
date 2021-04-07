@@ -10,12 +10,9 @@ Using axios.post it is able to add the information to the database. Making sure 
 import validate from './validateInfo'
 import {useState, useEffect} from 'react'
 import axios from 'axios'
-<<<<<<< HEAD
-=======
 
 import config from '../config.json'
 
->>>>>>> BE_PreProd
 
 
 const useForm = callback => {

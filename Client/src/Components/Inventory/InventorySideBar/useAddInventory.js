@@ -9,12 +9,9 @@ Additionally, I will show us the status of the upload
 import axios from "axios"
 import { useState } from "react"
 import fetchRows from "./InventoryHome"
-<<<<<<< HEAD
-=======
 
 import config from '../../../config.json';
 
->>>>>>> BE_PreProd
 
 const useAddInventory = () => {
 

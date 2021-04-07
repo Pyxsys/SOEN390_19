@@ -8,12 +8,9 @@
 */
 import axios from "axios"
 import { useState } from "react"
-<<<<<<< HEAD
-=======
 
 import config from '../../../config.json'
 
->>>>>>> BE_PreProd
 
 
 const usePartsForm = () => {
@@ -36,11 +33,7 @@ const usePartsForm = () => {
         console.log("Attempting to add info")
         // addPartsInformation(values.partsList)
         try{
-<<<<<<< HEAD
-            const response = await axios.post(`http://localhost:5000/inventory/partinventory`,{
-=======
             const response = await axios.post(config.site_root_from_config+`/inventory/partinventory`,{
->>>>>>> BE_PreProd
                 internalId: partValues.internalId,
                 partType: partValues.partType,
                 price: partValues.price,

@@ -10,12 +10,9 @@ Thanks to this service the inventory could be edited.
 */
 
 import axios from 'axios';
-<<<<<<< HEAD
-=======
 
 import config from './config.json'
 
->>>>>>> BE_PreProd
 
 export const fetchRows = async () => {
     try{
