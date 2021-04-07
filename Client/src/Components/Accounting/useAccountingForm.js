@@ -2,6 +2,7 @@ import axios from "axios"
 import { useState } from "react"
 import Inventory from "../Inventory/InventorySideBar/Inventory"
 import {fetchRows} from '../../APIService'
+import config from '../../config.json'
 
 const useAccountingForm = () => {
     var addSale=false;

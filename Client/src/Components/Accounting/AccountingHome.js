@@ -10,6 +10,8 @@ import Paper from '@material-ui/core/Paper';
 import InventorySideBar from '../Inventory/InventorySideBar/InventorySideBar'
 import AccountingForm from './AccountingForm'
 import axios from 'axios';
+import config from '../../config.json';
+
 //Styling for table
 const useStyles = makeStyles({
     table: {
