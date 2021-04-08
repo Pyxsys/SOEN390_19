@@ -44,7 +44,7 @@ const submitForm = async (e) => {
             <h1>  Manufacture a bike </h1>
       <form className="inv-forms" id= "" onSubmit={submitForm}>
             <label>
-          Which Bike Model:
+          Which Bike Model :  
           <select 
           className="Input-ID-Manufacture"
           id = "Input-ID"
@@ -57,6 +57,7 @@ const submitForm = async (e) => {
           </select>
           <br/>
         </label>
+        How many Bikes  :
           <input
             className = "Input-ID-Manufacture"
             type="text"
