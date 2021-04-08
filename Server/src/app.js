@@ -34,6 +34,9 @@ app.use('/inventory', inventoryRoute);
 const ManufacturingRoute = require('./Routes/Api/ManufacturingRoutes.js'); // Define manufacturing route
 app.use('/manufacturing', ManufacturingRoute);
 
+const AccountingRoute = require('./Routes/Api/AccountingRoutes.js'); // Define accounting route
+app.use('/accounting', AccountingRoute);
+
 
 // Connection link to mongoDB for mongoose (Uncomment/Comment for the desired connection)
 var db_link; 

@@ -53,7 +53,7 @@ You can login into the application by using the following credentials:
 1. Download/Clone the project locally  
 2. Open a terminal (*eg. Cmd on windows*)  
 3. Navigate to the project root (*C:/.../SOEN390_19/*).
-4. In a text editor, uncomment line 43 in *SOEN390_19/Server/src/app.js* and save.
+4. In a text editor, uncomment line 46 in *SOEN390_19/Server/src/app.js* and save.
 5. Build a fresh container docker using: `docker-compose build --no-cache`
 6. Input the following command: `docker-compose up`  
 7. Wait for the containers & images to to generate.  
@@ -68,7 +68,7 @@ You can login into the application by using the following credentials:
 ### Running in a local environment
 To run the the application in a local environment the following additional steps must be made:  
 - [ ] Change the value of `site_root_from_config` in '*SOEN390_19/Client/src/config.json*' to "*http://localhost:5000*"
-- [ ] Uncomment line 42 in *SOEN390_19/Server/src/app.js*  
+- [ ] Uncomment line 45 in *SOEN390_19/Server/src/app.js*  
 
 ### Additional MongoDB Options
 There are three possible avenues for the mongoDB connection:  
@@ -76,4 +76,4 @@ There are three possible avenues for the mongoDB connection:
 2. Local MongoDB Instance  
 3. Docker MongoDB Instance  
 
-If you wish to change the connection, comment/uncomment the appropriate '*db_link*' variable value on lines 41-43 in '*SOEN390_19/Server/src/app.js*' and save the change prior to starting the application.
+If you wish to change the connection, comment/uncomment the appropriate '*db_link*' variable value on lines 44-46 in '*SOEN390_19/Server/src/app.js*' and save the change prior to starting the application.

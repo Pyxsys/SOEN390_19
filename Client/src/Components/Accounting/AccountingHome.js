@@ -7,76 +7,73 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
-import "../../../CSSFiles/InventoryHome.css"
-import InventorySideBar from './InventorySideBar';
-import PartsForm from './PartsForm'
+import InventorySideBar from '../Inventory/InventorySideBar/InventorySideBar'
+import AccountingForm from './AccountingForm'
 import axios from 'axios';
+import config from '../../config.json';
 
-import config from '../../../config.json';
-
+//Styling for table
 const useStyles = makeStyles({
     table: {
-        minWidth: 50,
-        maxWidth: 1610,
+      minWidth: 650,
     },
   });
 
-/*
-Parts inventory that is within the sidebar, using material UI tables.
-*/
-function Parts() {
+
+
+
+function AccountingHome() {
+
     const [rows, setRows] = useState([]);
 
-    const fetchRows = () => {
+    const fetchRowse = () => {
         try{
             console.log("Fetching Rows from Database")
-            axios.get(`${config.site_root_from_config}/inventory/partinventory`,{
-
+            axios.get(`${config.site_root_from_config}/accounting`,{
+    
             }).then((response) => {
-                console.log("Got bike inventory")
+                console.log("Got sale transactions")
                 console.log(response.data)
                 setRows(response.data)
             })
         }catch(error){
-            console.debug("Error when Fetching Bike Inventory Data")
+            console.debug("Error when Fetching Sale Data")
             console.debug(error)
         }   
         
     }
-
     const classes = useStyles();
 
     console.log("fetching rows")
     useEffect(()=>{
-        fetchRows()
+        fetchRowse()
     },[])
 
-
-
     return (
-        <div className="Parts Needed">
+        <div className= "">
             <InventorySideBar/>
-            <PartsForm updateRows={fetchRows}/>
-            <TableContainer component={Paper} className = "Inventory-Container"> 
-                <Table className={classes.table} size="small" id="Edit-the-table" aria-label="a dense table">
-                    <TableHead><TableRow><TableCell colspan="5" id="The-Table-Title">Parts</TableCell></TableRow></TableHead>
+            <AccountingForm updateRows = {fetchRowse}/>
+           <TableContainer component={Paper} className = "Inventory-Container">
+                <Table className={classes.table} id="Edit-the-table"  size="small" aria-label="a dense table">
+                    <TableHead><TableRow><TableCell colspan="5" id="The-Table-Title">Sales</TableCell></TableRow></TableHead>
                     <TableHead>
                         <TableRow>
-                            <TableCell align="center">Part ID</TableCell>
-                            <TableCell align="center">Part Type</TableCell>
-                            <TableCell align="center">Price</TableCell>
-                            <TableCell align="center">Provider</TableCell>
+                            <TableCell align="center">Order ID</TableCell>
+                            <TableCell align="center">Client</TableCell>
+                            <TableCell align="center">Bike ID</TableCell>
                             <TableCell align="center">Quantity</TableCell>
+                            <TableCell align="center">Total Cost</TableCell>
+
                         </TableRow>
                     </TableHead>
                     <TableBody>
                         {rows.map((row) => (
                             <TableRow key={row.name}>
                                 <TableCell align="center">{row.internalId}</TableCell>
-                                <TableCell align="center">{row.partType}</TableCell>
-                                <TableCell align="center">{row.price}</TableCell>
-                                <TableCell align="center">{row.provider}</TableCell>
+                                <TableCell align="center">{row.client}</TableCell>
+                                <TableCell align="center">{row.item}</TableCell>
                                 <TableCell align="center">{row.numberOfUnits}</TableCell>
+                                <TableCell align="center">{row.price}</TableCell>
                             </TableRow>
                         ))}
                     </TableBody>
@@ -86,4 +83,4 @@ function Parts() {
     )
 }
 
-export default Parts
+export default AccountingHome

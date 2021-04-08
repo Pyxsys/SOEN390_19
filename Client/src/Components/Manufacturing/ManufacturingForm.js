@@ -42,10 +42,11 @@ const submitForm = async (e) => {
   return (
     <div id= "manufacture-formed">
             <h1>  Manufacture a bike </h1>
-      <form className="" id= "" onSubmit={submitForm}>
+      <form className="inv-forms" id= "" onSubmit={submitForm}>
             <label>
           Which Bike Model:
           <select 
+          className="Input-ID-Manufacture"
           id = "Input-ID"
           type="text"
           name = "internalId"
@@ -57,7 +58,7 @@ const submitForm = async (e) => {
           <br/>
         </label>
           <input
-             id = "Input-ID-Manufacture"
+            className = "Input-ID-Manufacture"
             type="text"
             name="quantity"
             placeholder= "Quantity"
@@ -65,7 +66,7 @@ const submitForm = async (e) => {
             onChange = {handleChange}
             />
         <div>
-        <button className = ""  
+        <button id = "form-manufacture-btn" className = ""  
         type = "submit">REQUEST
         </button>
         </div>
@@ -75,15 +76,6 @@ const submitForm = async (e) => {
 
 
    )
-
-
-
-
-
-
-
-
-
 
 }
 
