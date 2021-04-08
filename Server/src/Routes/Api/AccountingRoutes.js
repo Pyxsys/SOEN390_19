@@ -39,8 +39,8 @@ const Bike = require('../../Models/Bike.js');
         var inventory_amount = bike_model.numberOfUnits;
         inventory_amount -= req.body.numberOfUnits
 
-        //Ensure value is not negative
-        if(inventory_amount < 0){ throw new Error(`Can not order more ${bike_model.internalId} than are in inventory.`); }
+        //Ensure values are not negative
+        if(inventory_amount < 0 || req.body.numberOfUnits < 0){ throw new Error(`Cannot order a negative amount or more ${bike_model.internalId} than are in inventory.`); }
 
         //update bike inventory with new amount
         await Bike.Bikes.findOneAndUpdate(
