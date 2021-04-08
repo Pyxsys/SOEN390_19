@@ -60,8 +60,6 @@ const Bike = require('../../Models/Bike.js');
             numberOfUnits:    req.body.numberOfUnits,
             client:           req.body.client
         });
-    
-        console.log(new_accounting);
 
         // Save new accounting instance to db
         const saved_account = await new_accounting.save();
