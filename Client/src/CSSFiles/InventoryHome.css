@@ -23,4 +23,7 @@ table {
   .Inventory-Container{
     margin-left: 175px;
     max-width: calc(100% - 175px);
+    height: 675px;
   }
+
+
