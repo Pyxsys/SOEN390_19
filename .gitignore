@@ -34,3 +34,5 @@ node_modules
 
 # test instance files
 globalConfig.json
+
+Client/build/
