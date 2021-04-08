@@ -53,7 +53,7 @@ return temp;
                 alert("You ordered more bikes than we have in in stock, please andjust your quantity accordingly.")
             }
             if(addSale && numBikeCheck){
-            const response = await axios.post(`${config.site_root_from_config}/accounting/post`,{
+            const response = await axios.post(`${config.site_root_from_config}/accounting`,{
                 client: values.client,
                 item: values.item,
                 numberOfUnits: parseInt(values.numberOfUnits),
