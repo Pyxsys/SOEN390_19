@@ -53,7 +53,7 @@ return temp;
             }
             else if(!numBikeCheck)
             {
-                alert("You ordered more bikes than we have in in stock, please andjust your quantity accordingly.");
+                alert("You ordered more bikes than we have in in stock, please adjust your quantity accordingly.");
             }
             else if (!posNumber)
             {
