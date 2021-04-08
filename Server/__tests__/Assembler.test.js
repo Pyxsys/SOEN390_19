@@ -88,57 +88,120 @@
             expect(result).toBe(0);
         });
 
-        
-        
-        
         // TODO
-        // Unit Testing: ensurePartsAvailable() throws error when there are insufficient parts to produce a single bike.
-    /* test('throws error when there are insufficient parts to produce a single bike', async () => {
-            const testBike = new Bike.Bikes({
-                internalId:     'abc123',
-                type:           'Mountain Bike',
-                price:          400,
-                numberOfUnits:  6,
-                provider:       'Test Provider',
-                bikeDocPath:    './',
-                partsList:      [
-                    {partInternalId: 'frame', amountRequired: 10},
-                    {partInternalId: 'pedal', amountRequired: 10},
-                    {partInternalId: 'seat', amountRequired: 10}
-                ]
-            });
-            const savedBike = await testBike.save();
-            
-            //expect(savedBike.partsList[0].partInternalId).toBe('frame');
-            const testPartsList = [
-                {partInternalId: 'frame', amountRequired: 1},
-                {partInternalId: 'pedal', amountRequired: 1},
-                {partInternalId: 'seat', amountRequired: 1}
-            ];
-            const result = await Assembler.ensurePartsAvailable(testPartsList, 6);
-            
+    // Unit Testing: ensurePartsAvailable() throws error when there are insufficient parts to produce a single bike.
+    test('throws error when there are insufficient parts to produce a single bike', async () => {
+        // creating and saving partsList in DB
+        const frame = new BikePart.BikeParts({
+            internalId: 'xdf458',
+            partType: 'frame',
+            price: 45,
+            numberOfUnits: 5,
+            provider: 'Test Provider',  //refer to supplier
 
-            expect(await Assembler.ensurePartsAvailable(savedBike.partsList, 6)).toThrow(); // rejects key word necessary when Promises are used
-        });*/
+            partDocPath: './', //Path to .pdf file
+            partStepPath: './'
+        });
+        const savedFrame = await frame.save();
 
-        // Unit Testing: ensurePartsAvailable() returns a result with insufficient_parts set as true when min_possible_assemblies is less than requested_amount.
-        /*test('returns a result with insufficient_parts set as true when min_possible_assemblies is less than requested_amount', async () => {
-            const testBike = new Bike.Bikes({
-                internalId:     'abc123',
-                type:           'Mountain Bike',
-                price:          400,
-                numberOfUnits:  6,
-                provider:       'Test Provider',
-                bikeDocPath:    './',
-                partsList:      [
-                    {partInternalId: 'frame', amountRequired: 1},
-                    {partInternalId: 'pedal', amountRequired: 1},
-                    {partInternalId: 'seat', amountRequired: 1}
-                ]
-            });
-            const savedBike = await testBike.save();
-            
-            expect(Assembler.ensurePartsAvailable(savedBike.partsList, 6)).toBe(); // rejects key word necessary when Promises are used
-        });*/
+        const pedal = new BikePart.BikeParts({
+            internalId: 'ejf587',
+            partType: 'pedal',
+            price: 30,
+            numberOfUnits: 5,
+            provider: 'Test Provider',  //refer to supplier
 
+            partDocPath: './', //Path to .pdf file
+            partStepPath: './'
+        });
+        const savedPedal = await pedal.save();
+
+        const seat = new BikePart.BikeParts({
+            internalId: 'ktr413',
+            partType: 'seat',
+            price: 25,
+            numberOfUnits: 5,
+            provider: 'Test Provider',  //refer to supplier
+
+            partDocPath: './', //Path to .pdf file
+            partStepPath: './'
+        });
+        const savedSeat = await seat.save();
+
+        // creating and saving a test Bike in DB
+        const testBike = new Bike.Bikes({
+            internalId: 'efg567',
+            type: 'Mountain Bike',
+            price: 400,
+            numberOfUnits: 6,
+            provider: 'Test Provider',
+            bikeDocPath: './',
+            partsList: [
+                { partInternalId: savedFrame.internalId, amountRequired: 100 }, // requires 100 of each, only have 5 of each
+                { partInternalId: savedPedal.internalId, amountRequired: 100 },
+                { partInternalId: savedSeat.internalId, amountRequired: 100 }
+            ]
+        });
+        const savedBike = await testBike.save();
+
+        await expect(Assembler.ensurePartsAvailable(savedBike.partsList, 1)).rejects.toThrow(new Error(`Insufficient parts to produce a single bike.`)); // rejects key word necessary when Promises are used
+    });
+
+    // Unit Testing: ensurePartsAvailable() returns a result with insufficient_parts set as true when min_possible_assemblies is less than requested_amount.
+    /*test('returns a result with insufficient_parts set as true when min_possible_assemblies is less than requested_amount', async () => {
+        // creating and saving partsList in DB
+        const frame = new BikePart.BikeParts({
+            internalId: 'cjk458',
+            partType: 'frame',
+            price: 45,
+            numberOfUnits: 10,
+            provider: 'Test Provider',  //refer to supplier
+
+            partDocPath: './', //Path to .pdf file
+            partStepPath: './'
+        });
+        const savedFrame = await frame.save();
+
+        const pedal = new BikePart.BikeParts({
+            internalId: 'tgy587',
+            partType: 'pedal',
+            price: 30,
+            numberOfUnits: 10,
+            provider: 'Test Provider',  //refer to supplier
+
+            partDocPath: './', //Path to .pdf file
+            partStepPath: './'
+        });
+        const savedPedal = await pedal.save();
+
+        const seat = new BikePart.BikeParts({
+            internalId: 'yup413',
+            partType: 'seat',
+            price: 25,
+            numberOfUnits: 10,
+            provider: 'Test Provider',  //refer to supplier
+
+            partDocPath: './', //Path to .pdf file
+            partStepPath: './'
+        });
+        const savedSeat = await seat.save();
+
+        // creating and saving a test Bike in DB
+        const newTestBike = new Bike.Bikes({
+            internalId: 'qwe567',
+            type: 'Mountain Bike',
+            price: 400,
+            numberOfUnits: 6,
+            provider: 'Test Provider',
+            bikeDocPath: './',
+            partsList: [
+                { partInternalId: savedFrame.internalId, amountRequired: 5 }, 
+                { partInternalId: savedPedal.internalId, amountRequired: 5 },
+                { partInternalId: savedSeat.internalId, amountRequired: 5 }
+            ]
+        });
+        const savedBike = await newTestBike.save();
+
+        await expect(Assembler.ensurePartsAvailable(savedBike.partsList, 3)).toBe(true);
+    });*/
     });
