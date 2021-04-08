@@ -34,17 +34,22 @@ app.use('/inventory', inventoryRoute);
 const ManufacturingRoute = require('./Routes/Api/ManufacturingRoutes.js'); // Define manufacturing route
 app.use('/manufacturing', ManufacturingRoute);
 
-
-// Connect to mongoose mongoDB
-var db_link = 'mongodb://mongo:27017/kapp-docker-express';    //docker mongo container link
-/* Comment for local host mongodb connection
-db_link = 'mongodb://localhost:27017/?readPreference=primary&appname=MongoDB%20Compass&ssl=false';
-//*/
+const AccountingRoute = require('./Routes/Api/AccountingRoutes.js'); // Define accounting route
+app.use('/accounting', AccountingRoute);
 
 
+// Connection link to mongoDB for mongoose (Uncomment/Comment for the desired connection)
+var db_link; 
+
+db_link = 'mongodb+srv://KappApp:Kappernicus@kappindu.0adkv.mongodb.net/test';                       // Cloud mongodb link
+//db_link = 'mongodb://localhost:27017/?readPreference=primary&appname=MongoDB%20Compass&ssl=false'; // Localhost mongodb connection
+//db_link = 'mongodb://mongo:27017/kapp-docker-express';                                             // Docker mongo container link
+
+
+//Connect to mongoDB
 mongoose.connect(
-    db_link,                                    // Target DB
-    {   // Removes deprecation warnings
+    db_link,                    // Target DB
+    {                           // Removes deprecation warnings
         useNewUrlParser: true, 
         useUnifiedTopology: true, 
         useCreateIndex: true

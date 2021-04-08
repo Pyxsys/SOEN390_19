@@ -14,7 +14,7 @@ import {AuthContext}from "../Contexts/AuthorizationContext"
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom"
 import Inventory from "../Components/Inventory/InventorySideBar/Inventory"
 import Manufacturing from './Manufacturing/Manufacturing'
-
+import Accounting from './Accounting/Accounting'
 
  
 const OnceLoggedIn = () => {
@@ -27,6 +27,7 @@ const OnceLoggedIn = () => {
           <Switch>
           <Route path= "/Inventory" component = {Inventory}/>
           <Route path = "/Manufacturing" component = {Manufacturing}/>
+          <Route path = "/Accounting" component = {Accounting}/>
           </Switch>
       </div>
     );

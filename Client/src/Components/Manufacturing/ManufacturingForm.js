@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import useManufacturingForm from './useManufacturingForm'
 import {fetchRows} from '../../APIService'
-
+import "../../CSSFiles/Manufacturing.css"
 
 /** [ManufacturingForm.js]
 * Summary.
@@ -40,12 +40,13 @@ const submitForm = async (e) => {
 }
 
   return (
-    <div>
+    <div id= "manufacture-formed">
             <h1>  Manufacture a bike </h1>
-      <form className="" id= "" onSubmit={submitForm}>
+      <form className="inv-forms" id= "" onSubmit={submitForm}>
             <label>
           Which Bike Model:
           <select 
+          className="Input-ID-Manufacture"
           id = "Input-ID"
           type="text"
           name = "internalId"
@@ -57,16 +58,15 @@ const submitForm = async (e) => {
           <br/>
         </label>
           <input
-            id = "Input-ID"
+            className = "Input-ID-Manufacture"
             type="text"
             name="quantity"
-            className = "form-input"
             placeholder= "Quantity"
             value = {values.quantity}
             onChange = {handleChange}
             />
         <div>
-        <button className = ""  
+        <button id = "form-manufacture-btn" className = ""  
         type = "submit">REQUEST
         </button>
         </div>
@@ -76,15 +76,6 @@ const submitForm = async (e) => {
 
 
    )
-
-
-
-
-
-
-
-
-
 
 }
 

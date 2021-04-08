@@ -7,10 +7,10 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
-import "../../../CSSFiles/InventoryHome.css"
-import InventorySideBar from './InventorySideBar';
-import AddInventoryForm from './AddInventoryForm'
-import {fetchRows} from '../../../APIService'
+import InventorySideBar from '../Inventory/InventorySideBar/InventorySideBar'
+import AccountingForm from './AccountingForm'
+import axios from 'axios';
+import config from '../../config.json';
 
 //Styling for table
 const useStyles = makeStyles({
@@ -21,52 +21,59 @@ const useStyles = makeStyles({
 
 
 
-/*
-  InventoryHome displays the Bike Inventory
-  Using material UI tables to create the display we want
-*/
-function InventoryHome() {
+
+function AccountingHome() {
 
     const [rows, setRows] = useState([]);
 
+    const fetchRowse = () => {
+        try{
+            console.log("Fetching Rows from Database")
+            axios.get(`${config.site_root_from_config}/accounting`,{
+    
+            }).then((response) => {
+                console.log("Got sale transactions")
+                console.log(response.data)
+                setRows(response.data)
+            })
+        }catch(error){
+            console.debug("Error when Fetching Sale Data")
+            console.debug(error)
+        }   
+        
+    }
     const classes = useStyles();
 
     console.log("fetching rows")
-    useEffect(async () => {
-        await getData()
+    useEffect(()=>{
+        fetchRowse()
     },[])
-
-    const getData = async () => {
-        console.log("Entered getData")
-        var temp = await fetchRows()
-        setRows(temp)
-    }
 
     return (
         <div className= "">
             <InventorySideBar/>
-            <AddInventoryForm updateRows = {getData}/>
+            <AccountingForm updateRows = {fetchRowse}/>
            <TableContainer component={Paper} className = "Inventory-Container">
                 <Table className={classes.table} id="Edit-the-table"  size="small" aria-label="a dense table">
-                    <TableHead><TableRow><TableCell colspan="5" id="The-Table-Title">Inventory</TableCell></TableRow></TableHead>
+                    <TableHead><TableRow><TableCell colspan="5" id="The-Table-Title">Sales</TableCell></TableRow></TableHead>
                     <TableHead>
                         <TableRow>
+                            <TableCell align="center">Order ID</TableCell>
+                            <TableCell align="center">Client</TableCell>
                             <TableCell align="center">Bike ID</TableCell>
-                            <TableCell align="center">Bike Price</TableCell>
-                            <TableCell align="center">Provider</TableCell>
-                            <TableCell align="center">Type</TableCell>
                             <TableCell align="center">Quantity</TableCell>
+                            <TableCell align="center">Total Cost</TableCell>
+
                         </TableRow>
                     </TableHead>
                     <TableBody>
                         {rows.map((row) => (
                             <TableRow key={row.name}>
                                 <TableCell align="center">{row.internalId}</TableCell>
-                                <TableCell align="center">{row.price}</TableCell>
-                                <TableCell align="center">{row.provider}</TableCell>
-                                <TableCell align="center">{row.type}</TableCell>
+                                <TableCell align="center">{row.client}</TableCell>
+                                <TableCell align="center">{row.item}</TableCell>
                                 <TableCell align="center">{row.numberOfUnits}</TableCell>
-
+                                <TableCell align="center">{row.price}</TableCell>
                             </TableRow>
                         ))}
                     </TableBody>
@@ -76,4 +83,4 @@ function InventoryHome() {
     )
 }
 
-export default InventoryHome
+export default AccountingHome

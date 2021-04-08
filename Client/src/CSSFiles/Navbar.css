@@ -26,14 +26,14 @@
     text-align: center;
     width: 70vw;
     justify-content: end;
-    margin-right: 20rem;
+    margin-right: 1rem;
 }
 
 .nav-links{
     color: white;
     text-decoration:none;
     padding: 0.5rem 1rem;
-    margin-right: 17rem
+    margin-right: 10rem
 }
 
 .nav-links a:hover{
@@ -141,5 +141,6 @@
     #edit-the-elements{
         text-align: right;
     }
+    
 
 }

@@ -1,25 +1,18 @@
 import React from 'react'
-import ManufacturingHome from "./ManufacturingHome"
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom"
-import Navbar from "../Navbar/Navbar"
 import InventoryHome from '../Inventory/InventorySideBar/InventoryHome'
+import AccountingHome from '../Accounting/AccountingHome'
 import Parts from '../Inventory/InventorySideBar/Parts'
 import InventorySideBar from '../Inventory/InventorySideBar/InventorySideBar'
-/** [Manufacturing.js]
-* Summary.
-* Renders the Manufacturing Path with routes including the manufacturing ghome
-* 
-* Description. 
-* Rendering and routes with navbar
-*/
 
-function Manufacturing() {
+function Accounting() {
     return (
         <div>
             <Router>
+                 {/* <Navbar/> */}
             <InventorySideBar/>
             <Switch>
-                <Route path= "/Manufacturing" exact component = {ManufacturingHome}/>
+                <Route path= "/Accounting" exact component = {AccountingHome}/>
                 <Route path= "/Inventory" exact component = {InventoryHome}/>
                 <Route path= "/Inventory/PartsNeeded" component = {Parts}/>
             </Switch>
@@ -29,4 +22,4 @@ function Manufacturing() {
     )
 }
 
-export default Manufacturing
+export default Accounting

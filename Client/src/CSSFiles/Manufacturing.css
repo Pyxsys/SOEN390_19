@@ -1,0 +1,47 @@
+#manufacture-formed{
+    text-align: center;
+    background-color: #D3D3D3;
+    max-width: 400px;
+    margin-left: calc(50% - 200px);
+}
+
+#form-manufacture-btn {
+  width: 20%;
+  height: 30px;
+  margin-top: 10px;
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: 0px 0px 8px #47383880;
+  outline: none;
+  border: none;
+  color: #000000;
+  font-size: 1rem;
+}
+
+#form-manufacture-btn:hover {
+  cursor: pointer;
+  background-color: #4c96d3;
+  box-shadow: 0px 0px 8px #56b2f0b0;
+  transition: all 0.2s linear;
+  
+}
+
+
+
+.Input-ID-Manufacture{
+    width: 110px;
+    outline: none;
+    border-radius: 5px;
+    height: 40px;
+    width: 30%;
+    border: none;
+
+  }
+  input:focus{
+    border: 2px solid black;
+  }
+
+  input:hover {
+    border: 1px solid #999;
+    border-radius: 5px;
+} 

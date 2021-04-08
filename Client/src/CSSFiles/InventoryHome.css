@@ -2,6 +2,7 @@ table {
     font-family: arial, sans-serif;
     border-collapse: initial;
     width: 100%;
+    max-height: calc(100% - 132px);
   }
   
   td, th {
@@ -16,4 +17,12 @@ table {
   #The-Table-Title{
     font-size:25px;
     font-weight:bold;
+    background-color:#a9a9a9d2;
   }
+
+  .Inventory-Container{
+    margin-left: 175px;
+    max-width: calc(100% - 175px);
+  }
+
+

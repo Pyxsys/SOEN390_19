@@ -11,6 +11,9 @@ import "../../../CSSFiles/InventoryHome.css"
 import InventorySideBar from './InventorySideBar';
 import PartsForm from './PartsForm'
 import axios from 'axios';
+
+import config from '../../../config.json';
+
 const useStyles = makeStyles({
     table: {
         minWidth: 50,
@@ -27,7 +30,7 @@ function Parts() {
     const fetchRows = () => {
         try{
             console.log("Fetching Rows from Database")
-            axios.get(`http://localhost:5000/inventory/partinventory`,{
+            axios.get(`${config.site_root_from_config}/inventory/partinventory`,{
 
             }).then((response) => {
                 console.log("Got bike inventory")
@@ -54,26 +57,26 @@ function Parts() {
         <div className="Parts Needed">
             <InventorySideBar/>
             <PartsForm updateRows={fetchRows}/>
-            <TableContainer component={Paper}>
+            <TableContainer component={Paper} className = "Inventory-Container"> 
                 <Table className={classes.table} size="small" id="Edit-the-table" aria-label="a dense table">
                     <TableHead><TableRow><TableCell colspan="5" id="The-Table-Title">Parts</TableCell></TableRow></TableHead>
                     <TableHead>
                         <TableRow>
-                            <TableCell align="right">Part ID</TableCell>
-                            <TableCell align="right">Part Type</TableCell>
-                            <TableCell align="right">Price</TableCell>
-                            <TableCell align="right">Provider</TableCell>
-                            <TableCell align="right">Quantity</TableCell>
+                            <TableCell align="center">Part ID</TableCell>
+                            <TableCell align="center">Part Type</TableCell>
+                            <TableCell align="center">Price</TableCell>
+                            <TableCell align="center">Provider</TableCell>
+                            <TableCell align="center">Quantity</TableCell>
                         </TableRow>
                     </TableHead>
                     <TableBody>
                         {rows.map((row) => (
                             <TableRow key={row.name}>
-                                <TableCell align="right">{row.internalId}</TableCell>
-                                <TableCell align="right">{row.partType}</TableCell>
-                                <TableCell align="right">{row.price}</TableCell>
-                                <TableCell align="right">{row.provider}</TableCell>
-                                <TableCell align="right">{row.numberOfUnits}</TableCell>
+                                <TableCell align="center">{row.internalId}</TableCell>
+                                <TableCell align="center">{row.partType}</TableCell>
+                                <TableCell align="center">{row.price}</TableCell>
+                                <TableCell align="center">{row.provider}</TableCell>
+                                <TableCell align="center">{row.numberOfUnits}</TableCell>
                             </TableRow>
                         ))}
                     </TableBody>
