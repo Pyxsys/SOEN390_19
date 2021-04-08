@@ -35,6 +35,9 @@
     "preset": "@shelf/jest-mongodb",
     "verbose": true,
     "collectCoverage": true,
-    "coverageReporters": ["json", "html"]
+    "coverageReporters": [
+      "json",
+      "html"
+    ]
   }
 }
