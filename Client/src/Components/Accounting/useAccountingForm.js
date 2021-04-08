@@ -7,6 +7,7 @@ import config from '../../config.json'
 const useAccountingForm = () => {
     var addSale=false;
     var numBikeCheck = true;
+    var posNumber = true;
     const [values, setValues] = useState({
         internalId:'',
         client: '',
@@ -41,6 +42,8 @@ return temp;
                     values.price=e.price*values.numberOfUnits;
                     if (values.numberOfUnits > e.numberOfUnits)
                         numBikeCheck = false;
+                    if (values.numberOfUnits < 0)
+                        posNumber = false;
                 }
                 
             });
@@ -50,9 +53,13 @@ return temp;
             }
             else if(!numBikeCheck)
             {
-                alert("You ordered more bikes than we have in in stock, please andjust your quantity accordingly.")
+                alert("You ordered more bikes than we have in in stock, please andjust your quantity accordingly.");
             }
-            if(addSale && numBikeCheck){
+            else if (!posNumber)
+            {
+                alert("You entered a negative number of bikes, please enter a positive number.")
+            }
+            if(addSale && numBikeCheck && posNumber){
             const response = await axios.post(`${config.site_root_from_config}/accounting`,{
                 client: values.client,
                 item: values.item,
