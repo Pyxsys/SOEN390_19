@@ -1,6 +1,7 @@
-/**TODO update blantant copy-paste
- * Bike part model includes internal id to identify bike part, a general description of 
- * the part type, price, number of part units, supplier, pdf file path, and step file path
+/**
+ * Accounting form model for the DB, 
+ * possesses an internalId, an item that refers to another object's InternalId as well as the amount of said item,
+ * the price of the order and a client.
  */
 
 const mongoose = require('mongoose');
