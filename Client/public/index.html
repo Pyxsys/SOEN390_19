@@ -46,13 +46,60 @@
         <table id="table1" cellpadding="0" cellspacing="0" border="0" >
           <tr> 
             <td> <a href="https://github.com/Pyxsys/SOEN390_19"> <img  alt="logo" src="https://user-images.githubusercontent.com/58408904/113503733-a1fab480-9501-11eb-8147-4f6d9b1a2a97.png" width="70" height="70"> </a>  <figcaption> Github</figcaption> </td>
-            <td> <img src="https://user-images.githubusercontent.com/58408904/113531632-43801580-9597-11eb-959f-ace57c415f69.png" alt="logo" width="70" height="70"  /> <figcaption> Facebook</figcaption></td>
-            <td> <img src="https://user-images.githubusercontent.com/58408904/113532020-5e06be80-9598-11eb-8226-a9331a840a93.png" alt="logo" width="70" height="70"  /> <figcaption> Instagram</figcaption></td>
-            <td> <img src="https://user-images.githubusercontent.com/58408904/113531959-3152a700-9598-11eb-82ea-ddb7a20ec55e.png" alt="logo" width="80" height="70"  /> <figcaption> Twitter</figcaption></td>
-            <td> <img src="https://user-images.githubusercontent.com/58408904/113503728-9dce9700-9501-11eb-90f5-bb6f63fde848.png" alt="logo" width="70" height="70"  /> <figcaption> About Us</figcaption> </td>
+            <td> <a href="https://www.facebook.com/"> <img src="https://user-images.githubusercontent.com/58408904/113531632-43801580-9597-11eb-959f-ace57c415f69.png" alt="logo" width="70" height="70"  /> </a>  <figcaption> Facebook</figcaption></td>
+            <td> <a href="https://www.instagram.com/"> <img src="https://user-images.githubusercontent.com/58408904/113532020-5e06be80-9598-11eb-8226-a9331a840a93.png" alt="logo" width="70" height="70"  /> </a>  <figcaption> Instagram</figcaption></td>
+            <td> <a href="https://twitter.com/?lang=en"> <img src="https://user-images.githubusercontent.com/58408904/113531959-3152a700-9598-11eb-82ea-ddb7a20ec55e.png" alt="logo" width="80" height="70"  /> </a>  <figcaption> Twitter</figcaption></td>
+            <td> <a href="https://github.com/Pyxsys/SOEN390_19#readme"> <img src="https://user-images.githubusercontent.com/58408904/113503728-9dce9700-9501-11eb-90f5-bb6f63fde848.png" alt="logo" width="70" height="70"  /> </a>  <figcaption> About Us</figcaption> </td>
           </tr> 
        </table>
     </footer>
     </div>
-  
+   
+      </head>
+      <body>
+      <button id="InstButton">Instructions</button>
+      <div id="myModal" class="modal">
+        
+        <div class="modal-content">
+          <div class="modal-header">
+            <span class="close">&times;</span>
+            <h2>Instructions</h2>
+          </div>
+          <div class="modal-body">
+            <p>Start by ensuring that you have the type of parts needed (amount not necessary) </p>
+            <p> &nbsp;</p>
+            <p>If you did not start by creating/adding the parts to the data set, then go to the bike page.</p>
+            <p> &nbsp;</p>
+            <p> To add bike add a unique bike ID, price (number), provider (Brand/Name),  Type (eg. Mountain/Speed), Quantity (How many bikes) Then add the parts list.</p>
+            <p> &nbsp;</p>
+            <P> Once you have the parts list, format is like an instructions is as followed: </P>
+            <p> &nbsp;</p>
+            <p>  Inside the Part's Invertory fill the following: </P>
+            <p> &nbsp;</p>
+            <p>Part-1 ID, Part-1 Amount , Part-2 ID, Part-2 Amount, etc..., Part-N ID, Part-N Amount</p>
+            <p> &nbsp;</p>
+            <p> Then click "Add Bike" to submit and add the bike to the inventory and you are done.</p>  
+          </div>
+          <div class="modal-footer">
+            <h3> </h3>
+          </div>
+        </div>
+      </div>
+      
+      <script>
+      var modal = document.getElementById("myModal");
+      var btn = document.getElementById("InstButton");
+      var span = document.getElementsByClassName("close")[0];
+      btn.onclick = function() {
+        modal.style.display = "block";}
+      span.onclick = function() {
+        modal.style.display = "none";}
+      window.onclick = function(event) {
+        if (event.target == modal) {
+          modal.style.display = "none";}
+      }
+      </script>
+
+
+
 </html>
