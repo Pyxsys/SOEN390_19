@@ -104,6 +104,34 @@ const AddInventoryForm = (props) => {
                 &nbsp; &nbsp;&nbsp; &nbsp;
                     <button className = "inv-input-btn"
                     type = "submit">Add Info</button>
+               
+     <button id="InstButton">Instructions</button>
+      <div id="myModal" class="modal">
+         <div class="modal-content">
+          <div class="modal-header">
+            <span class="close">&times;</span>
+            <h2>Instructions</h2>
+          </div>
+          <div class="modal-body">
+            <p>Start by ensuring that you have the type of parts needed (amount not necessary) </p>
+            <p> &nbsp;</p>
+            <p>If you did not start by creating/adding the parts to the data set, then go to the bike page.</p>
+            <p> &nbsp;</p>
+            <p> To add bike add a unique bike ID, price (number), provider (Brand/Name),  Type (eg. Mountain/Speed), Quantity (How many bikes) Then add the parts list.</p>
+            <p> &nbsp;</p>
+            <p> Once you have the parts list, format is like an instructions is as followed: </p>
+            <p> &nbsp;</p>
+            <p>  Inside the Part's Invertory fill the following: </p>
+            <p> &nbsp;</p>
+            <p>Part-1 ID, Part-1 Amount , Part-2 ID, Part-2 Amount, etc..., Part-N ID, Part-N Amount</p>
+            <p> &nbsp;</p>
+            <p> Then click "Add Bike" to submit and add the bike to the inventory and you are done.</p>  
+          </div>
+          <div class="modal-footer">
+            <h3> </h3>
+          </div>
+        </div>
+      </div>
             </form>
             <form className="" onSubmit={handleSubmit}>   
        

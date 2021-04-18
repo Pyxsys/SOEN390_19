@@ -48,6 +48,19 @@ const useAddInventory = () => {
     const handleSubmit = async () => {
         console.log("Attempting to add info")
         // addPartsInformation(values.partsList)
+        var modal = document.getElementById("myModal");
+        var btn = document.getElementById("InstButton");
+        //can refactor
+        var span = document.getElementsByClassName("close")[0];
+        btn.onclick = function() {
+          modal.style.display = "block";}
+        span.onclick = function() {
+          modal.style.display = "none";}
+        window.onclick = function(event) {
+          if (event.target == modal) {
+            modal.style.display = "none";}
+        }
+        
         try{
             const response = await axios.post(`${config.site_root_from_config}/inventory/bikeinventory`,{
                 internalId: values.internalId,
