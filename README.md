@@ -3,7 +3,7 @@ Winter 2021 SOEN 390 minicap repository for Kapp Industries (Team 19).
 Concordia University.
 ![alt text](https://user-images.githubusercontent.com/58408904/112918742-9f4c2980-90d3-11eb-9d2d-a94f0acaf0e5.png "Kapp Logo")
 
-### [**WebApp Link**](https://kappindu.netlify.app/)
+### [**WebApp Link**](https://skysource.netlify.app/)
 *(Deployed with [Heroku](heroku.com) and [Netlify](https://www.netlify.com/))*
 
 ## Admin Login  
